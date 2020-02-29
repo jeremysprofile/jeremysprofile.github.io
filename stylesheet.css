@@ -1,3 +1,8 @@
+#page-container {
+  max-width: 100ch;
+  margin: auto;
+}
+
 /* Common classes between header and footer */
 .banner, .links {
   display: flex;
@@ -8,7 +13,7 @@
   padding: 0;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 40ch) {
   .links {
     flex-direction: column;
   }
