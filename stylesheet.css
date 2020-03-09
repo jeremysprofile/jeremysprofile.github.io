@@ -1,6 +1,8 @@
 #page-container {
   max-width: 100ch;
   margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Common classes between header and footer */
@@ -10,17 +12,12 @@
   justify-content: space-between;
   font-style: normal;
   align-items: baseline;
-  padding: 0;
 }
 
 @media screen and (max-width: 40ch) {
   .links {
     flex-direction: column;
   }
-}
-.right {
-  text-align: right;
-  margin-bottom: 0.5rem;
 }
 
 .banner a:link,a:visited {
@@ -32,15 +29,22 @@
   text-decoration: underline;
 }
 .banner > * {
-  margin: 0rem 1rem;
   width: max-content;
   flex-grow: 1;
 }
 .banner h1 {
   font-size: 1rem + 5vw;
+  margin: 1rem 1rem 0rem 0rem;
 }
-.banner h2 {
+.links > * {
+  margin: 0rem 1rem 0rem 0rem;
   font-size: 1rem;
+}
+.links > a:last-child {
+  margin: 0;
+}
+hr {
+  min-width: 100%;
 }
 
 .content {
