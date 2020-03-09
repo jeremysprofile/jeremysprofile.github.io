@@ -1,8 +1,9 @@
-#page-container {
+body {
   max-width: 100ch;
   margin: auto;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Common classes between header and footer */
@@ -48,4 +49,5 @@ hr {
 }
 
 .content {
+  flex: 1;
 }
