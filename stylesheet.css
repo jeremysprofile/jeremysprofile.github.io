@@ -15,11 +15,13 @@ body {
   align-items: baseline;
 }
 
+/*
 @media screen and (max-width: 40ch) {
   .links {
     flex-direction: column;
   }
 }
+*/
 
 .banner a:link,a:visited {
   color: inherit;
