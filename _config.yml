@@ -1,2 +1,6 @@
-name: idk, puppies or something
-markdown: kramdown
+name: "Jeremy Richards"
+url: "https://jeremy.richards.dev"
+
+markdown: redcarpet
+redcarpet:
+    extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "with_toc_data"]
