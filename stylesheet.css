@@ -15,13 +15,11 @@ body {
   align-items: baseline;
 }
 
-/*
 @media screen and (max-width: 40ch) {
   .links {
     flex-direction: column;
   }
 }
-*/
 
 .banner a:link,a:visited {
   color: inherit;
@@ -30,6 +28,10 @@ body {
 .banner a:hover {
   /* https://html.spec.whatwg.org/multipage/rendering.html#phrasing-content-3 */
   text-decoration: underline;
+}
+.links a:hover {
+  /* TODO better color */
+  background-color: aliceBlue;
 }
 .banner > * {
   width: max-content;
@@ -40,15 +42,11 @@ body {
   margin: 1rem 1rem 0rem 0rem;
 }
 .links > * {
-  margin: 0rem 1rem 0rem 0rem;
   font-size: 1rem;
-}
-.links > a:last-child {
-  margin: 0;
+  padding: 0.5rem;
+  border-radius: 8px;
 }
 hr {
-  border-left: none;
-  border-right: none;
   min-width: 100%;
 }
 
