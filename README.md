@@ -43,3 +43,7 @@ This is because, while `gap` exists in CSS for use with flexbox, [no one besides
 
 I dislike negative margins, so I went with `:last-child` to remove the right margin on my last `<a>` tag.
 It works, and reads about as cleanly as I can make it, though it does feel like there should be a better way.
+
+### 404
+
+Instructions [here](https://jekyllrb.com/tutorials/custom-404-page/).
