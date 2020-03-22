@@ -1,6 +1,8 @@
 # SVG
 The [Mozilla Dev Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Getting_Started) and [this random website](http://thenewcode.com/28/Making-And-Deploying-SVG-Favicons) showed me how to make SVGs.
 
+I used [this sandbox](https://www.w3schools.com/graphics/tryit.asp?filename=trysvg_myfirst) to try everything since it was the first sandbox I found and I decided figuring out inkscape wasn't worth the effort.
+
 The colors are HTML codes because I'm not creative. The ones that aren't are from [a SuperUser answer](https://superuser.com/a/1206781/809706) describing terminal colors.
 
 I originally made the favicon 40x64 (golden ratio hype) but it turns out browsers only handle square favicons.
