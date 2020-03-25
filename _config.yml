@@ -1,6 +1,4 @@
 name: "Jeremy Richards"
 url: "https://jeremy.richards.dev"
 
-markdown: GFM
-GFM:
-  extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "with_toc_data"]
+markdown: kramdown
