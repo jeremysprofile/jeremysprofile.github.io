@@ -2,3 +2,5 @@ name: "Jeremy Richards"
 url: "https://jeremy.richards.dev"
 
 markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge

@@ -28,7 +28,8 @@ Can I make numbers?
 2. Also yes.
 
 
-Here's a table:
+Tables need a newline first, though.
+
 | Table With a Really Long Title | Thing2 |
 |--------------------------------|--------|
 | key 1 | value1 |
