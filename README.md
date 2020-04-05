@@ -19,7 +19,7 @@ I learned [HTML](./kb/html) and [CSS](./kb/css) for this, but I had to ask a bun
 
 How do I do all the beautiful things I want?
 
-### Markdown Conversion
+### Markdown Conversion / Static Site Generator
 ~~I know `pandoc` can convert [GFM](https://github.github.com/gfm/) to HTML.
 I just want to add things to this output, but I can't use server-side includes, as that is server code and this is a free, static page from GitHub.~~
 
@@ -28,9 +28,14 @@ Literally all I want from Pelican is the ability to add a navbar and footer to e
 
 ~~Actually, let's just use [`<embed>`](https://stackoverflow.com/a/53675421/5889131). This is really not what it's meant for, but we can abuse it with the knowledge that if we were real people we could just do [server-side includes](https://stackoverflow.com/a/29858653/5889131).~~
 
-Eventually, I bit the bullet and used [Jekyll](https://jekyllrb.com/docs/github-pages/).
+~~Eventually, I bit the bullet and used [Jekyll](https://jekyllrb.com/docs/github-pages/).
 It feels old-school (the design of [their docs pages](https://jekyllrb.com/docs/configuration/markdown/) does not feel modern) but [GitHub still recommends Jekyll](https://help.github.com/en/github/working-with-github-pages).
-It does not feel as well documented as I would like.
+It does not feel as well documented as I would like.~~
+
+Turns out I'm very fickle on this.
+My newest plan is [Nanoc](https://nanoc.ws/about/).
+Unlike Jekyll, it's actually used to host some [pretty impressive sites](https://nanoc.ws/about/#why-nanoc), including the docs pages for Prometheus, GitLab, and GitHub (GitHub gets to use it but won't mention it for their GitHub Pages users?).
+Also, their docs page is way prettier than Jekyll's.
 
 ### Theme
 I'm an adult and I demand the ability to make my own theme.
@@ -50,8 +55,34 @@ Of course, [multiple people](https://stackoverflow.com/questions/20626685/better
 The answers boil down to "use inner `<div>`s between your elements" and "set left and right margins, and then set negative margins on your container".
 This is because, while `gap` exists in CSS for use with flexbox, [no one besides Firefox bothered to support it](https://caniuse.com/#feat=flexbox-gap).
 
-I dislike negative margins, so I went with `:last-child` to remove the right margin on my last `<a>` tag.
-It works, and reads about as cleanly as I can make it, though it does feel like there should be a better way.
 
 ### 404
-Instructions [here](https://jekyllrb.com/tutorials/custom-404-page/).
+
+### Nanoc
+Here's what I know about Ruby.
+I need a different version of Ruby than the `2.3.7` that comes with Mojave, so I need some Ruby version management system.
+`rvm` is older, and evidently `rbenv` screws with your shell less.
+Also, `rbenv` can be installed with brew, and we're lazy.
+```bash
+brew install rbenv
+```
+
+You can either add this in your `.bashrc`:
+```bash
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+```
+
+Or just do this on the command line:
+```bash
+export PATH="$HOME/.rbenv/bin:$PATH"
+rbenv init
+```
+
+Then you can actually install the ruby version and gem you want:
+```bash
+rbenv install 2.7.0
+rbenv global 2.7.0
+rbenv versions  # to verify
+gem install nanoc
+```
