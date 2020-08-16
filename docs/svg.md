@@ -1,3 +1,8 @@
+---
+title: SVGs
+description: How I made my site icons
+---
+
 # SVG
 The [Mozilla Dev Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Getting_Started) and [this random website](http://thenewcode.com/28/Making-And-Deploying-SVG-Favicons) showed me how to make SVGs.
 

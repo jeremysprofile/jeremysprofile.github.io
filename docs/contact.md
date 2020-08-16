@@ -1,4 +1,9 @@
-# Contact me
+---
+title: Contact Me
+description: Contact information for Jeremy Richards
+---
+
+# Contact Me
 
 Here. I'm here. Hurray!
 

@@ -1,7 +1,8 @@
 ---
-layout: default
 title: Jeremy Richards | Home
+description: Jeremy Richards' Homepage
 ---
+
 # Test of Syntax Highlights
 ```bash
 export SOMETIMES='very'

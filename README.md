@@ -4,22 +4,22 @@ I'm going to make a website.
 It's going to be basic, and I'm gonna enjoy it.
 
 ## Goals
-* Resume and other markdown content to styled html automatically
+* [Resume and other markdown content to styled html automatically](#static-site-generator)
 * I don't want to use a theme - I want a completely custom layout
 * Night mode Fight mode
-* Knowledge Base articles with:
+* [Knowledge Base articles](#knowledge-base) with:
   * The [GitLab-style](https://docs.gitlab.com/ee/ci/yaml/) scrolling nested headers
   * The [GitLab-style](https://docs.gitlab.com/ee/ci/yaml/) navigation sidebar
 * Custom 404, because why not
 
-## Problems
+### Problems
 I know *nothing*.
 
 I learned [HTML](./kb/html) and [CSS](./kb/css) for this, but I had to ask a bunch of StackOverflow questions because automatic margin did not make sense.
 
 How do I do all the beautiful things I want?
 
-### Markdown Conversion / Static Site Generator
+### Static Site Generator
 ~~I know `pandoc` can convert [GFM](https://github.github.com/gfm/) to HTML.
 I just want to add things to this output, but I can't use server-side includes, as that is server code and this is a free, static page from GitHub.~~
 
@@ -28,18 +28,15 @@ Literally all I want from Pelican is the ability to add a navbar and footer to e
 
 ~~Actually, let's just use [`<embed>`](https://stackoverflow.com/a/53675421/5889131). This is really not what it's meant for, but we can abuse it with the knowledge that if we were real people we could just do [server-side includes](https://stackoverflow.com/a/29858653/5889131).~~
 
-~~Eventually, I bit the bullet and used [Jekyll](https://jekyllrb.com/docs/github-pages/).
+~~I bit the bullet and used [Jekyll](https://jekyllrb.com/docs/github-pages/).
 It feels old-school (the design of [their docs pages](https://jekyllrb.com/docs/configuration/markdown/) does not feel modern) but [GitHub still recommends Jekyll](https://help.github.com/en/github/working-with-github-pages).
 It does not feel as well documented as I would like.~~
 
-Turns out I'm very fickle on this.
-My newest plan is [Nanoc](https://nanoc.ws/about/).
+~~My newest plan is [Nanoc](https://nanoc.ws/).
 Unlike Jekyll, it's actually used to host some [pretty impressive sites](https://nanoc.ws/about/#why-nanoc), including the docs pages for Prometheus, GitLab, and GitHub (GitHub gets to use it but won't mention it for their GitHub Pages users?).
-Also, their docs page is way prettier than Jekyll's.
+Also, their docs page is way prettier than Jekyll's.~~
 
-### Theme
-I'm an adult and I demand the ability to make my own theme.
-Let's do knowledge.
+My current plan is now [MkDocs](https://www.mkdocs.org/), because it's Python, we're using it at my [work](./resume) (TODO fix link), and I avoided touching this projejct for 4 months because that's how little I wanted to deal with Nanoc.
 
 #### Flexbox vs Grid
 CSS [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) ~~feels like~~ is the more modern framework.
@@ -55,34 +52,26 @@ Of course, [multiple people](https://stackoverflow.com/questions/20626685/better
 The answers boil down to "use inner `<div>`s between your elements" and "set left and right margins, and then set negative margins on your container".
 This is because, while `gap` exists in CSS for use with flexbox, [no one besides Firefox bothered to support it](https://caniuse.com/#feat=flexbox-gap).
 
+### Knowledge Base
+I really like [GitLab's page formatting](https://docs.gitlab.com/ee/ci/yaml/) with the sidebars and automatic scrolling.
+Fortunately, [GitLab uses the MIT license](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/master/LICENSE) (or close enough) so I can swipe with impunity.
 
-### 404
+Neat.
 
-### Nanoc
-Here's what I know about Ruby.
-I need a different version of Ruby than the `2.3.7` that comes with Mojave, so I need some Ruby version management system.
-`rvm` is older, and evidently `rbenv` screws with your shell less.
-Also, `rbenv` can be installed with brew, and we're lazy.
-```bash
-brew install rbenv
-```
+### content
+This part's pretty easy; you're just writing markdown files.
+I already had the markdown content, but I do need some *frontmatter* on them.
+This is just the YAML delimiter `---` wrapped around some YAML syntax defining the item variables your layout expects to be present.
 
-You can either add this in your `.bashrc`:
-```bash
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-```
+### layouts
+I used my previous layout, which I poorly iterated through with [this jsfiddle](https://jsfiddle.net/jeremydr2/z9dgeLyc/latest/).
+Jekyll used `{{ page.title }}` and `{{ content }}` to add things, but in nanoc you have your markdown content that you `<%= yield %>` and you have some YAML frontmatter that you define via items, e.g., `<%= @item[:title] %>`.
+I haven't updated the layout stuff to MkDocs yet.
+That change was pretty straightforward.
 
-Or just do this on the command line:
-```bash
-export PATH="$HOME/.rbenv/bin:$PATH"
-rbenv init
-```
+### lib
+Once again, no understanding of this, but the tutorial didn't have this populated to generate a site, so I'm going to ignore it for now.
 
-Then you can actually install the ruby version and gem you want:
-```bash
-rbenv install 2.7.0
-rbenv global 2.7.0
-rbenv versions  # to verify
-gem install nanoc
-```
+## Run on localhost
+
+
