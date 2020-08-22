@@ -58,6 +58,13 @@ Fortunately, [GitLab uses the MIT license](https://gitlab.com/gitlab-org/gitlab-
 
 Neat.
 
+## MkDocs
+### Install
+```bash
+unset {HTTP,HTTPS,FTP,NO}_PROXY {http,https,ftp,socks,no}_proxy
+pip install mkdocs --index-url https://pypi.python.org/simple
+```
+
 ### content
 This part's pretty easy; you're just writing markdown files.
 I already had the markdown content, but I do need some *frontmatter* on them.
@@ -65,13 +72,12 @@ This is just the YAML delimiter `---` wrapped around some YAML syntax defining t
 
 ### layouts
 I used my previous layout, which I poorly iterated through with [this jsfiddle](https://jsfiddle.net/jeremydr2/z9dgeLyc/latest/).
-Jekyll used `{{ page.title }}` and `{{ content }}` to add things, but in nanoc you have your markdown content that you `<%= yield %>` and you have some YAML frontmatter that you define via items, e.g., `<%= @item[:title] %>`.
-I haven't updated the layout stuff to MkDocs yet.
-That change was pretty straightforward.
-
-### lib
-Once again, no understanding of this, but the tutorial didn't have this populated to generate a site, so I'm going to ignore it for now.
+Jekyll used `{{ page.title }}` and `{{ content }}` to add things.
+MkDocs is pretty similar, but you have some YAML frontmatter that you define via meta, like `{{ meta.description }}` I think?
 
 ## Run on localhost
+```bash
+mkdocs serve
+```
 
 

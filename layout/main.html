@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Jeremy Richards">
-  <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
-
-  <title><%= @item[:title] %></title>
-  <meta name="description" content=<%= @item[:description] %>>
+  <!-- Begin MkDocs content -->
+  <meta name="generator" content="MkDocs {{ mkdocs_version }}">
+  <title>{{ page.title }}</title>
+  <meta name="description" content={{ page.meta.description }}>
+  <!-- End MkDocs content -->
 
   <link rel="icon" type="image/svg+xml" href="j.svg">
   <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen"/>
@@ -20,7 +21,6 @@
     Jeremy<wbr>.Richards<wbr>.dev
     </a></h1>
     <nav class="links">
-
       <a href="https://jeremy.richards.dev/cv">
       Resume
       </a>
@@ -38,7 +38,9 @@
   <hr>
 
   <div class="box content">
-    <%= yield %>
+  <!-- Begin MkDocs content -->
+    {{ page.content }}
+  <!-- End MkDocs content -->
   </div>
 
   <hr>
