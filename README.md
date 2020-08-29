@@ -37,6 +37,7 @@ Unlike Jekyll, it's actually used to host some [pretty impressive sites](https:/
 Also, their docs page is way prettier than Jekyll's.~~
 
 My current plan is now [MkDocs](https://www.mkdocs.org/), because it's Python, we're using it at my [work](./resume) (TODO fix link), and I avoided touching this projejct for 4 months because that's how little I wanted to deal with Nanoc.
+I don't love the facct that it's using [Jinja](https://jinja.palletsprojects.com/) for templating, but given that [Pelican uses Jinja](https://docs.getpelican.com/en/stable/themes.html) and [Jekyll uses Liquid which looks extremely similar at a glance](https://jekyllrb.com/docs/liquid/) I guess I have to accept this is The Way Things are Done^TM and move on.
 
 #### Flexbox vs Grid
 CSS [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) ~~feels like~~ is the more modern framework.
@@ -64,6 +65,7 @@ Neat.
 unset {HTTP,HTTPS,FTP,NO}_PROXY {http,https,ftp,socks,no}_proxy
 pip install mkdocs --index-url https://pypi.python.org/simple
 ```
+[Source](https://mkdocs.readthedocs.io/en/latest/#installation)
 
 ### content
 This part's pretty easy; you're just writing markdown files.
@@ -74,6 +76,18 @@ This is just the YAML delimiter `---` wrapped around some YAML syntax defining t
 I used my previous layout, which I poorly iterated through with [this jsfiddle](https://jsfiddle.net/jeremydr2/z9dgeLyc/latest/).
 Jekyll used `{{ page.title }}` and `{{ content }}` to add things.
 MkDocs is pretty similar, but you have some YAML frontmatter that you define via meta, like `{{ meta.description }}` I think?
+### Troubleshooting
+#### My CSS is only visible on the index!
+MkDocs deploys every file like a directory - the file `./contact.md` can be found at `/contact/`, for instance.
+This doesn't really matter most of the time, as `/contact` will 301 to `/contact/` automatically, except that you now have a new relative directory.
+My original CSS `href` without MkDocs was `href="stylesheet.css"`, but now that all files are directories, this tries to find `site/contact/stylesheet.css` in `site/`, which doesn't exist.
+
+Solution: look at [what the default themes do](https://github.com/mkdocs/mkdocs/blob/1.1.2/mkdocs/themes/mkdocs/base.html#L20), which is
+```
+href="{{ 'css/bootstrap.min.css'|url }}"
+```
+Copying that syntax (giving me `href="{{ 'stylesheet.csr'|url }}"`) worked, though to be honest, I don't really know Jinja syntax that well yet.
+
 
 ## Run on localhost
 ```bash

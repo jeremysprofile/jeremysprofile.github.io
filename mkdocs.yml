@@ -1,5 +1,6 @@
 site_name: Jeremy.Richards.Dev
+
+docs_dir: content/
 theme:
     name: null
     custom_dir: layout/
-    docs_dir: content/
