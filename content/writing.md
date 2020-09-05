@@ -1,5 +1,58 @@
 # Writing Prompt Answers
 
+## You are transported into a LitRPG (Multiplayer Role-Playing Game Universe), but it's already been optimized.
+(Too many LitRPG novels treat the main character as the first intelligent person to ever exist somewhere, and it's baffling how dumb they think the "average person" is.)
+Date: 20200829
+Tags: Sci-fi, Fantasy
+
+I open my eyes at the sound of a busy morning and find myself in a doorway, facing the interior of a restaurant housed in what looks like a large cabin.
+*Wait, what?*
+
+"Sir, could you please move out of the way? You're blocking our patrons from the store." A tall, bald man, dressed in a long white shirt and dull brown pants, stares down at me with a look of resigned patience.
+
+"I don't understand," I say, allowing myself to be led away from the entrance. "I don't -- How did I get here? ... Where is 'here'?"
+I look around as I speak, taking in a building that reminds me of a tourist trap in a mountain town -- treated logs forming the outline, and some sort of sealant stuck between them to prevent any airflow through the gaps.
+All the furniture, including a counter, shelves, tables, and chairs appear to be made of the same wood, and illumination comes only from the overcast sky through the the open-air windows, though I see some hanging lanterns at strategic intervals.
+
+"Ah." The man's eyes seem to brighten. "A new Traveler, I wonder?"
+
+"... I'm sorry? I don't understand. Look, I must have been ... sleepwalking." *Unlikely, but nothing sounds* more *plausible.* "Do you have a phone I can use to call an Uber or something? I'll be out of your h-- hands in no time." *Not a great save.*
+
+Luckily, the man's smile widens in response.
+"Yes, a Traveler indeed! Come, come! You must be famished. Let's get you something to eat while I explain."
+He gestures emphatically toward a table and tells me to wait for some food while he goes and grabs a few notes.
+When I ask, he just calls them notes on travelers and hurries off.
+
+This has to be some prank.
+Nothing stands out about the night before, and there's no reason I can think of for waking up in what looks like the doorway of an Amish diner.
+I sit and take stock.
+I'm definitely not dreaming.
+I feel fine: no headache, no bumps; nothing feels scraped, broken, or bruised, but I am a bit itchy.
+I realize I'm dressed similarly to everyone else: thick, dull-colored pants and a long-sleeved, billowing, off-white shirt tied at my waist with a bit of twine.
+From the itching, I assume wool, though it might just be due to hygenie of the mystery clothing source.
+My pockets are empty, and I don't see a phone anywhere.
+
+At the counter, a woman is trading large coins for cheese, fresh bread, and hot meat.
+Everyone walking into the diner greets each person they pass by name, usually accompanied by a nod or a slap on the back.
+I get a few curious stares, but my expression must turn them away, though it doesn't prevent smiles and a few polite waves.
+Everyone seems too friendly.
+I can't decide whether my working theory should be a cult abduction or the weirdest melatonin-induced cross-country sleepwalking session I've ever heard of.
+I'm not-so-surreptiously checking myself for needle marks when my host returns with a plate of food in each hand, some looseleaf paper dangling from his grip on the underside of one of the plates.
+
+"There! I'm told you know of 'sandwiches' in your territory?"
+He doesn't wait for an answer as he begins to cut his bread into slices and gestures for me to do the same.
+
+I look at my plate and see a sourdough loaf, white cheese, and sausage.
+I follow his lead, not seeing any reason to distrust the food.
+*If this is a cult, they've clearly already drugged me, so I can't do much worse.*
+I give him an expectant look, which he studiously ignores as he takes a large bite.
+
+I finish first.
+
+
+
+
+
 ## [WP] You are on board a federation starship. The universal translators have just gone down during a life-or-death situation. Most of the crew can't communicate with each other without them.
 
 "God fucking dammit." Captain Tarpals swore, but his inflection never wavered from calm and professional. "The only silver lining is that I can finally call you a worthless slimeball pilot as long as I smile while doing it. Isn't that right, you greasy hunk of snot?"
