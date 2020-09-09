@@ -20,20 +20,13 @@
     <h1><a href="https://jeremy.richards.dev">
     Jeremy<wbr>.Richards<wbr>.dev
     </a></h1>
-    <nav class="links">
-      <a href="https://jeremy.richards.dev/cv">
-      Resume
-      </a>
-      <a href="https://jeremy.richards.dev/contact">
-      Contact
-      </a>
-      <a href="https://jeremy.richards.dev/kb">
-      Knowledge Base
-      </a>
-      <a href="https://jeremy.richards.dev/links">
-      Links
-      </a>
-    </nav>
+    {%- if nav|length > 1 %}
+      <nav class="links">
+        {%- for nav_item in nav %}
+          <a href="{{ nav_item.url|url }}" class="nav-link">{{ nav_item.title }}</a>
+        {%- endfor %}
+      </nav>
+    {%- endif %}
   </section>
   <hr>
 
