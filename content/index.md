@@ -19,17 +19,20 @@ some:
         value: "qux"
 ```
 ## Subtitle
-This is a test of lists:
+Lists need a newline for separation.
+Ugh.
+
 * This should be a list
 * This is the second element
 
 
 Can I make numbers?
+
 1. Yes.
 2. Also yes.
 
 
-Tables need a newline first, though.
+Tables need it, too.
 
 | Table With a Really Long Title | Thing2 |
 |--------------------------------|--------|
