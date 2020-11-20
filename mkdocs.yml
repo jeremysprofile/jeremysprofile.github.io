@@ -1,4 +1,6 @@
 site_name: Jeremy.Richards.Dev
+site_url: https://test.richards.dev
+repo_url: https://github.com/jeremysprofile/jeremysprofile.github.io
 
 docs_dir: content/
 theme:
