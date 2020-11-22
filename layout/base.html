@@ -17,7 +17,7 @@
 <body>
 
   <section class="top banner">
-    <h1><a href="https://jeremy.richards.dev">
+    <h1><a href="{{ ''|url }}">
     Jeremy<wbr>.Richards<wbr>.dev
     </a></h1>
     {%- if nav|length > 1 %}
@@ -45,7 +45,7 @@
     <nav class="links">
       <!-- Empty element to move "About" to the end of the box -->
       <a></a>
-      <a href="https://jeremy.richards.dev/about">
+      <a href="{{ 'about'|url }}">
         About this site
       </a>
     </nav>

@@ -37,7 +37,7 @@ Unlike Jekyll, it's actually used to host some [pretty impressive sites](https:/
 Also, their docs page is way prettier than Jekyll's.~~
 
 My current plan is now [MkDocs](https://www.mkdocs.org/), because it's Python, we're using it at my [work](./resume) (TODO fix link), and I avoided touching this projejct for 4 months because that's how little I wanted to deal with Nanoc.
-I don't love the facct that it's using [Jinja](https://jinja.palletsprojects.com/) for templating, but given that [Pelican uses Jinja](https://docs.getpelican.com/en/stable/themes.html) and [Jekyll uses Liquid which looks extremely similar at a glance](https://jekyllrb.com/docs/liquid/) I guess I have to accept this is The Way Things are Done<sup>TM</sup> and move on.
+I don't love the fact that it's using [Jinja](https://jinja.palletsprojects.com/) for templating, but given that [Pelican uses Jinja](https://docs.getpelican.com/en/stable/themes.html) and [Jekyll uses Liquid which looks extremely similar at a glance](https://jekyllrb.com/docs/liquid/), I guess I have to accept this is The Way Things are Done<sup>TM</sup> and move on.
 
 #### Flexbox vs Grid
 CSS [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) ~~feels like~~ is the more modern framework.
@@ -58,6 +58,15 @@ I really like [GitLab's page formatting](https://docs.gitlab.com/ee/ci/yaml/) wi
 Fortunately, [GitLab uses the MIT license](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/master/LICENSE) (or close enough) so I can swipe with impunity.
 
 Neat.
+
+### GitLab vs GitHub
+As far as I can tell, there's very little difference between the two:
+
+* Both keep your source code separate from your build website ([GitHub via separate branch](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/about-github-pages#publishing-sources-for-github-pages-sites), [GitLab via artifact]())
+* Both allow for custom 404s ([GitHub](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site), [GitLab](https://docs.gitlab.com/ee/user/project/pages/introduction.html#custom-error-codes-pages))
+* Both allow for push-button HTTPS via [Let's Encrypt](https://letsencrypt.org/) ([GitHub](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/securing-your-github-pages-site-with-https), [GitLab](https://docs.gitlab.com/ee/user/project/pages/custom_domains_ssl_tls_certification/lets_encrypt_integration.html))
+
+Honestly, the only reason I went with GitHub was because I knew about GitHub Pages first and I got it set up and working, while I have some questions abuot how [GitLab would handle HTTPS for my "richards.dev" username](https://docs.gitlab.com/ee/user/project/pages/introduction.html#limitations) and can't tell if [GitLab would honor `/404/index.html` as an alternative to `/404.html`](https://docs.gitlab.com/ee/user/project/pages/introduction.html#custom-error-codes-pages).
 
 # MkDocs
 ## Install
@@ -88,9 +97,21 @@ href="{{ 'css/bootstrap.min.css'|url }}"
 ```
 Copying that syntax (giving me `href="{{ 'stylesheet.csr'|url }}"`) worked, though to be honest, I don't really know Jinja syntax that well yet.
 
+### My 404 page doesn't work on localhost!
+That's expected, I guess. It'll work on a real host.
+#### My 404 page doesn't work on a real host!
+Yeah, [the MkDocs](https://www.mkdocs.org/user-guide/deploying-your-docs/#404-pages) make it sound like you get a custom 404 page for free.
+You need to make a `{{ docs_dir }}/404.md` page, which you can choose to style differently with a `{{ theme.custom_dir }}/404.html` if you'd like.
+
+### My website isn't generated on GitHub!
+This was actually the reason I switched to GitLab.
+On GitHub, your [site must be the only content in its branch]().
+Mkdocs added a helpful `mkdocs gh-deploy` command to generate your site and push it to the branch of your choice, but I don't like how this uses multiple branches to maintain one version of your website, or how [GitHub's source branch for personal pages was just `master` for 4 years](https://stackoverflow.com/a/39978969/5889131).
+After spending a few hours, I was able to figure out how to set up a custom domain on a personal page.
+Mkdocs needs more up-to-date docs.
+
 ## Run on localhost
 ```bash
 mkdocs serve
 ```
-
 
