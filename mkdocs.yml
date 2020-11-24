@@ -4,11 +4,15 @@ repo_url: https://github.com/jeremysprofile/jeremysprofile.github.io
 
 docs_dir: content/
 theme:
-    name: null
-    custom_dir: layout/
+  name: null
+  custom_dir: layout/
+  static_templates:
+    - '404.html'
+    - 'search.html'
+    - 'sitemap.xml'
 
 nav:
-    - Resume: 'cv.md'
-    - Contact: 'contact.md'
-    - Knowledge Base: 'kb'
-    - Links: 'links'
+  - Resume: 'cv.md'
+  - Contact: 'contact.md'
+  - Knowledge Base: 'kb'
+  - Links: 'links'

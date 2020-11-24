@@ -101,7 +101,14 @@ Copying that syntax (giving me `href="{{ 'stylesheet.csr'|url }}"`) worked, thou
 That's expected, I guess. It'll work on a real host.
 #### My 404 page doesn't work on a real host!
 Yeah, [the MkDocs](https://www.mkdocs.org/user-guide/deploying-your-docs/#404-pages) make it sound like you get a custom 404 page for free.
-You need to make a `{{ docs_dir }}/404.md` page, which you can choose to style differently with a `{{ theme.custom_dir }}/404.html` if you'd like.
+That's true, but *only with a theme that provides it*.
+
+Since I'm making my own theme, this didn't work; I needed to make a `{{ theme.custom_dir }}/404.html` page and add it as a [static template](https://www.mkdocs.org/user-guide/configuration/#static_templates) (read: is not populated by a `404.md` page).
+
+I was originally against this, since I really wanted my 404 page to be customized, and it made sense to me to customize it via a `404.md` page.
+Thee problem with that line of thinking is that MkDocs would create it as `/404/` rather than `/404.html`.
+Once I stopped to think about this for a bit, it made sense that they wouldn't add special cases for a `404.md`: the point of markdown is to make writing prose easy, and a 404 page should not be about prose.
+If you want a custom 404 page, you'll likely want to customize the style or images, not write a paragraph of text, meaning it is much easier to do in HTML than markdown.
 
 ### My website isn't generated on GitHub!
 This was actually the reason I switched to GitLab.
