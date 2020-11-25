@@ -1,21 +1,24 @@
 <!DOCTYPE HTML>
 <html>
+{%- block head %}
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Jeremy Richards">
-  <!-- Begin MkDocs content -->
-  <meta name="generator" content="MkDocs {{ mkdocs_version }}">
-  <title>{{ page.title }}</title>
-  <meta name="description" content="{{ page.meta.description }}">
-  <!-- End MkDocs content -->
+  {%- block meta %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="{{ config.site_author }}">
+    <title>{% if page and page.title and not page.is_homepage %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+    {% if not page %}<meta name="description" content="{{ config.site_description }}">
+    {% else %}<meta name="description" content="{{ page.meta.description }}">{% endif %}
+  {%- endblock %}
 
   <link rel="icon" type="image/svg+xml" href="{{ 'img/j.svg'|url }}">
   <link rel="stylesheet" type="text/css" href="{{ 'css/stylesheet.css'|url }}" media="screen"/>
 </head>
+{%- endblock %}
 
+{%- block body %}
 <body>
-
+  {%- block header %}
   <section class="top banner">
     <h1><a href="{{ ''|url }}">
     Jeremy<wbr>.Richards<wbr>.dev
@@ -29,17 +32,19 @@
     {%- endif %}
   </section>
   <hr>
+  {%- endblock %}
 
   <div class="box content">
-  <!-- Begin MkDocs content -->
-    {{ page.content }}
-  <!-- End MkDocs content -->
+    {%- block content %}
+      {{ page.content }}
+    {%- endblock %}
   </div>
 
+  {%- block footer %}
   <hr>
   <section class="bottom banner">
     <p>
-      A website to showcase how little I know about web dev.
+    {% if config.blurb %}{{ config['blurb'] }}{% endif %}
     </p>
     <!-- If I remove the nav, then flex-grow prevents "About" from being right-justified -->
     <nav class="links">
@@ -50,6 +55,12 @@
       </a>
     </nav>
   </section>
+  {%- endblock %}
 
 </body>
+{%- endblock %}
 </html>
+<!--
+MkDocs version : {{ mkdocs_version }}
+Build Date UTC : {{ build_date_utc }}
+-->
