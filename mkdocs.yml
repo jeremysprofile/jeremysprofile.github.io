@@ -1,6 +1,7 @@
 site_name: Jeremy.Richards.Dev
 site_url: https://test.richards.dev
 repo_url: https://github.com/jeremysprofile/jeremysprofile.github.io
+blurb: "A website to showcase how little I know about web dev."
 
 docs_dir: content/
 theme:
