@@ -110,6 +110,10 @@ Thee problem with that line of thinking is that MkDocs would create it as `/404/
 Once I stopped to think about this for a bit, it made sense that they wouldn't add special cases for a `404.md`: the point of markdown is to make writing prose easy, and a 404 page should not be about prose.
 If you want a custom 404 page, you'll likely want to customize the style or images, not write a paragraph of text, meaning it is much easier to do in HTML than markdown.
 
+### Nested lists don't work
+Python-Markdown (what MkDocs uses) requires 4 spaces for nested lists, not 2 that's supported many other places.
+They [closed the issue as WONTFIX](https://github.com/Python-Markdown/markdown/issues/3).
+
 ### My website isn't generated on GitHub!
 This was actually the reason I switched to GitLab.
 On GitHub, your [site must be the only content in its branch]().

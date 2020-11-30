@@ -1,23 +1,79 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Jeremy Richards">
-  <!-- Begin MkDocs content -->
-  <meta name="generator" content="MkDocs {{ mkdocs_version }}">
-  <title>{{ page.title }}</title>
-  <meta name="description" content="{{ page.meta.description }}">
-  <!-- End MkDocs content -->
+{% extends "base.html" %}
 
-  <link rel="icon" type="image/svg+xml" href="{{ 'j.svg'|url }}">
-  <link rel="stylesheet" type="text/css" href="{{ 'stylesheet.css'|url }}" media="screen"/>
-</head>
+{% macro format(info) -%}
+  {% if info is mapping -%}
+    {%- if info.text -%}
+      {%- if info.details -%}
+        <details {{ open if info.open is true }}>
+          <summary>{{ info.text }}</summary>
+          {% if info.details is string -%}
+            {{ info.details }}
+          {% else -%}
+            {{ format(info.details) }}
+          {% endif -%}
+        </details>
+      {%- else -%}
+        {{ info.text }}
+      {%- endif -%}
+    {%- endif -%}
+    {% if info.bullets -%}
+      <ul>
+        {% for bullet in info.bullets -%}
+          <li>{{ format(bullet) }}</li>
+        {% endfor -%}
+      </ul>
+    {% endif -%}
+  {% elif info is string -%}
+    {{ info }}
+  {%- else -%}
+    {%- for datum in info -%}
+      {{ format(datum) }}
+    {%- endfor -%}
+  {%- endif -%}
+{% endmacro -%}
 
-<body>
-  {{ page.meta.name }}
-  <!-- Begin MkDocs content -->
-    {{ page.content }}
-  <!-- End MkDocs content -->
-</body>
-</html
+{% block content %}
+<h1>{{ page.meta.name }}</h1>
+<h2>{{ page.meta.position or page.meta.role }}</h2>
+<p>
+{% for section, data in page.meta.sections.items() -%}
+  <h2>{{ section }}</h2>
+  {% for item in data -%}
+    {% if item.title or item.company -%}
+      <h3>{{ item.title or item.company }}</h3>
+    {% endif -%}
+    {% if item.subtitle or item.position or item.role -%}
+      <h4>{{ item.subtitle or item.position or item.role }}</h4>
+    {% endif -%}
+    {% if item.date -%}
+      <h5>{{ item.date }}</h5>
+    {% endif -%}
+    {% if item.location -%}
+      <h5>{{ item.location }}</h5>
+    {% endif -%}
+    {% if item.info or item.data -%}
+      {# Useful for plaintext or raw HTML #}
+      {{ format(item.info or item.data) }}
+    {% endif -%}
+  {% endfor -%}
+{% endfor -%}
+<p>
+{% if page.meta.Education -%}
+  <h2>Education</h2>
+  {% for degree in page.meta.Education -%}
+    <h3>{{ degree.school }}</h3>
+    {% if degree.date -%}
+      <h4>{{ degree.date }}</h4>
+    {% endif -%}
+    {% if degree.GPA -%}
+      <h4>{{ degree.GPA }}</h4>
+    {% endif -%}
+    {{ degree.degree }}
+    {% if degree.content -%}
+      {# Useful for plaintext raw HTML #}
+      <h4>{{ degree.content }}</h4>
+    {% endif -%}
+  {% endfor -%}
+{% endif -%}
+
+{% endblock -%}
