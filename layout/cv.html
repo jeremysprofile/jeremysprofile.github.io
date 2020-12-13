@@ -4,13 +4,9 @@
   {% if info is mapping -%}
     {%- if info.text -%}
       {%- if info.details -%}
-        <details {{ open if info.open is true }}>
+        <details {{ 'open' if info.open is true }}>
           <summary>{{ info.text }}</summary>
-          {% if info.details is string -%}
-            {{ info.details }}
-          {% else -%}
-            {{ format(info.details) }}
-          {% endif -%}
+          {{ format(info.details) }}
         </details>
       {%- else -%}
         {{ info.text }}
@@ -19,16 +15,26 @@
     {% if info.bullets -%}
       <ul>
         {% for bullet in info.bullets -%}
-          <li>{{ format(bullet) }}</li>
+          {% if bullet.details -%}
+            <li class="details">{{ format(bullet) }}</li>
+          {% else -%}
+            <li>{{ format(bullet) }}</li>
+          {% endif -%}
         {% endfor -%}
       </ul>
     {% endif -%}
   {% elif info is string -%}
     {{ info }}
   {%- else -%}
-    {%- for datum in info -%}
-      {{ format(datum) }}
-    {%- endfor -%}
+    <ul>
+      {%- for datum in info -%}
+        {% if datum.details -%}
+          <li class="details">{{ format(datum) }}</li>
+        {% else -%}
+          <li>{{ format(datum) }}</li>
+        {% endif -%}
+      {%- endfor -%}
+    </ul>
   {%- endif -%}
 {% endmacro -%}
 
