@@ -5,10 +5,11 @@ template: cv.html
 name: Jeremy Richards
 position: Software Engineer
 sections:
+
   Professional Experience:
 
     - company: Nasdaq
-      position: 'Software Engineering Contractor → Senior Software Developer (E2) → Software Developer Specialist (E3)'
+      position: 'Contractor → Senior Software Developer (E2) → Software Developer Specialist (E3)'
       date: Sep 2018 - Current
       data:
         - text: 'Took ownership of all new and existing Python applications, including documentation, mentoring, testing, <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>, and DevOps infrastructure'
@@ -20,7 +21,7 @@ sections:
         - text: 'Diagnosed and resolved time-sensitive production incidents during on-call rotations'
           hidden:
             - 'Included manual failover, fixing configuration, <abbr title="Root Cause Analysis">RCA</abbr>, providing post-mortem to the team, and writing tickets for any discovered bugs'
-        - text: 'Improved <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipelines across our application suite by adding: automatic updating to latest internal dependencies, version incrementing, and tagging.'
+        - text: 'Improved <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipelines across our application suite by adding automatic updating to latest internal dependencies, version incrementing, and tagging.'
         - text: 'Quickly onboarded to adjacent teams as necessary to help meet tight deadlines'
           hidden:
              - 'Joined the TradeGuard Reporting team at different points to enable horizontal scaling for trade data processing and to help with <a href="https://www.catnmsplan.com/"><abbr title="Consolidated Audit Trail">CAT</abbr></a> go-live.'
@@ -65,7 +66,7 @@ sections:
       position: Applications Engineering Intern
       date: Jan 2016 - Dec 2016
       data:
-        - text: 'Performed joint testing between Seagate and Fortune 500 companies to qualify hard drives in customer-specific storage systems'
+        - text: 'Performed qualifications testing for Fortune 500 cloud companies to ensure <abbr title="Hard Disk Drive">HDD</abbr> performance and reliabillity in customer systems'
         - text: '<strong>Decreased total qualifications test time by 20%</strong>'
           hidden:
             - 'Wrote tests to be 9% more efficient.'
@@ -75,7 +76,7 @@ sections:
             - 'Drives were both <abbr title="Serial Attached SCSI (Small Computer System Interface)">SAS</abbr> and <abbr title="Serial ATA (AT Attachment)">SATA</abbr>, different capacities, and different architectures, including <abbr title="Conventional Magnetic Recording">CMR</abbr> and <abbr title="Host-Aware">HA</abbr> <abbr title="Shingled Magnetic Recording">SMR</abbr>.'
             - text: 'Updated <abbr title="Conventional Magnetic Recording">CMR</abbr>-style tests for <abbr title="Host-Aware">HA</abbr> <abbr title="Shingled Magnetic Recording">SMR</abbr> drives'
               hidden: 'SMR drive tracks overlap so you have to write tracks in order; you can''t just rewrite a small part of the track, you have to rewrite the whole track'
-        - text: 'Created Python parsers to read data from over 20,000 log files and automatically generate Excel workbooks containing graphs, pivot tables, and highlighted top-level statistics'
+        - text: 'Created Python parsers to read >20,000 log files and generate Excel workbooks with graphs, pivot tables, and conditionally-highlighted statistics'
           hidden:
             - 'Created pivot tables with automatic highlighting, graphs, and summary data output in top workbook with raw data in other workbooks.'
             - 'Read in text log files created from our various tests and output data to Excel via <a href="https://pypi.org/project/XlsxWriter/"><code>XlsxWriter</code></a>.'
@@ -84,50 +85,51 @@ sections:
             - 'The log backup was a cron job to call a service which was just glorified <code>rsync</code> and some logic to put everything into timestamped folders on a secondary server.'
             - 'The system setup and end-to-end test run were slightly fault-tolerant Bash scripts.'
 
-Education:
-  - school: University of Colorado Boulder
-    degree: B.S. Mechanical Engineering, <i>magna cum laude</i>
-    GPA: <strong>3.8</strong>
-    data:
-      - text: '<a href="http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=10,429,838"><strong>Co-inventor of Patent No. 10,429,838</strong> for method of routing multiple drone landings at a base station</a> resulting from senior project'
-        hidden:
-          - text: Senior project – drones leave station, get GPS coordinates, determine optimal paths based on obstacles, and fly to targets
-            details:
-              - Project team designed drone assigning and tracking app.
-              - text: Wrote Swift code to have drone navigate by vision to specific QR code and land
-                details:
-                  - 'Used <a href="https://github.com/zxing/zxing"><code>zxing</code> (Zebra Crossing) pre-existing library</a>.'
-                  - 'Computed XYZ offset of drone from pad based on landing pad relative size and position in video and iterated motions to land.'
-              - Our two biggest hurdles were that this was a mechanical engineering course (meaning the timelines and grades were built around design being the largest portion of the project) and that most of Boulder, including the main CU campus, is a no-fly zone for drones, making testing difficult.
-              - In the end, we had individual working pieces, but not a end-to-end success.
-              - Drones could land successfully at landing pads by vision and QR code recognition, plot courses around pre-configured obstacles, and fly to GPS waypoints.
-              - Lack of experience with project planning meant we didn't give ourselves even close to enough time for integration and testing.
-      - text: 'Team software lead in autonomous robot soccer competition, placing second of twelve. Video of matches <a href="https://www.youtube.com/watch?v=tI_wfxj9qU8">available here</a>'
-        details:
-          - 'Team designed, built, and programmed robot from off-the-shelf and 3D-printed components'
-          - 'Wrote all Arduino (C++) code for: tracking ball & goal via IR sensors, determining relative position on field and estimated ball distance, shooting, and goalie behavior'
-        hidden:
-         - text: Team designed and assembled Arduino-based robot to play soccer
-           details:
-             - 'We were given an <a href="https://www.pjrc.com/store/teensy36.html">Arduino offshoot</a>, a maximum size and budget and told to design a roboot capable of scoring goals. The goals and the ball were marked by <abbr title="Infrared">IR</abbr> <abbr title="Light-emitting diode">LEDs</abbr> at specific frequencies. The "field" was white, with black tape for the boundaries and gray tape for the goal zones.'
-             - 'We used photodiode "triads" (three photodiodes grouped together at slightly different angles) mounted on servos to sense the ball and goal, tape sensors to view ground color, and four <a href="https://external-preview.redd.it/nnuZFbODO3VGW8P1uZJLeKK03Y9uWf37gGCWrUTuccA.gif?format=mp4&s=b2a1b9b3c52d6cc7dd3aa4601308406b809d97b2">onmiwheels</a> provided movement.'
-         - text: 'Wrote all Arduino (C++) code for: tracking ball & goal via IR sensors, determining relative position on field and estimated ball distance, shooting, and goalie behavior'
-           details:
-             - 'We used parallax to determine relative distance to the ball, and used the relative angle of the goal servos to determine relative location on the field. If we lost track of the ball, we would have the robot engage in goalie behavior, waiting in the goal area for until we found the ball. When attempting to score, we would attempt to line up behind the ball facing directly toward the goal.'
-         - text: 'Placed 2nd of 12 teams - <a href="https://www.youtube.com/watch?v=tI_wfxj9qU8">video of competition</a>'
-           hidden: >
-             I believe we had the best programmed robot - you can see in the video that we were the only team to actually try to align with the goal when trying to score, while the other teams simply went for the approach of "aim for the ball and hit it", hoping that the fact that the ball was initially ahead of them and toward the target goal would be sufficient.
-             Most of our struggle (and the fact that we got second instead of first) came down to two factors: reflection and multiplexing.
-             During testing, the field wasn''t surrounded by spectators, so there was nothing to reflect the IR of the ball or goals.
-             During the competition, however, the legs of the spectators allowed the IR to bounce and give false positives for ball or goal location.
-             Our other problem was limited speed due to sensor multiplexing. Our design used a single multiplexer to provide the photodiode outputs to a single pin on the Teensy, which greatly simplified wiring at the cost of speed.
-             Because we had to not only detect IR emissions, but also their frequency, we had to wait at minimum for half a period of the frequencies before we could check the next sensor, meaning polling the sensors significantly slowed our loop time.
-             We initially thought this would not be a problem, since our loop was still on the order of tens of milliseconds, but during testing we found that we had to slow our movement speed (both rotation and translation) to a quarter of the maximum to avoid missed signals.
-             Without the multiplexing, we would have been able to average readings and have much more robust data collection.
+  Education:
 
-  - school: University of Oklahoma
-    degree: B.A. Economics - minors in Psychology and Mathematics
-    GPA: <strong>3.96</strong>
+    - school: University of Colorado Boulder
+      degree: B.S. Mechanical Engineering, <i>magna cum laude</i>
+      gpa: 3.8
+      data:
+        - text: '<a href="http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=10,429,838"><strong>Co-inventor of Patent No. 10,429,838</strong> for method of routing multiple drone landings at a base station</a> resulting from senior project'
+          hidden:
+            - text: Senior project – drones leave station, get GPS coordinates, determine optimal paths based on obstacles, and fly to targets
+              details:
+                - Project team designed drone assigning and tracking app.
+                - text: Wrote Swift code to have drone navigate by vision to specific QR code and land
+                  details:
+                    - 'Used <a href="https://github.com/zxing/zxing"><code>zxing</code> (Zebra Crossing) pre-existing library</a>.'
+                    - 'Computed XYZ offset of drone from pad based on landing pad relative size and position in video and iterated motions to land.'
+                - Our two biggest hurdles were that this was a mechanical engineering course (meaning the timelines and grades were built around design being the largest portion of the project) and that most of Boulder, including the main CU campus, is a no-fly zone for drones, making testing difficult.
+                - In the end, we had individual working pieces, but not a end-to-end success.
+                - Drones could land successfully at landing pads by vision and QR code recognition, plot courses around pre-configured obstacles, and fly to GPS waypoints.
+                - Lack of experience with project planning meant we didn't give ourselves even close to enough time for integration and testing.
+        - text: 'Team software lead in autonomous robot soccer competition, placing second of twelve. Video of matches <a href="https://www.youtube.com/watch?v=tI_wfxj9qU8">available here</a>'
+          details:
+            - 'Team designed, built, and programmed robot from off-the-shelf and 3D-printed components'
+            - 'Wrote all Arduino (C++) code for tracking ball & goal via IR sensors, determining relative position on field and estimated ball distance, shooting, and goalie behavior'
+          hidden:
+           - text: Team designed and assembled Arduino-based robot to play soccer
+             details:
+               - 'We were given an <a href="https://www.pjrc.com/store/teensy36.html">Arduino offshoot</a>, a maximum size and budget and told to design a robot capable of scoring goals. The goals and the ball were marked by <abbr title="Infrared">IR</abbr> <abbr title="Light-emitting diode">LEDs</abbr> at specific frequencies. The "field" was white, with black tape for the boundaries and gray tape for the goal zones.'
+               - 'We used photodiode "triads" (three photodiodes grouped together at slightly different angles) mounted on servos to sense the ball and goal, tape sensors to view ground color, and four <a href="https://external-preview.redd.it/nnuZFbODO3VGW8P1uZJLeKK03Y9uWf37gGCWrUTuccA.gif?format=mp4&s=b2a1b9b3c52d6cc7dd3aa4601308406b809d97b2">onmiwheels</a> provided movement.'
+           - text: 'Wrote all Arduino (C++) code for tracking ball & goal via IR sensors, determining relative position on field and estimated ball distance, shooting, and goalie behavior'
+             details:
+               - 'We used parallax to determine relative distance to the ball, and used the relative angle of the goal servos to determine relative location on the field. If we lost track of the ball, we would have the robot engage in goalie behavior, waiting in the goal area for until we found the ball. When attempting to score, we would attempt to line up behind the ball facing directly toward the goal.'
+           - text: 'Placed 2nd of 12 teams - <a href="https://www.youtube.com/watch?v=tI_wfxj9qU8">video of competition</a>'
+             hidden: >
+               I believe we had the best programmed robot - you can see in the video that we were the only team to actually try to align with the goal when trying to score, while the other teams simply went for the approach of "aim for the ball and hit it", hoping that the fact that the ball was initially ahead of them and toward the target goal would be sufficient.
+               Most of our struggle (and the fact that we got second instead of first) came down to two factors: reflection and multiplexing.
+               During testing, the field wasn''t surrounded by spectators, so there was nothing to reflect the IR of the ball or goals.
+               During the competition, however, the legs of the spectators allowed the IR to bounce and give false positives for ball or goal location.
+               Our other problem was limited speed due to sensor multiplexing. Our design used a single multiplexer to provide the photodiode outputs to a single pin on the Teensy, which greatly simplified wiring at the cost of speed.
+               Because we had to not only detect IR emissions, but also their frequency, we had to wait at minimum for half a period of the frequencies before we could check the next sensor, meaning polling the sensors significantly slowed our loop time.
+               We initially thought this would not be a problem, since our loop was still on the order of tens of milliseconds, but during testing we found that we had to slow our movement speed (both rotation and translation) to a quarter of the maximum to avoid missed signals.
+               Without the multiplexing, we would have been able to average readings and have much more robust data collection.
+
+    - school: University of Oklahoma
+      degree: B.A. Economics - minors in Psychology and Mathematics
+      gpa: 3.96
 ---
 All sections can take a `data` object, as defined below.
 ```yaml

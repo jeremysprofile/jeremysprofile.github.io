@@ -68,29 +68,39 @@ hr {
 
 
 /* Resume css */
-ul {
+.data ul {
   list-style: inside square;
   padding: 0rem;
+  margin: 0.2rem 0 1rem 0;
 }
-ul li::marker {
+.data ul li::marker {
   font-size: 1.3rem;
   color: darkgreen;
 }
-ul ul {
+.data ul ul {
   padding-left: 1.1rem;
-}
-ul ul li::marker {
-  font-size: 1.3rem;
-  color: forestgreen;
+  margin: 0;
 }
 .details {
   list-style: none;
 }
-summary::marker {
+.data summary::marker {
   padding-right: 0rem;
   color: darkgreen;
 }
-ul ul summary::marker {
+.data ul ul summary::marker {
   padding-right: 0rem;
   color: forestgreen;
+}
+.title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.title > * {
+  width: max-content;
+  margin: 0.2rem 1rem 0.2rem 0;
+}
+.title > *:last-child {
+  margin: 0.2rem 0;
 }
