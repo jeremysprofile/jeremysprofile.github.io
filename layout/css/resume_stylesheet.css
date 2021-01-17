@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+
+}
+body {
+  font-size: 18px;
+
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0;
+}
+hr {
+  min-width: 100%;
+  margin: 0;
+}
+
+/* Resume css */
+.resume {
+  display: flex;
+  justify-content: space-between;
+  max-width: 80ch;
+}
+.sidebar {
+  display: inline-block;
+  max-width: 24ch;
+  padding: 2ch 2ch 2ch 2ch;
+  background-color: #dcf0c9;
+}
+.main {
+  display: inline-block;
+  max-width: 56ch;
+  padding: 2ch 2ch 2ch 2ch;
+  background-color: #f9fff2;
+}
+
+.section {
+  border-color: #022b0e;
+  background-color: #022b0e;
+  margin: 0 0 1.2rem 0;
+}
+
+
+/* This is a whole bunch of nonsense.
+I couldn't just use 'list-style: inside square;' because chrome puts way too
+much space after the bullet. I couldn't use
+'li::marker { content: counter(list-item, square); }' because Firefox makes
+those bullets way too large (and Safari doesn't render them at all?).
+
+Regardless of what I do, I can't make the space between the li bullet and the details triangle match on both Chrome and Firefox without doing some negative margin.
+
+I think that means I should figure out how my PDF resume will render and deal with that?
+
+Or it means I should remove the ability to expand bullet points...
+
+
+This means I'm left with ::before
+
+*/
+.data {
+  margin: 0 0 1.2rem 0;
+}
+/* Chrome's bullet rendering is BS with too much space so we have to use
+a psuedo-element to fix it */
+.data ul {
+  margin: 0;
+  padding: 0;
+  /* inside set here, the marker is actually set later depending on summary vs list item */
+  list-style: inside none;
+}
+.data ul li {
+  margin: 0;
+  padding: 0;
+}
+.data .details::before {
+  content: none;
+  margin-right: 10ch;
+}
+/* ::marker doesn't let you set margin or padding */
+.data li::before {
+  /* This makes different sized bullets on Chrome vs FF and idk why. */
+  content: counter(list-item, square);
+  margin-right: 1ch;
+}
+.data ul ul {
+  padding-left: 1rem;
+  margin: 0;
+}
+
+
+.title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.title > * {
+  width: max-content;
+  margin: 0.2rem 1rem 0.2rem 0;
+}
+.title > *:last-child {
+  margin: 0.2rem 0;
+}
+.contact {
+}
+.icon {
+  height: 1em;
+  vertical-align: text-bottom;
+  padding-right: 0.5ch;
+}
+
+
+a {
+  padding: 0.125rem;
+  border-radius: 8px;
+}
+a:link,a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  /* https://html.spec.whatwg.org/multipage/rendering.html#phrasing-content-3 */
+  text-decoration: underline;
+  /* TODO better color */
+  background-color: #8dc26e;
+}
+.main a {
+  /* top and bottom margins do nothing on non-replaced inline elements like a */
+  margin: -0.125rem;
+  text-decoration: underline;
+}
+abbr {
+  cursor: help;
+}
+summary:hover {
+  border: 2px solid #8dc26e;
+  border-radius: 4px;
+  margin: -2px;
+  cursor: pointer;
+}
+summary:focus, summary:active {
+  outline: none;
+}

@@ -2,8 +2,44 @@
 template: cv.html
 # Mkdocs really wants this to be a markdown file with YAML frontmatter.
 # We'll pretend, but all the content lives in the "frontmatter".
+
+logo: '/img/j_light.svg'
 name: Jeremy Richards
-position: Software Engineer
+position: Backend Engineer / DevOps
+
+# Icons sourced from https://uxwing.com and https://systemuicons.com/
+contact:
+  - text: me@richards.dev
+    icon: /img/mail.svg
+    link: mailto:jeremy@richards.dev
+  - text: Denver, CO
+    icon: /img/location.svg
+  - text: PDF Resume
+    icon: /img/link.svg
+  - text: Web Resume
+    icon: /img/link.svg
+    link: https://jeremy.richards.dev/cv
+  - icon: /img/stackoverflow.svg
+    stackoverflow:
+      reputation: 7.3k
+      badges:
+        gold: 3
+        silver: 30
+        bronze: 81
+    link: https://stackexchange.com/users/7783437/jeremysprofile?tab=accounts
+  - text: jeremysprofile
+    icon: /img/github.svg
+    link: https://github.com/jeremysprofile/jeremysprofile.github.io
+  - icon: /img/website.svg
+    text: richards.dev
+    link: https://jeremy.richards.dev
+  - text: /in/richards-dev
+    icon: /img/linkedin.svg
+    link: www.linkedin.com/in/richards-dev
+
+badges:
+  - text: <a href="https://stackexchange.com/users/7783437"><img src="https://stackexchange.com/users/flair/7783437.png?theme=clean" width="208" height="58" alt="profile for jeremysprofile on Stack Exchange" title="profile for jeremysprofile on Stack Exchange"></a>
+
 sections:
 
   Professional Experience:
@@ -12,7 +48,7 @@ sections:
       position: 'Contractor → Senior Software Developer (E2) → Software Developer Specialist (E3)'
       date: Sep 2018 - Current
       data:
-        - text: 'Took ownership of all new and existing Python applications, including documentation, mentoring, testing, <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>, and DevOps infrastructure'
+        - text: 'Took ownership of all new and existing Python applications, including documentation, mentoring, testing, <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>, and DevOps infrastructure (check how long this line this to see if we should expand CICD)'
           hidden:
             - 'Meticulously documented python development setup process for Windows and Mac users, including package structure, virtual environments, and test writing for use by other developers'
             - 'Mentored junior developers in Python and programming best practices'
@@ -21,8 +57,8 @@ sections:
         - text: 'Diagnosed and resolved time-sensitive production incidents during on-call rotations'
           hidden:
             - 'Included manual failover, fixing configuration, <abbr title="Root Cause Analysis">RCA</abbr>, providing post-mortem to the team, and writing tickets for any discovered bugs'
-        - text: 'Improved <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipelines across our application suite by adding automatic updating to latest internal dependencies, version incrementing, and tagging.'
-        - text: 'Quickly onboarded to adjacent teams as necessary to help meet tight deadlines'
+        - text: 'Improved <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipelines across application suite, adding automatic updating to latest internal dependencies, version incrementing, and git and container tagging.'
+        - text: 'Loaned to adjacent teams to help meet tight deadlines'
           hidden:
              - 'Joined the TradeGuard Reporting team at different points to enable horizontal scaling for trade data processing and to help with <a href="https://www.catnmsplan.com/"><abbr title="Consolidated Audit Trail">CAT</abbr></a> go-live.'
         - text: 'Collaborated on productizing financial message relay application: ported existing setup to <abbr title="Amazon Web Services">AWS</abbr> and Kubernetes; utilized Terraform and Helm for <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>; and improved reliability in server or networking outage scenarios.'
@@ -32,9 +68,9 @@ sections:
       position: Software Engineer I
       date: Jun 2017 - Sep 2018
       data:
-        - text: 'Created convolutional neural network (CNN) to classify <abbr title="Code Division Multiple Access">CDMA</abbr> radio signals at negative signal-to-noise ratios'
+        - text: 'Created neural network to classify <abbr title="Code Division Multiple Access">CDMA</abbr> radio signals at negative signal-to-noise ratios'
           bullets:
-            - Awarded trade secret bonus for work, which was presented in internal symposium and used in classified space
+            - '<strong>Awarded trade secret</strong> for work, which was presented in internal symposium and <strong>used in classified space</strong>'
           details:
             - '<abbr title="Code Division Multiple Access">CDMA</abbr> is a way to share bandwidth with cooperating simultaneous users via sets of spreading sequences, which are psuedorandom binary sequences designed to minimally interfere with each other. My goal was to detect usage of a subset of these sequences in a target bandwidth'
           hidden:
@@ -50,7 +86,7 @@ sections:
                 - "A convolutional neural network (CNN) is named for the convolutional layers it uses. These layers use a kernel of a specified size (a small contiguous section of the data) and convolve over the input data (matrix multiplication between the trained weights of that kernel and the input values), looking for features of some level of complexity. In the case of images, the standard example is that an initial layer will look for gradients and edges, which intermediate layers will view and interpret into simple shapes, in turn being used to recognize complex shapes, like faces. My task was to apply this to certain types of spreading codes with varying levels of noise."
                 - "I used Keras and TensorFlow in Python."
             - "This was exploratory research. I found that in modeled data with added noise, I was able to determine which Gold code was used in a given sample through different clock offsets and negative signal-to-noise ratios. There was no customer for this work and I was taken off the project when Northrop found a non-overhead charge code I could use."
-        - text: 'Created <abbr title="Convolutional Neural Network">CNN</abbr> to detect mining locations from satellite images'
+        - text: 'Created convolutional neural network (CNN) to detect mining locations from satellite images'
           details:
             - 'Created training data using Google Earth API and list of GPS coordinates of current (and former) mines'
           hidden:
@@ -66,12 +102,14 @@ sections:
       position: Applications Engineering Intern
       date: Jan 2016 - Dec 2016
       data:
-        - text: 'Performed qualifications testing for Fortune 500 cloud companies to ensure <abbr title="Hard Disk Drive">HDD</abbr> performance and reliabillity in customer systems'
-        - text: '<strong>Decreased total qualifications test time by 20%</strong>'
+        - text: 'Tested <abbr title="Hard Disk Drive">HDD</abbr> qualifications in Fortune 500 cloud company setups'
+          open: True
+          details:
+            - '<strong>Decreased total qualifications test time by 20%</strong>'
           hidden:
             - 'Wrote tests to be 9% more efficient.'
             - 'The other 11% time reduction was due to increased automation (previously, all tests were kicked off manually during the workday, meaning a test finishing at 6 P.M. would leave the system idle for 14 hours).'
-        - text: 'Wrote multi-day Bash scripts to capture performance and reliability metrics for populations of hundreds of <abbr title="Hard Disk Drive">HDDs</abbr>'
+        - text: 'Created Bash scripts to capture performance and reliability metrics for populations of hundreds of <abbr title="Hard Disk Drive">HDDs</abbr> over multiple days'
           hidden:
             - 'Drives were both <abbr title="Serial Attached SCSI (Small Computer System Interface)">SAS</abbr> and <abbr title="Serial ATA (AT Attachment)">SATA</abbr>, different capacities, and different architectures, including <abbr title="Conventional Magnetic Recording">CMR</abbr> and <abbr title="Host-Aware">HA</abbr> <abbr title="Shingled Magnetic Recording">SMR</abbr>.'
             - text: 'Updated <abbr title="Conventional Magnetic Recording">CMR</abbr>-style tests for <abbr title="Host-Aware">HA</abbr> <abbr title="Shingled Magnetic Recording">SMR</abbr> drives'
@@ -80,7 +118,7 @@ sections:
           hidden:
             - 'Created pivot tables with automatic highlighting, graphs, and summary data output in top workbook with raw data in other workbooks.'
             - 'Read in text log files created from our various tests and output data to Excel via <a href="https://pypi.org/project/XlsxWriter/"><code>XlsxWriter</code></a>.'
-        - text: 'Automated log backup, system setup, and joint qualifications test run on all test systems'
+        - text: 'Automated log backup and system setup on all test systems'
           hidden:
             - 'The log backup was a cron job to call a service which was just glorified <code>rsync</code> and some logic to put everything into timestamped folders on a secondary server.'
             - 'The system setup and end-to-end test run were slightly fault-tolerant Bash scripts.'
@@ -91,7 +129,7 @@ sections:
       degree: B.S. Mechanical Engineering, <i>magna cum laude</i>
       gpa: 3.8
       data:
-        - text: '<a href="http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=10,429,838"><strong>Co-inventor of Patent No. 10,429,838</strong> for method of routing multiple drone landings at a base station</a> resulting from senior project'
+        - text: '<strong>Invented <a href="http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=10,429,838">patent no. 10,429,838</a></strong> for method of routing multiple drone landings at a base station during senior project'
           hidden:
             - text: Senior project – drones leave station, get GPS coordinates, determine optimal paths based on obstacles, and fly to targets
               details:
@@ -104,7 +142,7 @@ sections:
                 - In the end, we had individual working pieces, but not a end-to-end success.
                 - Drones could land successfully at landing pads by vision and QR code recognition, plot courses around pre-configured obstacles, and fly to GPS waypoints.
                 - Lack of experience with project planning meant we didn't give ourselves even close to enough time for integration and testing.
-        - text: 'Team software lead in autonomous robot soccer competition, placing second of twelve. Video of matches <a href="https://www.youtube.com/watch?v=tI_wfxj9qU8">available here</a>'
+        - text: 'Software team lead in autonomous robot soccer competition, placing second of twelve. Video of matches <a href="https://www.youtube.com/watch?v=tI_wfxj9qU8">available here</a>'
           details:
             - 'Team designed, built, and programmed robot from off-the-shelf and 3D-printed components'
             - 'Wrote all Arduino (C++) code for tracking ball & goal via IR sensors, determining relative position on field and estimated ball distance, shooting, and goalie behavior'
@@ -128,8 +166,45 @@ sections:
                Without the multiplexing, we would have been able to average readings and have much more robust data collection.
 
     - school: University of Oklahoma
-      degree: B.A. Economics - minors in Psychology and Mathematics
+      degree: B.A. Economics—Psychology and Mathematics minors
       gpa: 3.96
+
+
+sidebar:
+  Skills:
+    - text: Languages
+      open: True
+      details:
+        - Python
+        - Bash
+        - Java (Spring Boot, Maven)
+    - text: OS
+      open: True
+      details: Linux (CentOS, Alpine, Ubuntu), Mac, Windows
+    - text: Cloud
+      open: True
+      details: AWS (<a href="TODO">Certified Cloud Practioner</a>)
+    - text: Machine Learning
+      open: True
+      details: Keras, TensorFlow, CNNs
+    - text: Infrastructure as Code
+      open: True
+      details: Terraform, Puppet
+    - text: Containers
+      open: True
+      details: Docker, Kubernetes, Helm
+    - text: CI/CD
+      open: True
+      details: GitLab-CI
+    - text: Tools
+      open: True
+      details: Vim, Alacritty, Tmux, IntelliJ, PyCharm
+    - text: Misc
+      open: True
+      details: Documentation, Scrum / Agile, Tutoring
+    # Barely: HTML, CSS, Jinja, Kotlin, Groovy, SQL, C++
+    # Middleware: Kafka
+
 ---
 All sections can take a `data` object, as defined below.
 ```yaml
@@ -157,7 +232,6 @@ data:
 TODO:
   * this:
 <!-- This became pure HTML once I wanted too many HTML elements and markdown stopped being sufficient -->
-<a href="https://stackexchange.com/users/7783437"><img src="https://stackexchange.com/users/flair/7783437.png" width="208" height="58" alt="profile for jeremysprofile on Stack Exchange" title="profile for jeremysprofile on Stack Exchange"></a>
 <!-- TODO why doesn't this display -->
 <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="8e0e38c6-6407-4c4a-8c6d-48ee835a6e67" data-share-badge-host="https://www.youracclaim.com"></div><script type="text/javascript" async src="//cdn.youracclaim.com/assets/utilities/embed.js"></script>
 <a href="https://www.youracclaim.com/badges/8e0e38c6-6407-4c4a-8c6d-48ee835a6e67/public_url"><img src="https://images.youracclaim.com/size/340x340/images/1fdcf6a9-de8e-4e35-96b0-e801d8411506/AWS-CloudPractitioner.png" alt="AWS Certified Cloud Practitioner Badge" width=120></a>

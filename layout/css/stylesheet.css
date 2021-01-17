@@ -1,10 +1,12 @@
 body {
-  max-width: 100ch;
+  max-width: 80ch;
   width: 95%;
   margin: auto;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+
 }
 
 /* Common classes between header and footer */
@@ -64,43 +66,4 @@ hr {
 
 .content {
   flex: 1;
-}
-
-
-/* Resume css */
-.data ul {
-  list-style: inside square;
-  padding: 0rem;
-  margin: 0.2rem 0 1rem 0;
-}
-.data ul li::marker {
-  font-size: 1.3rem;
-  color: darkgreen;
-}
-.data ul ul {
-  padding-left: 1.1rem;
-  margin: 0;
-}
-.details {
-  list-style: none;
-}
-.data summary::marker {
-  padding-right: 0rem;
-  color: darkgreen;
-}
-.data ul ul summary::marker {
-  padding-right: 0rem;
-  color: forestgreen;
-}
-.title {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-}
-.title > * {
-  width: max-content;
-  margin: 0.2rem 1rem 0.2rem 0;
-}
-.title > *:last-child {
-  margin: 0.2rem 0;
 }

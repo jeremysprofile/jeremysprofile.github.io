@@ -1,7 +1,38 @@
 {% extends "base.html" %}
 
+{% block extraheadings %}
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet"> 
+
+  <link rel="stylesheet" type="text/css" href="{{ 'css/resume_stylesheet.css'|url }}" media="screen"/>
+{% endblock %}
+
+
+{% macro stackoverflow(content) -%}
+
+  {%- if content.reputation -%}
+    {{ content.reputation }}
+  {%- endif -%}
+
+  {%- if content.badges -%}
+    <span style="color: #ffcc01;">●{{ content.badges.gold }}</span>
+    <span style="color: #b4b8bc;">●{{ content.badges.silver }}</span>
+    <span style="color: #caa789;">●{{ content.badges.bronze }}</span>
+  {%- endif -%}
+
+  {%- if content.link -%}
+    </a>
+  {%- endif -%}
+{% endmacro -%}
+
 {% macro format(info) -%}
   {% if info is mapping -%}
+    {%- if info.link -%}
+      <a href="{{ info.link }}">
+    {%- endif -%}
+    {%- if info.icon -%}
+      <img src="{{ info.icon }}" class="icon">
+    {%- endif -%}
     {%- if info.text -%}
       {%- if info.details -%}
         <details {{ 'open' if info.open is true }}>
@@ -23,6 +54,12 @@
         {% endfor -%}
       </ul>
     {% endif -%}
+    {% if info.stackoverflow -%}
+      {{ stackoverflow(info.stackoverflow) }}
+    {% endif -%}
+    {%- if info.link -%}
+      </a>
+    {%- endif -%}
   {% elif info is string -%}
     {{ info }}
   {%- else -%}
@@ -39,40 +76,67 @@
 {% endmacro -%}
 
 {% block content %}
-<div class="title">
-  <h1>{{ page.meta.name }}</h1>
-  <h2>{{ page.meta.position }}</h2>
-</div>
-<p>
-{% for section, data in page.meta.sections.items() -%}
-  <h2>{{ section }}</h2>
-  {% for item in data -%}
-    <div class="title">
-      {% if item.title or item.company or item.school -%}
-        <h3>{{ item.title or item.company or item.school }}</h3>
-      {% endif -%}
-      {% if item.date -%}
-        <h5>{{ item.date }}</h5>
-      {% endif -%}
-    </div>
-    <div class="title">
-      {% if item.subtitle or item.position or item.degree -%}
-        <h4>{{ item.subtitle or item.position or item.degree }}</h4>
-      {% endif -%}
-      {% if item.gpa -%}
-        <h4>GPA: {{ item.gpa }}</h4>
-      {% elif item.location -%}
-        <h5>{{ item.location }}</h5>
-      {% endif -%}
-    </div>
-    {% if item.data -%}
-      <div class="data">
-      {# Useful for plaintext or raw HTML #}
-        {{ format(item.data) }}
+
+<img src="{{ page.meta.logo }}" class="watermark" />
+
+<div class="resume">
+  <div class="sidebar">
+
+    <h1><strong>{{ page.meta.name }}</strong></h1>
+    <h2>{{ page.meta.position }}</h2>
+    <p>
+    {% for item in page.meta.contact -%}
+      <div class="contact">
+        {{ format(item) }}
       </div>
-    {% endif -%}
+    {% endfor -%}
+
+    {% for section, data in page.meta.sidebar.items() -%}
+      <h2>{{section }}</h2>
+      <hr class="section">
+      <div class="data">
+        {{ format(data) }}
+      </div>
+    {% endfor %}
+
+  <!--Having these divs on separate lines adds a whitespace
+  to the flexbox, which is stupid.-->
+  </div><div class="main">
+
+  {% for section, data in page.meta.sections.items() -%}
+    <h2>{{ section }}</h2>
+    <hr class="section">
+    {% for item in data -%}
+      <section>
+        <div class="title">
+          {% if item.title or item.company or item.school -%}
+            <h3>{{ item.title or item.company or item.school }}</h3>
+          {% endif -%}
+          {% if item.date -%}
+            <h5>{{ item.date }}</h5>
+          {% endif -%}
+        </div>
+        <div class="title">
+          {% if item.subtitle or item.position or item.degree -%}
+            <h4>{{ item.subtitle or item.position or item.degree }}</h4>
+          {% endif -%}
+          {% if item.gpa -%}
+            <h4>GPA: {{ item.gpa }}</h4>
+          {% elif item.location -%}
+            <h5>{{ item.location }}</h5>
+          {% endif -%}
+        </div>
+        {% if item.data -%}
+          <div class="data">
+          {# Useful for plaintext or raw HTML #}
+            {{ format(item.data) }}
+          </div>
+        {% endif -%}
+      </section>
+    {% endfor -%}
+    <p>
   {% endfor -%}
-  <p>
-{% endfor -%}
+  </div>
+</div>
 
 {% endblock -%}
