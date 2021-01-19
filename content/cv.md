@@ -37,8 +37,45 @@ contact:
     icon: /img/linkedin.svg
     link: www.linkedin.com/in/richards-dev
 
-badges:
-  - text: <a href="https://stackexchange.com/users/7783437"><img src="https://stackexchange.com/users/flair/7783437.png?theme=clean" width="208" height="58" alt="profile for jeremysprofile on Stack Exchange" title="profile for jeremysprofile on Stack Exchange"></a>
+skills:
+  Languages:
+    - Python
+    - Bash
+    - Java (Spring Boot, Maven)
+  Platforms:
+    - text: Linux
+      details:
+        - CentOS
+        - Alpine
+        - Ubuntu
+    - Mac
+    - Windows
+    - Docker
+    - AWS (<a href="https://www.youracclaim.com/badges/8e0e38c6-6407-4c4a-8c6d-48ee835a6e67">Certified Cloud Practioner</a>)
+  <abbr title="Infrastructure as Code">IaC</abbr>:
+    - Kubernetes
+    - Helm
+    - Terraform
+    - Puppet
+
+  # - text: CI/CD
+    # open: True
+    # details: GitLab-CI
+  # - text: Tools
+    # open: True
+    # details: Vim, Alacritty, Tmux, IntelliJ, PyCharm
+  # - text: Misc
+    # open: True
+    # details: Documentation, Scrum / Agile, Tutoring
+
+  # Barely: HTML, CSS, Jinja, Kotlin, Groovy, SQL, C++
+  # Middleware: Kafka
+  # - text: Machine Learning
+    # open: True
+    # details: Keras, TensorFlow, CNNs
+  # - text: Containers
+    # open: True
+    # details: Docker, Kubernetes, Helm
 
 sections:
 
@@ -102,7 +139,7 @@ sections:
       position: Applications Engineering Intern
       date: Jan 2016 - Dec 2016
       data:
-        - text: 'Tested <abbr title="Hard Disk Drive">HDD</abbr> qualifications in Fortune 500 cloud company setups'
+        - text: 'CTested <abbr title="Hard Disk Drive">HDD</abbr> qualifications in Fortune 500 cloud company setups'
           open: True
           details:
             - '<strong>Decreased total qualifications test time by 20%</strong>'
@@ -170,40 +207,6 @@ sections:
       gpa: 3.96
 
 
-sidebar:
-  Skills:
-    - text: Languages
-      open: True
-      details:
-        - Python
-        - Bash
-        - Java (Spring Boot, Maven)
-    - text: OS
-      open: True
-      details: Linux (CentOS, Alpine, Ubuntu), Mac, Windows
-    - text: Cloud
-      open: True
-      details: AWS (<a href="TODO">Certified Cloud Practioner</a>)
-    - text: Machine Learning
-      open: True
-      details: Keras, TensorFlow, CNNs
-    - text: Infrastructure as Code
-      open: True
-      details: Terraform, Puppet
-    - text: Containers
-      open: True
-      details: Docker, Kubernetes, Helm
-    - text: CI/CD
-      open: True
-      details: GitLab-CI
-    - text: Tools
-      open: True
-      details: Vim, Alacritty, Tmux, IntelliJ, PyCharm
-    - text: Misc
-      open: True
-      details: Documentation, Scrum / Agile, Tutoring
-    # Barely: HTML, CSS, Jinja, Kotlin, Groovy, SQL, C++
-    # Middleware: Kafka
 
 ---
 All sections can take a `data` object, as defined below.

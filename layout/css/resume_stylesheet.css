@@ -3,6 +3,11 @@
   padding: 0;
 
 }
+
+p {
+  margin: 1rem;
+}
+
 body {
   font-size: 18px;
 
@@ -63,27 +68,34 @@ This means I'm left with ::before
 }
 /* Chrome's bullet rendering is BS with too much space so we have to use
 a psuedo-element to fix it */
-.data ul {
+
+
+ul {
   margin: 0;
   padding: 0;
-  /* inside set here, the marker is actually set later depending on summary vs list item */
-  list-style: inside none;
+  list-style: inside square;
 }
-.data ul li {
+ul li {
   margin: 0;
   padding: 0;
 }
-.data .details::before {
-  content: none;
-  margin-right: 10ch;
+
+.details {
+  list-style: none;
 }
-/* ::marker doesn't let you set margin or padding */
-.data li::before {
-  /* This makes different sized bullets on Chrome vs FF and idk why. */
-  content: counter(list-item, square);
-  margin-right: 1ch;
+
+/* Chrome doesn't use the same amount of space after a bullet as the details
+icon, so we force them to be the same */
+summary::-webkit-details-marker {
+  padding-right: 0.35rem;
 }
-.data ul ul {
+/* and so in firefox we only have font sizing, not padding, to get the lines
+to start tat the same point */
+summary::marker {
+  font-size: 0.8em;
+}
+
+ul ul {
   padding-left: 1rem;
   margin: 0;
 }
@@ -124,7 +136,7 @@ a:hover {
   /* TODO better color */
   background-color: #8dc26e;
 }
-.main a {
+a {
   /* top and bottom margins do nothing on non-replaced inline elements like a */
   margin: -0.125rem;
   text-decoration: underline;

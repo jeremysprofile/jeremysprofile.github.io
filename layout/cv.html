@@ -9,7 +9,6 @@
 
 
 {% macro stackoverflow(content) -%}
-
   {%- if content.reputation -%}
     {{ content.reputation }}
   {%- endif -%}
@@ -90,14 +89,16 @@
         {{ format(item) }}
       </div>
     {% endfor -%}
+    <p>
 
-    {% for section, data in page.meta.sidebar.items() -%}
-      <h2>{{section }}</h2>
+    <div class="skills">
+      <h2>Skills</h2>
       <hr class="section">
-      <div class="data">
+      {% for section, data in page.meta.skills.items() -%}
+        <h3>{{ section }}</h3>
         {{ format(data) }}
-      </div>
-    {% endfor %}
+      {% endfor -%}
+    </div>
 
   <!--Having these divs on separate lines adds a whitespace
   to the flexbox, which is stupid.-->
