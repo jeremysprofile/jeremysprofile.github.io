@@ -93,7 +93,7 @@
 
     <div class="skills">
       <h2>Skills</h2>
-      <hr class="section">
+      <hr>
       {% for section, data in page.meta.skills.items() -%}
         <h3>{{ section }}</h3>
         {{ format(data) }}
@@ -106,7 +106,7 @@
 
   {% for section, data in page.meta.sections.items() -%}
     <h2>{{ section }}</h2>
-    <hr class="section">
+    <hr>
     {% for item in data -%}
       <section>
         <div class="title">

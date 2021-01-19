@@ -1,3 +1,20 @@
+:root {
+  /* Define our color variables here */
+
+  /* light mode */
+  --bg-color: #f9fff2;
+  --title-color: darkgreen;
+  --first-accent: #8dc26e;
+  --bullet-color: darkgreen;
+
+  /* Dark mode? TODO */
+
+}
+.sidebar {
+  --bg-color: #dcf0c9;
+  --bullet-color: darkgreen;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -15,10 +32,16 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   margin: 0;
+  /* TODO way darker */
+  color: var(--title-color);
 }
 hr {
-  min-width: 100%;
-  margin: 0;
+  /* TODO why doesn't this work? */
+  width: 10%;
+  background: linear-gradient(to right, var(--title-color), var(--bg-color));
+  height: 2px;
+  border: 0;
+  margin: 0 0 1.2rem 0;
 }
 
 /* Resume css */
@@ -31,37 +54,29 @@ hr {
   display: inline-block;
   max-width: 24ch;
   padding: 2ch 2ch 2ch 2ch;
-  background-color: #dcf0c9;
+  background-color: var(--bg-color);
 }
 .main {
   display: inline-block;
   max-width: 56ch;
   padding: 2ch 2ch 2ch 2ch;
-  background-color: #f9fff2;
-}
-
-.section {
-  border-color: #022b0e;
-  background-color: #022b0e;
-  margin: 0 0 1.2rem 0;
+  background-color: var(--bg-color);
 }
 
 
-/* This is a whole bunch of nonsense.
-I couldn't just use 'list-style: inside square;' because chrome puts way too
-much space after the bullet. I couldn't use
-'li::marker { content: counter(list-item, square); }' because Firefox makes
-those bullets way too large (and Safari doesn't render them at all?).
 
-Regardless of what I do, I can't make the space between the li bullet and the details triangle match on both Chrome and Firefox without doing some negative margin.
+/*
+Styling these bullets across Chrome/Firefox/Safari was kind of a pain, since
+all browsers use different methods to determine the spacing between a bullets
+and the text content, and I want to use different bullets (square and the
+details triangle).
 
-I think that means I should figure out how my PDF resume will render and deal with that?
+I tried customizing the bullets with ::before and using `list-style: none;` but
+Firefox made the `content: counter(list-item, square);` bullets way too large.
 
-Or it means I should remove the ability to expand bullet points...
-
-
-This means I'm left with ::before
-
+Eventually I gave up on something that felt "clean" and customized Chrome with
+summary::-webkit-details-marker and Firefox with summary::marker and accepted
+Safari would be off since I don't know anyone who uses it on desktop.
 */
 .data {
   margin: 0 0 1.2rem 0;
@@ -75,9 +90,16 @@ ul {
   padding: 0;
   list-style: inside square;
 }
-ul li {
+ul ul {
+  padding-left: 1.5rem;
+  margin: 0;
+}
+li {
   margin: 0;
   padding: 0;
+}
+li::marker {
+  color: var(--bullet-color);
 }
 
 .details {
@@ -88,16 +110,13 @@ ul li {
 icon, so we force them to be the same */
 summary::-webkit-details-marker {
   padding-right: 0.35rem;
+  color: var(--bullet-color);
 }
 /* and so in firefox we only have font sizing, not padding, to get the lines
 to start tat the same point */
 summary::marker {
   font-size: 0.8em;
-}
-
-ul ul {
-  padding-left: 1rem;
-  margin: 0;
+  color: var(--bullet-color);
 }
 
 
@@ -134,7 +153,7 @@ a:hover {
   /* https://html.spec.whatwg.org/multipage/rendering.html#phrasing-content-3 */
   text-decoration: underline;
   /* TODO better color */
-  background-color: #8dc26e;
+  background-color: var(--first-accent);
 }
 a {
   /* top and bottom margins do nothing on non-replaced inline elements like a */
@@ -143,9 +162,10 @@ a {
 }
 abbr {
   cursor: help;
+  text-decoration: dotted underline;
 }
 summary:hover {
-  border: 2px solid #8dc26e;
+  border: 2px solid var(--first-accent);
   border-radius: 4px;
   margin: -2px;
   cursor: pointer;
