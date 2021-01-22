@@ -41,7 +41,11 @@ skills:
   Languages:
     - Python
     - Bash
-    - Java (Spring Boot, Maven)
+    - text: Java
+      details:
+        - Maven
+        - Spring Boot
+        - Kotlin
   Platforms:
     - text: Linux
       details:
@@ -57,6 +61,10 @@ skills:
     - Helm
     - Terraform
     - Puppet
+  Other:
+    - Git
+    - Scrum / Agile
+    - Tutoring
 
   # - text: CI/CD
     # open: True
@@ -82,10 +90,11 @@ sections:
   Professional Experience:
 
     - company: Nasdaq
-      position: 'Contractor → Senior Software Developer (E2) → Software Developer Specialist (E3)'
+      position: 'Contractor → SW Engineer II → SW Engineer III'
       date: Sep 2018 - Current
+      duration: '>2 yr 6 mo'
       data:
-        - text: 'Took ownership of all new and existing Python applications, including documentation, mentoring, testing, <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>, and DevOps infrastructure (check how long this line this to see if we should expand CICD)'
+        - text: 'Took ownership of all new and existing Python applications, including documentation, mentoring, testing, <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>, and DevOps infrastructure'
           hidden:
             - 'Meticulously documented python development setup process for Windows and Mac users, including package structure, virtual environments, and test writing for use by other developers'
             - 'Mentored junior developers in Python and programming best practices'
@@ -102,8 +111,9 @@ sections:
           hidden: 'improved reliability by using Kafka better, basically'
 
     - company: Northrop Grumman
-      position: Software Engineer I
+      position: SW Engineer I
       date: Jun 2017 - Sep 2018
+      duration: 1 yr 3 mo
       data:
         - text: 'Created neural network to classify <abbr title="Code Division Multiple Access">CDMA</abbr> radio signals at negative signal-to-noise ratios'
           bullets:
@@ -138,8 +148,9 @@ sections:
     - company: Seagate Technology
       position: Applications Engineering Intern
       date: Jan 2016 - Dec 2016
+      duration: 1 yr
       data:
-        - text: 'CTested <abbr title="Hard Disk Drive">HDD</abbr> qualifications in Fortune 500 cloud company setups'
+        - text: 'Tested <abbr title="Hard Disk Drive">HDD</abbr> qualifications in Fortune 500 cloud company setups'
           open: True
           details:
             - '<strong>Decreased total qualifications test time by 20%</strong>'
@@ -151,7 +162,7 @@ sections:
             - 'Drives were both <abbr title="Serial Attached SCSI (Small Computer System Interface)">SAS</abbr> and <abbr title="Serial ATA (AT Attachment)">SATA</abbr>, different capacities, and different architectures, including <abbr title="Conventional Magnetic Recording">CMR</abbr> and <abbr title="Host-Aware">HA</abbr> <abbr title="Shingled Magnetic Recording">SMR</abbr>.'
             - text: 'Updated <abbr title="Conventional Magnetic Recording">CMR</abbr>-style tests for <abbr title="Host-Aware">HA</abbr> <abbr title="Shingled Magnetic Recording">SMR</abbr> drives'
               hidden: 'SMR drive tracks overlap so you have to write tracks in order; you can''t just rewrite a small part of the track, you have to rewrite the whole track'
-        - text: 'Created Python parsers to read >20,000 log files and generate Excel workbooks with graphs, pivot tables, and conditionally-highlighted statistics'
+        - text: 'Created Python parsers to generate graphs, pivot tables, and conditionally-highlighted statistics from >20,000 log files'
           hidden:
             - 'Created pivot tables with automatic highlighting, graphs, and summary data output in top workbook with raw data in other workbooks.'
             - 'Read in text log files created from our various tests and output data to Excel via <a href="https://pypi.org/project/XlsxWriter/"><code>XlsxWriter</code></a>.'
@@ -163,7 +174,7 @@ sections:
   Education:
 
     - school: University of Colorado Boulder
-      degree: B.S. Mechanical Engineering, <i>magna cum laude</i>
+      degree: B.S. Mechanical Engineering, <strong><i>magna cum laude</i></strong>
       gpa: 3.8
       data:
         - text: '<strong>Invented <a href="http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=10,429,838">patent no. 10,429,838</a></strong> for method of routing multiple drone landings at a base station during senior project'
@@ -203,8 +214,10 @@ sections:
                Without the multiplexing, we would have been able to average readings and have much more robust data collection.
 
     - school: University of Oklahoma
-      degree: B.A. Economics—Psychology and Mathematics minors
-      gpa: 3.96
+      degree: B.A. Economics
+      gpa: <strong>3.96</strong>
+      data:
+        - 'Minors: Psychology and Mathematics'
 
 
 

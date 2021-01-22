@@ -2,7 +2,7 @@
 
 {% block extraheadings %}
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet"> 
 
   <link rel="stylesheet" type="text/css" href="{{ 'css/resume_stylesheet.css'|url }}" media="screen"/>
 {% endblock %}
@@ -14,9 +14,9 @@
   {%- endif -%}
 
   {%- if content.badges -%}
-    <span style="color: #ffcc01;">●{{ content.badges.gold }}</span>
-    <span style="color: #b4b8bc;">●{{ content.badges.silver }}</span>
-    <span style="color: #caa789;">●{{ content.badges.bronze }}</span>
+    <span> ●{{ content.badges.gold }}</span>
+    <span>●{{ content.badges.silver }}</span>
+    <span>●{{ content.badges.bronze }}</span>
   {%- endif -%}
 
   {%- if content.link -%}
@@ -76,7 +76,6 @@
 
 {% block content %}
 
-<img src="{{ page.meta.logo }}" class="watermark" />
 
 <div class="resume">
   <div class="sidebar">
@@ -84,11 +83,13 @@
     <h1><strong>{{ page.meta.name }}</strong></h1>
     <h2>{{ page.meta.position }}</h2>
     <p>
-    {% for item in page.meta.contact -%}
-      <div class="contact">
-        {{ format(item) }}
-      </div>
-    {% endfor -%}
+    <div class="data">
+      {% for item in page.meta.contact -%}
+        <div class="contact">
+          {{ format(item) }}
+        </div>
+      {% endfor -%}
+    </div>
     <p>
 
     <div class="skills">
@@ -96,10 +97,13 @@
       <hr>
       {% for section, data in page.meta.skills.items() -%}
         <h3>{{ section }}</h3>
-        {{ format(data) }}
+        <div class="data">
+          {{ format(data) }}
+        </div>
       {% endfor -%}
     </div>
 
+    <img src="{{ page.meta.logo }}" id="watermark" />
   <!--Having these divs on separate lines adds a whitespace
   to the flexbox, which is stupid.-->
   </div><div class="main">
@@ -110,21 +114,28 @@
     {% for item in data -%}
       <section>
         <div class="title">
-          {% if item.title or item.company or item.school -%}
-            <h3>{{ item.title or item.company or item.school }}</h3>
+          {% if item.title or item.position -%}
+            <h3>{{ item.title or item.position }}</h3>
           {% endif -%}
-          {% if item.date -%}
-            <h5>{{ item.date }}</h5>
-          {% endif -%}
-        </div>
-        <div class="title">
-          {% if item.subtitle or item.position or item.degree -%}
-            <h4>{{ item.subtitle or item.position or item.degree }}</h4>
+          {% if item.degree -%}
+            <h4>{{ item.degree }}</h4>
           {% endif -%}
           {% if item.gpa -%}
             <h4>GPA: {{ item.gpa }}</h4>
           {% elif item.location -%}
             <h5>{{ item.location }}</h5>
+          {% endif -%}
+        </div>
+        <div class="title">
+          {% if item.subtitle or item.company or item.school -%}
+            <h4>{{ item.subtitle or item.company or item.school }}</h4>
+          {% endif -%}
+          {% if item.date -%}
+            {% if item.duration %}
+              <h5 title="{{ item.duration }}">{{ item.date }}</h5>
+            {% else %}
+              <h5>{{ item.date }}</h5>
+            {% endif %}
           {% endif -%}
         </div>
         {% if item.data -%}

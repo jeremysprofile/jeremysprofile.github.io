@@ -3,45 +3,73 @@
 
   /* light mode */
   --bg-color: #f9fff2;
-  --title-color: darkgreen;
   --first-accent: #8dc26e;
-  --bullet-color: darkgreen;
+
+  --text-color: #053912;
+  --subtitle-color: #01230b;
+  --title-color: #000d04;
+  --bullet-color: #01230b;
 
   /* Dark mode? TODO */
 
 }
 .sidebar {
-  --bg-color: #dcf0c9;
-  --bullet-color: darkgreen;
+  /* Dark mode? TODO */
+
+  /* Light Mode */
+  --bg-color: #e4f4d4;
+  --bullet-color: #01230b;
+
 }
+
+
+
 
 * {
   margin: 0;
   padding: 0;
-
+  color: var(--text-color);
 }
-
 p {
   margin: 1rem;
 }
 
 body {
   font-size: 18px;
-
 }
 h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
+  font-weight: 500;
   margin: 0;
-  /* TODO way darker */
-  color: var(--title-color);
+  color: inherit;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.25rem;
+}
+h5 {
+  font-size: 1rem;
 }
 hr {
-  /* TODO why doesn't this work? */
-  width: 10%;
+  min-width: 80%;
+  width: 80%;
   background: linear-gradient(to right, var(--title-color), var(--bg-color));
   height: 2px;
   border: 0;
   margin: 0 0 1.2rem 0;
+}
+b, strong {
+  font-weight: 700;
 }
 
 /* Resume css */
@@ -55,6 +83,7 @@ hr {
   max-width: 24ch;
   padding: 2ch 2ch 2ch 2ch;
   background-color: var(--bg-color);
+  position: relative;
 }
 .main {
   display: inline-block;
@@ -86,7 +115,10 @@ a psuedo-element to fix it */
 
 
 ul {
-  margin: 0;
+  /* Indent slightly as bullets have 0 spacing before, while text has a small
+  amount. This also indents the line-wrapped bullet text a bit, but I don't
+  mind how that looks. */
+  margin-left: 0.2rem;
   padding: 0;
   list-style: inside square;
 }
@@ -124,15 +156,12 @@ summary::marker {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+  color: var(--title-color);
 }
-.title > * {
-  width: max-content;
-  margin: 0.2rem 1rem 0.2rem 0;
-}
-.title > *:last-child {
-  margin: 0.2rem 0;
-}
+
+
 .contact {
+  margin: 0.25rem 0;
 }
 .icon {
   height: 1em;
@@ -144,21 +173,18 @@ summary::marker {
 a {
   padding: 0.125rem;
   border-radius: 8px;
+  /* top and bottom margins do nothing on non-replaced inline elements like a */
+  margin: -0.125rem;
+  text-decoration: underline;
 }
 a:link,a:visited {
   color: inherit;
-  text-decoration: none;
 }
 a:hover {
   /* https://html.spec.whatwg.org/multipage/rendering.html#phrasing-content-3 */
   text-decoration: underline;
   /* TODO better color */
   background-color: var(--first-accent);
-}
-a {
-  /* top and bottom margins do nothing on non-replaced inline elements like a */
-  margin: -0.125rem;
-  text-decoration: underline;
 }
 abbr {
   cursor: help;
@@ -172,4 +198,13 @@ summary:hover {
 }
 summary:focus, summary:active {
   outline: none;
+}
+
+
+#watermark {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  opacity: 0.2;
+  height: 10rem;
 }
