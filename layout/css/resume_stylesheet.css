@@ -1,6 +1,8 @@
 :root {
   /* Define our color variables here */
 
+  /* Dark mode? TODO */
+
   /* light mode */
   --bg-color: #f9fff2;
   --first-accent: #8dc26e;
@@ -10,8 +12,6 @@
   --title-color: #000d04;
   --bullet-color: #01230b;
 
-  /* Dark mode? TODO */
-
 }
 .sidebar {
   /* Dark mode? TODO */
@@ -19,7 +19,6 @@
   /* Light Mode */
   --bg-color: #e4f4d4;
   --bullet-color: #01230b;
-
 }
 
 
@@ -35,7 +34,7 @@ p {
 }
 
 body {
-  font-size: 18px;
+  font-size: 16px;
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
@@ -43,19 +42,19 @@ h1, h2, h3, h4, h5, h6 {
   color: inherit;
 }
 h1 {
-  font-size: 3rem;
+  font-size: 2.4rem;
 }
 h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 h3 {
-  font-size: 1.75rem;
+  font-size: 1.6rem;
 }
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 h4 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 h5 {
   font-size: 1rem;
@@ -66,7 +65,7 @@ hr {
   background: linear-gradient(to right, var(--title-color), var(--bg-color));
   height: 2px;
   border: 0;
-  margin: 0 0 1.2rem 0;
+  margin: 0 0 1rem 0;
 }
 b, strong {
   font-weight: 700;
@@ -76,18 +75,17 @@ b, strong {
 .resume {
   display: flex;
   justify-content: space-between;
-  max-width: 80ch;
+  height: 297mm;
+  width: 210mm;
 }
 .sidebar {
-  display: inline-block;
-  max-width: 24ch;
+  max-width: content;
   padding: 2ch 2ch 2ch 2ch;
   background-color: var(--bg-color);
   position: relative;
 }
 .main {
-  display: inline-block;
-  max-width: 56ch;
+  max-width: content;
   padding: 2ch 2ch 2ch 2ch;
   background-color: var(--bg-color);
 }
@@ -158,6 +156,11 @@ summary::marker {
   justify-content: space-between;
   color: var(--title-color);
 }
+.org {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+}
 
 
 .contact {
@@ -205,6 +208,6 @@ summary:focus, summary:active {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  opacity: 0.2;
-  height: 10rem;
+  opacity: 0.025;
+  height: 16rem;
 }

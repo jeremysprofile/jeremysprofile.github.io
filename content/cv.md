@@ -55,9 +55,11 @@ skills:
     - Mac
     - Windows
     - Docker
-    - AWS (<a href="https://www.youracclaim.com/badges/8e0e38c6-6407-4c4a-8c6d-48ee835a6e67">Certified Cloud Practioner</a>)
-  <abbr title="Infrastructure as Code">IaC</abbr>:
     - Kubernetes
+    - text: AWS
+      details:
+        - <a href="https://www.youracclaim.com/badges/8e0e38c6-6407-4c4a-8c6d-48ee835a6e67">Certified Cloud Practioner</a>)
+  <abbr title="Infrastructure as Code">IaC</abbr>:
     - Helm
     - Terraform
     - Puppet
@@ -90,6 +92,7 @@ sections:
   Professional Experience:
 
     - company: Nasdaq
+      icon: /img/nasdaq-icon.svg
       position: 'Contractor → SW Engineer II → SW Engineer III'
       date: Sep 2018 - Current
       duration: '>2 yr 6 mo'
@@ -100,17 +103,19 @@ sections:
             - 'Mentored junior developers in Python and programming best practices'
             - 'Set up Nasdaq-internal <a href="https://pypi.org/"><abbr title="Python Package Index">PyPI</abbr></a> server via <a href="https://www.sonatype.com/nexus/repository-pro">Nexus</a>'
           tools: "Python 2 and 3, PyCharm, Vim, Poetry, pip, pytest, pre-commit, GitLab-CI"
-        - text: 'Diagnosed and resolved time-sensitive production incidents during on-call rotations'
-          hidden:
-            - 'Included manual failover, fixing configuration, <abbr title="Root Cause Analysis">RCA</abbr>, providing post-mortem to the team, and writing tickets for any discovered bugs'
         - text: 'Improved <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipelines across application suite, adding automatic updating to latest internal dependencies, version incrementing, and git and container tagging.'
         - text: 'Loaned to adjacent teams to help meet tight deadlines'
           hidden:
              - 'Joined the TradeGuard Reporting team at different points to enable horizontal scaling for trade data processing and to help with <a href="https://www.catnmsplan.com/"><abbr title="Consolidated Audit Trail">CAT</abbr></a> go-live.'
         - text: 'Collaborated on productizing financial message relay application: ported existing setup to <abbr title="Amazon Web Services">AWS</abbr> and Kubernetes; utilized Terraform and Helm for <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>; and improved reliability in server or networking outage scenarios.'
           hidden: 'improved reliability by using Kafka better, basically'
+      hidden:
+        - text: 'Diagnosed and resolved time-sensitive production incidents during on-call rotations'
+          hidden:
+            - 'Included manual failover, fixing configuration, <abbr title="Root Cause Analysis">RCA</abbr>, providing post-mortem to the team, and writing tickets for any discovered bugs'
 
     - company: Northrop Grumman
+      icon: /img/northrop-icon.png
       position: SW Engineer I
       date: Jun 2017 - Sep 2018
       duration: 1 yr 3 mo
@@ -133,12 +138,12 @@ sections:
                 - "A convolutional neural network (CNN) is named for the convolutional layers it uses. These layers use a kernel of a specified size (a small contiguous section of the data) and convolve over the input data (matrix multiplication between the trained weights of that kernel and the input values), looking for features of some level of complexity. In the case of images, the standard example is that an initial layer will look for gradients and edges, which intermediate layers will view and interpret into simple shapes, in turn being used to recognize complex shapes, like faces. My task was to apply this to certain types of spreading codes with varying levels of noise."
                 - "I used Keras and TensorFlow in Python."
             - "This was exploratory research. I found that in modeled data with added noise, I was able to determine which Gold code was used in a given sample through different clock offsets and negative signal-to-noise ratios. There was no customer for this work and I was taken off the project when Northrop found a non-overhead charge code I could use."
-        - text: 'Created convolutional neural network (CNN) to detect mining locations from satellite images'
+        - text: 'Created convolutional neural network (CNN) to detect mining sites in satellite images'
           details:
             - 'Created training data using Google Earth API and list of GPS coordinates of current (and former) mines'
           hidden:
             - 'Achieved only 92% accuracy due to poor data - some mines had been abandoned and revegetated, and some mine coordinates did not have enough precision to display the mine at sufficient resolution for training'
-        - text: 'Explored use of various machine learning tools to detect novel inputs to trained <abbr title="Convolutional Neural Network">CNNs</abbr> via intermediate layer activations'
+        - text: 'Explored machine learning tools to detect novel inputs to trained <abbr title="Convolutional Neural Network">CNNs</abbr> via intermediate layer activations'
           details:
             - 'A <abbr title="Convolutional Neural Network">CNN</abbr> is pretrained on certain categories and outputs how "likely" a sample is to belong to each category, but cannot determine if a sample belongs to none of the categories. My goal was to leverage the feature detection of the network via tools not requiring pretraining to detect these outlier samples'
             - 'Tested isolation forests, support vector machines, principal component analysis, <abbr title="Least Absolute Shrinkage and Selection Operator">LASSO</abbr>, and k-nearest neighbor analysis'
@@ -146,38 +151,45 @@ sections:
             - 'Layperson explanation: the last layer in a deep neural network has one neuron per possible classification - a network trained to distinguish images of cats versus images of dogs would have two neurons in the final layer, and whichever neuron is most activated is what the image gets classified as. Intermediate layers will have learned to detect lower-level information about the images (e.g., one neuron could detect the existence of a muzzle, another could detect more dog-like ears). My goal was to see if I could determine if the network had seen a novel image (e.g., a picture of a person) from examining the activations of the intermediate layers, since presumably these images would result in unusual combinations of activations.'
 
     - company: Seagate Technology
+      icon: /img/seagate-icon.svg
       position: Applications Engineering Intern
       date: Jan 2016 - Dec 2016
       duration: 1 yr
       data:
-        - text: 'Tested <abbr title="Hard Disk Drive">HDD</abbr> qualifications in Fortune 500 cloud company setups'
-          open: True
-          details:
-            - '<strong>Decreased total qualifications test time by 20%</strong>'
-          hidden:
-            - 'Wrote tests to be 9% more efficient.'
-            - 'The other 11% time reduction was due to increased automation (previously, all tests were kicked off manually during the workday, meaning a test finishing at 6 P.M. would leave the system idle for 14 hours).'
         - text: 'Created Bash scripts to capture performance and reliability metrics for populations of hundreds of <abbr title="Hard Disk Drive">HDDs</abbr> over multiple days'
           hidden:
+            - 'Created Bash scripts to capture performance and reliability metrics for populations of hundreds of <abbr title="Hard Disk Drive">HDDs</abbr> over multiple days'
             - 'Drives were both <abbr title="Serial Attached SCSI (Small Computer System Interface)">SAS</abbr> and <abbr title="Serial ATA (AT Attachment)">SATA</abbr>, different capacities, and different architectures, including <abbr title="Conventional Magnetic Recording">CMR</abbr> and <abbr title="Host-Aware">HA</abbr> <abbr title="Shingled Magnetic Recording">SMR</abbr>.'
             - text: 'Updated <abbr title="Conventional Magnetic Recording">CMR</abbr>-style tests for <abbr title="Host-Aware">HA</abbr> <abbr title="Shingled Magnetic Recording">SMR</abbr> drives'
               hidden: 'SMR drive tracks overlap so you have to write tracks in order; you can''t just rewrite a small part of the track, you have to rewrite the whole track'
+        - text: "<strong>Decreased customer's total qualifications test time 20%</strong>"
+          hidden:
+            - 'Wrote tests to be 9% more efficient.'
+            - 'The other 11% time reduction was due to increased automation (previously, all tests were kicked off manually during the workday, meaning a test finishing at 6 P.M. would leave the system idle for 14 hours).'
+
+        - text: 'Automated log backup, system setup on all test systems'
+          hidden:
+            - 'The log backup was a cron job to call a service which was just glorified <code>rsync</code> and some logic to put everything into timestamped folders on a secondary server.'
+            - 'The system setup and end-to-end test run were slightly fault-tolerant Bash scripts.'
+      hidden:
+        - text: 'Automated tests to qualify Seagate <abbr title="Hard Disk Drives">HDDs</abbr> in customer environments'
+          hidden: 'Worked with Fortune 100 cloud company as final qualifications gate to ensure interoperability between our drives and their racks'
+
         - text: 'Created Python parsers to generate graphs, pivot tables, and conditionally-highlighted statistics from >20,000 log files'
           hidden:
             - 'Created pivot tables with automatic highlighting, graphs, and summary data output in top workbook with raw data in other workbooks.'
             - 'Read in text log files created from our various tests and output data to Excel via <a href="https://pypi.org/project/XlsxWriter/"><code>XlsxWriter</code></a>.'
-        - text: 'Automated log backup and system setup on all test systems'
-          hidden:
-            - 'The log backup was a cron job to call a service which was just glorified <code>rsync</code> and some logic to put everything into timestamped folders on a secondary server.'
-            - 'The system setup and end-to-end test run were slightly fault-tolerant Bash scripts.'
+
 
   Education:
 
     - school: University of Colorado Boulder
-      degree: B.S. Mechanical Engineering, <strong><i>magna cum laude</i></strong>
-      gpa: 3.8
+      icon: /img/cu-icon.svg
+      degree: B.S. Mechanical Engineering
+      gpa: <strong>3.8</strong>
       data:
-        - text: '<strong>Invented <a href="http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=10,429,838">patent no. 10,429,838</a></strong> for method of routing multiple drone landings at a base station during senior project'
+        - text: '<strong><i>Magna cum laude</i></strong>'
+        - text: '<strong>Invented <a href="http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=10,429,838">patent no. 10,429,838</a></strong> for drone landing patterns'
           hidden:
             - text: Senior project – drones leave station, get GPS coordinates, determine optimal paths based on obstacles, and fly to targets
               details:
@@ -190,7 +202,9 @@ sections:
                 - In the end, we had individual working pieces, but not a end-to-end success.
                 - Drones could land successfully at landing pads by vision and QR code recognition, plot courses around pre-configured obstacles, and fly to GPS waypoints.
                 - Lack of experience with project planning meant we didn't give ourselves even close to enough time for integration and testing.
-        - text: 'Software team lead in autonomous robot soccer competition, placing second of twelve. Video of matches <a href="https://www.youtube.com/watch?v=tI_wfxj9qU8">available here</a>'
+        - text: 'Software team lead in autonomous robot soccer competition'
+          bullets:
+            - 'Team placed second of twelve. <a href="https://www.youtube.com/watch?v=tI_wfxj9qU8">Watch match videos</a>'
           details:
             - 'Team designed, built, and programmed robot from off-the-shelf and 3D-printed components'
             - 'Wrote all Arduino (C++) code for tracking ball & goal via IR sensors, determining relative position on field and estimated ball distance, shooting, and goalie behavior'
@@ -214,6 +228,7 @@ sections:
                Without the multiplexing, we would have been able to average readings and have much more robust data collection.
 
     - school: University of Oklahoma
+      icon: /img/ou-icon.svg
       degree: B.A. Economics
       gpa: <strong>3.96</strong>
       data:

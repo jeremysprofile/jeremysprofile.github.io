@@ -80,8 +80,8 @@
 <div class="resume">
   <div class="sidebar">
 
-    <h1><strong>{{ page.meta.name }}</strong></h1>
-    <h2>{{ page.meta.position }}</h2>
+    <h1>{{ page.meta.name }}</h1>
+    <h3>{{ page.meta.position }}</h3>
     <p>
     <div class="data">
       {% for item in page.meta.contact -%}
@@ -103,10 +103,12 @@
       {% endfor -%}
     </div>
 
-    <img src="{{ page.meta.logo }}" id="watermark" />
-  <!--Having these divs on separate lines adds a whitespace
-  to the flexbox, which is stupid.-->
-  </div><div class="main">
+    {% if page.meta.logo %}
+      <img src="{{ page.meta.logo }}" id="watermark" />
+    {% endif %}
+
+  </div>
+  <div class="main">
 
   {% for section, data in page.meta.sections.items() -%}
     <h2>{{ section }}</h2>
@@ -114,11 +116,8 @@
     {% for item in data -%}
       <section>
         <div class="title">
-          {% if item.title or item.position -%}
-            <h3>{{ item.title or item.position }}</h3>
-          {% endif -%}
-          {% if item.degree -%}
-            <h4>{{ item.degree }}</h4>
+          {% if item.title or item.position or item.degree -%}
+            <h3>{{ item.title or item.position or item.degree }}</h3>
           {% endif -%}
           {% if item.gpa -%}
             <h4>GPA: {{ item.gpa }}</h4>
@@ -127,9 +126,14 @@
           {% endif -%}
         </div>
         <div class="title">
-          {% if item.subtitle or item.company or item.school -%}
-            <h4>{{ item.subtitle or item.company or item.school }}</h4>
-          {% endif -%}
+          <div class="org">
+            {% if item.icon -%}
+              <img src="{{ item.icon }}" class="icon">
+            {% endif %}
+            {% if item.subtitle or item.company or item.school -%}
+              <h4>{{ item.subtitle or item.company or item.school }}</h4>
+            {% endif -%}
+          </div>
           {% if item.date -%}
             {% if item.duration %}
               <h5 title="{{ item.duration }}">{{ item.date }}</h5>
