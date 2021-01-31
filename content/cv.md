@@ -3,23 +3,23 @@ template: cv.html
 # Mkdocs really wants this to be a markdown file with YAML frontmatter.
 # We'll pretend, but all the content lives in the "frontmatter".
 
-logo: '/img/j_light.svg'
+logo: '/img/cv/j_light.svg'
 name: Jeremy Richards
 position: Backend Engineer / DevOps
 
 # Icons sourced from https://uxwing.com and https://systemuicons.com/
 contact:
   - text: me@richards.dev
-    icon: /img/mail.svg
+    icon: /img/cv/mail.svg
     link: mailto:jeremy@richards.dev
   - text: Denver, CO
-    icon: /img/location.svg
+    icon: /img/cv/location.svg
   - text: PDF Resume
-    icon: /img/link.svg
+    icon: /img/cv/link.svg
   - text: Web Resume
-    icon: /img/link.svg
+    icon: /img/cv/link.svg
     link: https://jeremy.richards.dev/cv
-  - icon: /img/stackoverflow.svg
+  - icon: /img/cv/stackoverflow.svg
     stackoverflow:
       reputation: 7.3k
       badges:
@@ -28,13 +28,13 @@ contact:
         bronze: 81
     link: https://stackexchange.com/users/7783437/jeremysprofile?tab=accounts
   - text: jeremysprofile
-    icon: /img/github.svg
+    icon: /img/cv/github.svg
     link: https://github.com/jeremysprofile/jeremysprofile.github.io
-  - icon: /img/website.svg
+  - icon: /img/cv/website.svg
     text: richards.dev
     link: https://jeremy.richards.dev
   - text: /in/richards-dev
-    icon: /img/linkedin.svg
+    icon: /img/cv/linkedin.svg
     link: www.linkedin.com/in/richards-dev
 
 skills:
@@ -92,7 +92,7 @@ sections:
   Professional Experience:
 
     - company: Nasdaq
-      icon: /img/nasdaq-icon.svg
+      icon: /img/cv/nasdaq-icon.svg
       position: 'Contractor → SW Engineer II → SW Engineer III'
       date: Sep 2018 - Current
       duration: '>2 yr 6 mo'
@@ -115,7 +115,7 @@ sections:
             - 'Included manual failover, fixing configuration, <abbr title="Root Cause Analysis">RCA</abbr>, providing post-mortem to the team, and writing tickets for any discovered bugs'
 
     - company: Northrop Grumman
-      icon: /img/northrop-icon.png
+      icon: /img/cv/northrop-icon.png
       position: SW Engineer I
       date: Jun 2017 - Sep 2018
       duration: 1 yr 3 mo
@@ -151,7 +151,7 @@ sections:
             - 'Layperson explanation: the last layer in a deep neural network has one neuron per possible classification - a network trained to distinguish images of cats versus images of dogs would have two neurons in the final layer, and whichever neuron is most activated is what the image gets classified as. Intermediate layers will have learned to detect lower-level information about the images (e.g., one neuron could detect the existence of a muzzle, another could detect more dog-like ears). My goal was to see if I could determine if the network had seen a novel image (e.g., a picture of a person) from examining the activations of the intermediate layers, since presumably these images would result in unusual combinations of activations.'
 
     - company: Seagate Technology
-      icon: /img/seagate-icon.svg
+      icon: /img/cv/seagate-icon.svg
       position: Applications Engineering Intern
       date: Jan 2016 - Dec 2016
       duration: 1 yr
@@ -184,7 +184,7 @@ sections:
   Education:
 
     - school: University of Colorado Boulder
-      icon: /img/cu-icon.svg
+      icon: /img/cv/cu-icon.svg
       degree: B.S. Mechanical Engineering
       gpa: <strong>3.8</strong>
       data:
@@ -228,7 +228,7 @@ sections:
                Without the multiplexing, we would have been able to average readings and have much more robust data collection.
 
     - school: University of Oklahoma
-      icon: /img/ou-icon.svg
+      icon: /img/cv/ou-icon.svg
       degree: B.A. Economics
       gpa: <strong>3.96</strong>
       data:
