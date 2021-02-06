@@ -4,7 +4,6 @@
   /* Dark mode? TODO */
 
   /* light mode */
-  --bg-color: #f9fff2;
   --first-accent: #8dc26e;
 
   --text-color: #053912;
@@ -12,16 +11,17 @@
   --title-color: #000d04;
   --bullet-color: #01230b;
 
+  /* accent only */
+  --bg-color: white;
+  --text-color: #000d04;
+  --bullet-color: forestgreen;
+  --title-color: darkgreen;
+
+  --bold-color: #053912;
+  --muted-color: #404040;
+
+
 }
-.sidebar {
-  /* Dark mode? TODO */
-
-  /* Light Mode */
-  --bg-color: #e4f4d4;
-  --bullet-color: #01230b;
-}
-
-
 
 
 * {
@@ -30,7 +30,7 @@
   color: var(--text-color);
 }
 p {
-  margin: 1rem;
+  margin: 1rem 0;
 }
 
 body {
@@ -69,25 +69,40 @@ hr {
 }
 b, strong {
   font-weight: 700;
+  color: var(--bold-color);
 }
 
-/* Resume css */
 .resume {
-  display: flex;
-  justify-content: space-between;
+  border: solid red;
   height: 297mm;
   width: 210mm;
 }
-.sidebar {
-  max-width: content;
-  padding: 2ch 2ch 2ch 2ch;
-  background-color: var(--bg-color);
-  position: relative;
+.main, .header {
+  display: flex;
+  justify-content: space-between;
+  margin: 2ch 0;
 }
-.main {
+.pinks {
+  min-width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 2ch;
+}
+.about {
+  margin: 0 2ch;
+}
+.summary {
+  font-style: oblique 7deg;
+}
+.sidebar {
+  /* Make sure my last name fits */
+  width: max-content;
+  margin: 0 2ch;
+}
+.experience {
   max-width: content;
-  padding: 2ch 2ch 2ch 2ch;
-  background-color: var(--bg-color);
+  margin: 0 2ch;
 }
 
 
@@ -126,7 +141,9 @@ ul ul {
 }
 li {
   margin: 0;
-  padding: 0;
+}
+.main li {
+  padding: 0.15rem;
 }
 li::marker {
   color: var(--bullet-color);
@@ -149,12 +166,20 @@ summary::marker {
   color: var(--bullet-color);
 }
 
-
+.name {
+  color: var(--name-color);
+}
 .title {
+  color: var(--title-color);
+}
+.subtitle {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  color: var(--title-color);
+}
+.date {
+  font-style: oblique 14deg;
+  color: var(--muted-color);
 }
 .org {
   display: flex;
@@ -163,12 +188,10 @@ summary::marker {
 }
 
 
-.contact {
-  margin: 0.25rem 0;
-}
+
 .icon {
   height: 1em;
-  vertical-align: text-bottom;
+  vertical-align: middle;
   padding-right: 0.5ch;
 }
 
@@ -176,8 +199,6 @@ summary::marker {
 a {
   padding: 0.125rem;
   border-radius: 8px;
-  /* top and bottom margins do nothing on non-replaced inline elements like a */
-  margin: -0.125rem;
   text-decoration: underline;
 }
 a:link,a:visited {
@@ -201,6 +222,24 @@ summary:hover {
 }
 summary:focus, summary:active {
   outline: none;
+}
+
+.filter {
+  /* As calculated by https://stackoverflow.com/a/43960991/5889131
+   * For 'forestgreen' aka rgb(34, 139, 34)
+   */
+  /*filter: invert(20%) sepia(97%) saturate(3230%) hue-rotate(124deg) brightness(100%) contrast(73%);
+
+  /* As calculated by https://stackoverflow.com/a/43960991/5889131
+   * For 'darkgreen' aka rgb(0, 100, 0)
+   */
+  filter: invert(21%) sepia(30%) saturate(6459%) hue-rotate(103deg) brightness(92%) contrast(111%);
+  /*
+  */
+}
+
+.white-filter {
+  filter: invert(100%);
 }
 
 

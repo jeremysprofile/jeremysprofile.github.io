@@ -5,7 +5,12 @@ template: cv.html
 
 logo: '/img/cv/j_light.svg'
 name: Jeremy Richards
-position: Backend Engineer / DevOps
+position: Backend | DevOps
+summary:
+  text: 'Software engineer focused on fault-tolerance and push-button deployments. Strong technical writer. Track record of improving automation, both in CI/CD and personal workflow.'
+  hidden:
+    - "CI/CD automation: see Nasdaq gains"
+    - "Personal workflow automation: bashrc (brownbag sharing session). proxy login (built own and used another) - documented and shared with team."
 
 # Icons sourced from https://uxwing.com and https://systemuicons.com/
 contact:
@@ -14,14 +19,10 @@ contact:
     link: mailto:jeremy@richards.dev
   - text: Denver, CO
     icon: /img/cv/location.svg
-  - text: PDF Resume
-    icon: /img/cv/link.svg
-  - text: Web Resume
-    icon: /img/cv/link.svg
     link: https://jeremy.richards.dev/cv
   - icon: /img/cv/stackoverflow.svg
     stackoverflow:
-      reputation: 7.3k
+      reputation: <strong>7.3k</strong>
       badges:
         gold: 3
         silver: 30
@@ -35,7 +36,8 @@ contact:
     link: https://jeremy.richards.dev
   - text: /in/richards-dev
     icon: /img/cv/linkedin.svg
-    link: www.linkedin.com/in/richards-dev
+    link: https://www.linkedin.com/in/richards-dev
+
 
 skills:
   Languages:
@@ -58,7 +60,7 @@ skills:
     - Kubernetes
     - text: AWS
       details:
-        - <a href="https://www.youracclaim.com/badges/8e0e38c6-6407-4c4a-8c6d-48ee835a6e67">Certified Cloud Practioner</a>)
+        - <a href="https://www.youracclaim.com/badges/8e0e38c6-6407-4c4a-8c6d-48ee835a6e67">Certified Cloud Practioner</a>
   <abbr title="Infrastructure as Code">IaC</abbr>:
     - Helm
     - Terraform
@@ -97,17 +99,17 @@ sections:
       date: Sep 2018 - Current
       duration: '>2 yr 6 mo'
       data:
-        - text: 'Took ownership of all new and existing Python applications, including documentation, mentoring, testing, <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>, and DevOps infrastructure'
+        - text: 'Took ownership of all Python applications, including docs, mentoring, <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>, and DevOps infrastructure'
           hidden:
             - 'Meticulously documented python development setup process for Windows and Mac users, including package structure, virtual environments, and test writing for use by other developers'
             - 'Mentored junior developers in Python and programming best practices'
             - 'Set up Nasdaq-internal <a href="https://pypi.org/"><abbr title="Python Package Index">PyPI</abbr></a> server via <a href="https://www.sonatype.com/nexus/repository-pro">Nexus</a>'
           tools: "Python 2 and 3, PyCharm, Vim, Poetry, pip, pytest, pre-commit, GitLab-CI"
-        - text: 'Improved <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipelines across application suite, adding automatic updating to latest internal dependencies, version incrementing, and git and container tagging.'
+        - text: 'Added auto-updating internal dependencies, version incrementing, and container tagging to <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipelines across application suite'
         - text: 'Loaned to adjacent teams to help meet tight deadlines'
           hidden:
              - 'Joined the TradeGuard Reporting team at different points to enable horizontal scaling for trade data processing and to help with <a href="https://www.catnmsplan.com/"><abbr title="Consolidated Audit Trail">CAT</abbr></a> go-live.'
-        - text: 'Collaborated on productizing financial message relay application: ported existing setup to <abbr title="Amazon Web Services">AWS</abbr> and Kubernetes; utilized Terraform and Helm for <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>; and improved reliability in server or networking outage scenarios.'
+        - text: 'Collaborated on productizing financial message relay application: ported existing setup to <abbr title="Amazon Web Services">AWS</abbr> and Kubernetes; utilized Terraform and Helm for <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>; and improved reliability during outages'
           hidden: 'improved reliability by using Kafka better, basically'
       hidden:
         - text: 'Diagnosed and resolved time-sensitive production incidents during on-call rotations'
@@ -122,7 +124,7 @@ sections:
       data:
         - text: 'Created neural network to classify <abbr title="Code Division Multiple Access">CDMA</abbr> radio signals at negative signal-to-noise ratios'
           bullets:
-            - '<strong>Awarded trade secret</strong> for work, which was presented in internal symposium and <strong>used in classified space</strong>'
+            - '<strong>Awarded trade secret</strong> for work, which was presented in internal symposium and used in classified space'
           details:
             - '<abbr title="Code Division Multiple Access">CDMA</abbr> is a way to share bandwidth with cooperating simultaneous users via sets of spreading sequences, which are psuedorandom binary sequences designed to minimally interfere with each other. My goal was to detect usage of a subset of these sequences in a target bandwidth'
           hidden:
@@ -138,17 +140,18 @@ sections:
                 - "A convolutional neural network (CNN) is named for the convolutional layers it uses. These layers use a kernel of a specified size (a small contiguous section of the data) and convolve over the input data (matrix multiplication between the trained weights of that kernel and the input values), looking for features of some level of complexity. In the case of images, the standard example is that an initial layer will look for gradients and edges, which intermediate layers will view and interpret into simple shapes, in turn being used to recognize complex shapes, like faces. My task was to apply this to certain types of spreading codes with varying levels of noise."
                 - "I used Keras and TensorFlow in Python."
             - "This was exploratory research. I found that in modeled data with added noise, I was able to determine which Gold code was used in a given sample through different clock offsets and negative signal-to-noise ratios. There was no customer for this work and I was taken off the project when Northrop found a non-overhead charge code I could use."
-        - text: 'Created convolutional neural network (CNN) to detect mining sites in satellite images'
-          details:
-            - 'Created training data using Google Earth API and list of GPS coordinates of current (and former) mines'
-          hidden:
-            - 'Achieved only 92% accuracy due to poor data - some mines had been abandoned and revegetated, and some mine coordinates did not have enough precision to display the mine at sufficient resolution for training'
         - text: 'Explored machine learning tools to detect novel inputs to trained <abbr title="Convolutional Neural Network">CNNs</abbr> via intermediate layer activations'
           details:
             - 'A <abbr title="Convolutional Neural Network">CNN</abbr> is pretrained on certain categories and outputs how "likely" a sample is to belong to each category, but cannot determine if a sample belongs to none of the categories. My goal was to leverage the feature detection of the network via tools not requiring pretraining to detect these outlier samples'
             - 'Tested isolation forests, support vector machines, principal component analysis, <abbr title="Least Absolute Shrinkage and Selection Operator">LASSO</abbr>, and k-nearest neighbor analysis'
           hidden:
             - 'Layperson explanation: the last layer in a deep neural network has one neuron per possible classification - a network trained to distinguish images of cats versus images of dogs would have two neurons in the final layer, and whichever neuron is most activated is what the image gets classified as. Intermediate layers will have learned to detect lower-level information about the images (e.g., one neuron could detect the existence of a muzzle, another could detect more dog-like ears). My goal was to see if I could determine if the network had seen a novel image (e.g., a picture of a person) from examining the activations of the intermediate layers, since presumably these images would result in unusual combinations of activations.'
+      hidden:
+        - text: 'Created convolutional neural network (CNN) to detect mining sites in satellite images'
+          details:
+            - 'Created training data using Google Earth API and list of GPS coordinates of current (and former) mines'
+          hidden:
+            - 'Achieved only 92% accuracy due to poor data - some mines had been abandoned and revegetated, and some mine coordinates did not have enough precision to display the mine at sufficient resolution for training'
 
     - company: Seagate Technology
       icon: /img/cv/seagate-icon.svg
@@ -188,8 +191,8 @@ sections:
       degree: B.S. Mechanical Engineering
       gpa: <strong>3.8</strong>
       data:
-        - text: '<strong><i>Magna cum laude</i></strong>'
-        - text: '<strong>Invented <a href="http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=10,429,838">patent no. 10,429,838</a></strong> for drone landing patterns'
+        - text: '<i><strong>Magna cum laude</strong></i>'
+        - text: 'Invented <a href="http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=10,429,838">patent no. 10,429,838</a> for drone landing patterns'
           hidden:
             - text: Senior project – drones leave station, get GPS coordinates, determine optimal paths based on obstacles, and fly to targets
               details:
@@ -205,7 +208,7 @@ sections:
         - text: 'Software team lead in autonomous robot soccer competition'
           bullets:
             - 'Team placed second of twelve. <a href="https://www.youtube.com/watch?v=tI_wfxj9qU8">Watch match videos</a>'
-          details:
+          hidden:
             - 'Team designed, built, and programmed robot from off-the-shelf and 3D-printed components'
             - 'Wrote all Arduino (C++) code for tracking ball & goal via IR sensors, determining relative position on field and estimated ball distance, shooting, and goalie behavior'
           hidden:
@@ -232,7 +235,7 @@ sections:
       degree: B.A. Economics
       gpa: <strong>3.96</strong>
       data:
-        - 'Minors: Psychology and Mathematics'
+        - 'Minors: Psychology, Mathematics'
 
 
 

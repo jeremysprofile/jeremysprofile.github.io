@@ -30,7 +30,7 @@
       <a href="{{ info.link }}">
     {%- endif -%}
     {%- if info.icon -%}
-      <img src="{{ info.icon }}" class="icon">
+      <img src="{{ info.icon }}" class="icon filter">
     {%- endif -%}
     {%- if info.text -%}
       {%- if info.details -%}
@@ -74,84 +74,95 @@
   {%- endif -%}
 {% endmacro -%}
 
-{% block content %}
+{% block body %}
+
 
 
 <div class="resume">
-  <div class="sidebar">
-
-    <h1>{{ page.meta.name }}</h1>
-    <h3>{{ page.meta.position }}</h3>
-    <p>
-    <div class="data">
+  <div class="header">
+    <div class="about">
+      <h1 class="name">{{ page.meta.name }}</h1>
+      {% if page.meta.position %}
+        <h4>{{ page.meta.position }}</h4>
+      {% endif %}
+      {% if page.meta.summary %}
+        <div class="summary">
+          {{ format(page.meta.summary) }}
+        </div>
+      {% endif %}
+    </div>
+    <div class="pinks">
       {% for item in page.meta.contact -%}
         <div class="contact">
           {{ format(item) }}
         </div>
       {% endfor -%}
     </div>
-    <p>
-
-    <div class="skills">
-      <h2>Skills</h2>
-      <hr>
-      {% for section, data in page.meta.skills.items() -%}
-        <h3>{{ section }}</h3>
-        <div class="data">
-          {{ format(data) }}
-        </div>
-      {% endfor -%}
-    </div>
-
-    {% if page.meta.logo %}
-      <img src="{{ page.meta.logo }}" id="watermark" />
-    {% endif %}
-
   </div>
-  <div class="main">
 
-  {% for section, data in page.meta.sections.items() -%}
-    <h2>{{ section }}</h2>
-    <hr>
-    {% for item in data -%}
-      <section>
-        <div class="title">
-          {% if item.title or item.position or item.degree -%}
-            <h3>{{ item.title or item.position or item.degree }}</h3>
-          {% endif -%}
-          {% if item.gpa -%}
-            <h4>GPA: {{ item.gpa }}</h4>
-          {% elif item.location -%}
-            <h5>{{ item.location }}</h5>
-          {% endif -%}
-        </div>
-        <div class="title">
-          <div class="org">
-            {% if item.icon -%}
-              <img src="{{ item.icon }}" class="icon">
-            {% endif %}
-            {% if item.subtitle or item.company or item.school -%}
-              <h4>{{ item.subtitle or item.company or item.school }}</h4>
+  <div class="main">
+    <div class="experience">
+
+    {% for section, data in page.meta.sections.items() -%}
+      <h2 class="title">{{ section }}</h2>
+      <hr>
+      {% for item in data -%}
+        <section>
+          <div class="subtitle">
+            {% if item.title or item.position or item.degree -%}
+              <h3>{{ item.title or item.position or item.degree }}</h3>
+            {% endif -%}
+            {% if item.gpa -%}
+              <h4>GPA: {{ item.gpa }}</h4>
+            {% elif item.location -%}
+              <h5>{{ item.location }}</h5>
             {% endif -%}
           </div>
-          {% if item.date -%}
-            {% if item.duration %}
-              <h5 title="{{ item.duration }}">{{ item.date }}</h5>
-            {% else %}
-              <h5>{{ item.date }}</h5>
-            {% endif %}
-          {% endif -%}
-        </div>
-        {% if item.data -%}
-          <div class="data">
-          {# Useful for plaintext or raw HTML #}
-            {{ format(item.data) }}
+          <div class="subtitle">
+            <div class="org">
+              {% if item.icon -%}
+                <img src="{{ item.icon }}" class="icon">
+              {% endif %}
+              {% if item.subtitle or item.company or item.school -%}
+                <h4>{{ item.subtitle or item.company or item.school }}</h4>
+              {% endif -%}
+            </div>
+            {% if item.date -%}
+              {% if item.duration %}
+                <h5 class="date" title="{{ item.duration }}">{{ item.date }}</h5>
+              {% else %}
+                <h5 class="date">{{ item.date }}</h5>
+              {% endif %}
+            {% endif -%}
           </div>
-        {% endif -%}
-      </section>
+          {% if item.data -%}
+            <div class="data">
+            {# Useful for plaintext or raw HTML #}
+              {{ format(item.data) }}
+            </div>
+          {% endif -%}
+        </section>
+      {% endfor -%}
+      <p>
     {% endfor -%}
-    <p>
-  {% endfor -%}
+    </div>
+    <div class="sidebar">
+      <div class="skills">
+        <h2 class="title">Skills</h2>
+        <hr>
+        {% for section, data in page.meta.skills.items() -%}
+          <h3>{{ section }}</h3>
+          <div class="data">
+            {{ format(data) }}
+          </div>
+        {% endfor -%}
+      </div>
+
+      {% if page.meta.logo %}
+        <img src="{{ page.meta.logo }}" id="watermark" />
+      {% endif %}
+
+    </div>
   </div>
 </div>
 
