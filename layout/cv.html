@@ -29,9 +29,6 @@
     {%- if info.link -%}
       <a href="{{ info.link }}">
     {%- endif -%}
-    {%- if info.icon -%}
-      <img src="{{ info.icon }}" class="icon filter">
-    {%- endif -%}
     {%- if info.text -%}
       {%- if info.details -%}
         <details {{ 'open' if info.open is true }}>
@@ -41,6 +38,12 @@
       {%- else -%}
         {{ info.text }}
       {%- endif -%}
+    {%- endif -%}
+    {% if info.stackoverflow -%}
+      {{ stackoverflow(info.stackoverflow) }}
+    {% endif -%}
+    {%- if info.icon -%}
+      <img src="{{ info.icon }}" class="icon filter left-padded">
     {%- endif -%}
     {% if info.bullets -%}
       <ul>
@@ -52,9 +55,6 @@
           {% endif -%}
         {% endfor -%}
       </ul>
-    {% endif -%}
-    {% if info.stackoverflow -%}
-      {{ stackoverflow(info.stackoverflow) }}
     {% endif -%}
     {%- if info.link -%}
       </a>
@@ -101,6 +101,23 @@
   </div>
 
   <div class="main">
+    <div class="sidebar">
+      <div class="skills">
+        <h2 class="title">Skills</h2>
+        <hr>
+        {% for section, data in page.meta.skills.items() -%}
+          <h3>{{ section }}</h3>
+          <div class="data">
+            {{ format(data) }}
+          </div>
+        {% endfor -%}
+      </div>
+
+      {% if page.meta.logo %}
+        <img src="{{ page.meta.logo }}" id="watermark" />
+      {% endif %}
+
+    </div>
     <div class="experience">
 
     {% for section, data in page.meta.sections.items() -%}
@@ -121,7 +138,7 @@
           <div class="subtitle">
             <div class="org">
               {% if item.icon -%}
-                <img src="{{ item.icon }}" class="icon">
+                <img src="{{ item.icon }}" class="icon right-padded">
               {% endif %}
               {% if item.subtitle or item.company or item.school -%}
                 <h4>{{ item.subtitle or item.company or item.school }}</h4>
@@ -145,23 +162,6 @@
       {% endfor -%}
       <p>
     {% endfor -%}
-    </div>
-    <div class="sidebar">
-      <div class="skills">
-        <h2 class="title">Skills</h2>
-        <hr>
-        {% for section, data in page.meta.skills.items() -%}
-          <h3>{{ section }}</h3>
-          <div class="data">
-            {{ format(data) }}
-          </div>
-        {% endfor -%}
-      </div>
-
-      {% if page.meta.logo %}
-        <img src="{{ page.meta.logo }}" id="watermark" />
-      {% endif %}
-
     </div>
   </div>
 </div>

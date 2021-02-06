@@ -17,9 +17,11 @@ contact:
   - text: me@richards.dev
     icon: /img/cv/mail.svg
     link: mailto:jeremy@richards.dev
+  - icon: /img/cv/website.svg
+    text: jeremy.richards.dev
+    link: https://jeremy.richards.dev
   - text: Denver, CO
     icon: /img/cv/location.svg
-    link: https://jeremy.richards.dev/cv
   - icon: /img/cv/stackoverflow.svg
     stackoverflow:
       reputation: <strong>7.3k</strong>
@@ -31,9 +33,6 @@ contact:
   - text: jeremysprofile
     icon: /img/cv/github.svg
     link: https://github.com/jeremysprofile/jeremysprofile.github.io
-  - icon: /img/cv/website.svg
-    text: richards.dev
-    link: https://jeremy.richards.dev
   - text: /in/richards-dev
     icon: /img/cv/linkedin.svg
     link: https://www.linkedin.com/in/richards-dev
