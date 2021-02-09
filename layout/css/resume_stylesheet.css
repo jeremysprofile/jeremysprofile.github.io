@@ -1,8 +1,6 @@
 :root {
   /* Define our color variables here */
 
-  /* Dark mode? TODO */
-
   /* light mode */
   --bg-color: white;
   --text-color: #000d04;
@@ -10,14 +8,11 @@
   --name-color: black;
   --muted-color: #404040;
 
-  --first-accent: #8dc26e;
+  --accent-color: #8dc26e;
 
   --title-color: darkgreen;
   --subtitle-color: #01230b;
   --bullet-color: forestgreen;
-
-
-
 }
 
 
@@ -26,16 +21,14 @@
   padding: 0;
   color: var(--text-color);
 }
-p {
-  margin: 1rem 0;
-}
-
 body {
   font-size: 16px;
 }
+p {
+  margin: 1rem 0;
+}
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
-  margin: 0;
   color: inherit;
 }
 h1 {
@@ -43,9 +36,6 @@ h1 {
 }
 h2 {
   font-size: 1.8rem;
-}
-h3 {
-  font-size: 1.6rem;
 }
 h3 {
   font-size: 1.4rem;
@@ -57,55 +47,65 @@ h5 {
   font-size: 1rem;
 }
 hr {
-  min-width: 80%;
-  width: 80%;
-  background: linear-gradient(to right, var(--title-color), var(--bg-color));
+  width: 95%;
+  background-color: var(--title-color);
   height: 2px;
   border: 0;
-  margin: 0 0 1rem 0;
 }
 b, strong {
   font-weight: 700;
 }
 
-.resume {
-  border: solid red;
+
+#resume {
+  /*border: solid var(--accent-color);*/
   height: 297mm;
   width: 210mm;
+  /* half-inch margins */
+  padding: 1.27cm;
 }
-.main, .header {
+.flex {
   display: flex;
   justify-content: space-between;
-  margin: 2ch 0;
+  /* Late 2020 hype! */
+  grid-column-gap: 2rem;
 }
-.pinks {
-  min-width: max-content;
-  display: flex;
+.column {
   flex-direction: column;
-  justify-content: space-between;
-  margin: 0 2ch;
 }
-.about {
-  margin: 0 2ch;
+.grow {
+  flex-grow: 1;
 }
-.contact {
+.max-content {
+  min-width: max-content;
+}
+.right-align {
   text-align: right;
 }
 .summary {
   font-style: oblique 7deg;
-}
-.sidebar {
-  /* Make sure my last name fits */
-  width: max-content;
-  margin: 0 2ch;
-}
-.experience {
-  max-width: content;
-  margin: 0 2ch;
+  padding-top: 0.2rem;
 }
 
+section {
+  margin-top: 1rem;
+}
 
-
+ul {
+  /* Indent slightly as bullets have 0 spacing before, while text has a small
+  amount. This also indents the line-wrapped bullet text a bit, but I don't
+  mind how that looks. */
+  margin-left: 0.2rem;
+  list-style: inside square;
+}
+ul ul {
+  padding-left: 1.5rem;
+  margin: 0;
+}
+li {
+  margin: 0;
+  margin: 0.15rem 0;
+}
 /*
 Styling these bullets across Chrome/Firefox/Safari was kind of a pain, since
 all browsers use different methods to determine the spacing between a bullets
@@ -119,39 +119,14 @@ Eventually I gave up on something that felt "clean" and customized Chrome with
 summary::-webkit-details-marker and Firefox with summary::marker and accepted
 Safari would be off since I don't know anyone who uses it on desktop.
 */
-.data {
-  margin: 0 0 1.2rem 0;
-}
-/* Chrome's bullet rendering is BS with too much space so we have to use
-a psuedo-element to fix it */
 
-
-ul {
-  /* Indent slightly as bullets have 0 spacing before, while text has a small
-  amount. This also indents the line-wrapped bullet text a bit, but I don't
-  mind how that looks. */
-  margin-left: 0.2rem;
-  padding: 0;
-  list-style: inside square;
-}
-ul ul {
-  padding-left: 1.5rem;
-  margin: 0;
-}
-li {
-  margin: 0;
-}
-.main li {
-  padding: 0.15rem;
+/* Style the bullets properly */
+.details {
+  list-style: none;
 }
 li::marker {
   color: var(--bullet-color);
 }
-
-.details {
-  list-style: none;
-}
-
 /* Chrome doesn't use the same amount of space after a bullet as the details
 icon, so we force them to be the same */
 summary::-webkit-details-marker {
@@ -159,11 +134,12 @@ summary::-webkit-details-marker {
   color: var(--bullet-color);
 }
 /* and so in firefox we only have font sizing, not padding, to get the lines
-to start tat the same point */
+to start at the same point */
 summary::marker {
   font-size: 0.8em;
   color: var(--bullet-color);
 }
+
 
 .name {
   color: var(--name-color);
@@ -171,21 +147,22 @@ summary::marker {
 .title {
   color: var(--title-color);
 }
-.subtitle {
-  display: flex;
+.base-align {
   align-items: baseline;
-  justify-content: space-between;
+}
+.wrap {
+  flex-wrap: wrap;
 }
 .date {
+  /* italic */
   font-style: oblique 14deg;
-  color: var(--muted-color);
+  color: var(--title-color);
 }
 .org {
   display: flex;
   align-items: baseline;
   justify-content: flex-start;
 }
-
 
 
 .icon {
@@ -200,6 +177,7 @@ summary::marker {
 }
 
 
+/* Style links and hoverable elements */
 a {
   padding: 0.125rem;
   border-radius: 8px;
@@ -212,14 +190,14 @@ a:hover {
   /* https://html.spec.whatwg.org/multipage/rendering.html#phrasing-content-3 */
   text-decoration: underline;
   /* TODO better color */
-  background-color: var(--first-accent);
+  background-color: var(--accent-color);
 }
 abbr {
   cursor: help;
   text-decoration: dotted underline;
 }
 summary:hover {
-  border: 2px solid var(--first-accent);
+  border: 2px solid var(--accent-color);
   border-radius: 4px;
   margin: -2px;
   cursor: pointer;
@@ -228,7 +206,7 @@ summary:focus, summary:active {
   outline: none;
 }
 
-.filter {
+.green-filter {
   /* As calculated by https://stackoverflow.com/a/43960991/5889131
    * For 'forestgreen' aka rgb(34, 139, 34)
    */
@@ -240,17 +218,4 @@ summary:focus, summary:active {
   filter: invert(21%) sepia(30%) saturate(6459%) hue-rotate(103deg) brightness(92%) contrast(111%);
   /*
   */
-}
-
-.white-filter {
-  filter: invert(100%);
-}
-
-
-#watermark {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  opacity: 0.025;
-  height: 16rem;
 }

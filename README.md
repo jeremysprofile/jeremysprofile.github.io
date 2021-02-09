@@ -49,9 +49,10 @@ Even if this had worked, all my objects would have been the same size, which is 
 Realistically, Flexbox is better for my use case of auto-wrapping whatever I decide to shove in my header and footer banners.
 
 That being said, I want Flexbox to support my idea syntax of "thing1 thing2 thing3" with some minimum level of space between these elements.
-Of course, [multiple people](https://stackoverflow.com/questions/20626685/better-way-to-set-distance-between-flexbox-items) already [asked this question on StackOverflow](https://stackoverflow.com/questions/32984008/how-can-i-set-a-minimum-amount-of-space-between-flexbox-items).
+~~Of course, [multiple people](https://stackoverflow.com/questions/20626685/better-way-to-set-distance-between-flexbox-items) already [asked this question on StackOverflow](https://stackoverflow.com/questions/32984008/how-can-i-set-a-minimum-amount-of-space-between-flexbox-items).
 The answers boil down to "use inner `<div>`s between your elements" and "set left and right margins, and then set negative margins on your container".
-This is because, while `gap` exists in CSS for use with flexbox, [no one besides Firefox bothered to support it](https://caniuse.com/#feat=flexbox-gap).
+This is because, while `gap` exists in CSS for use with flexbox, [no one besides Firefox bothered to support it](https://caniuse.com/#feat=flexbox-gap).~~
+That's no longer true, [Chrome also supports `gap`, and Safari has it in preview](https://caniuse.com/?search=flexbox-gap), so it's used at least some places on this site (like my resume!).
 
 ### Knowledge Base
 I really like [GitLab's page formatting](https://docs.gitlab.com/ee/ci/yaml/) with the sidebars and automatic scrolling.
@@ -115,14 +116,14 @@ Python-Markdown (what MkDocs uses) requires 4 spaces for nested lists, not 2 tha
 They [closed the issue as WONTFIX](https://github.com/Python-Markdown/markdown/issues/3).
 
 ### My website isn't generated on GitHub!
-This was actually the reason I switched to GitLab.
-On GitHub, your [site must be the only content in its branch]().
+On GitHub, your site must be the only content in its branch.
 Mkdocs added a helpful `mkdocs gh-deploy` command to generate your site and push it to the branch of your choice, but I don't like how this uses multiple branches to maintain one version of your website, or how [GitHub's source branch for personal pages was just `master` for 4 years](https://stackoverflow.com/a/39978969/5889131).
-After spending a few hours, I was able to figure out how to set up a custom domain on a personal page.
+After spending a few hours, I was able to figure out how to set up a custom domain on a personal page, which is using `mkdocs gh-deploy` and putting your `CNAME` file under `content/`.
 Mkdocs needs more up-to-date docs.
 
 ## Run on localhost
 ```bash
 mkdocs serve
 ```
+It auto-reloads!
 
