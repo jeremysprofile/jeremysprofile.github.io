@@ -7,7 +7,7 @@ logo: '/img/cv/j_light.svg'
 name: Jeremy Richards
 position: Backend | DevOps
 summary:
-  text: 'Software engineer focused on fault-tolerance and push-button deployments. Strong technical writer. Track record of improving automation, both in CI/CD and personal workflow.'
+  text: 'Software engineer focused on fault-tolerance and push-button deployments. Strong technical writer. Track record of improving automation, both in <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> and personal workflow.'
   hidden:
     - "CI/CD automation: see Nasdaq gains"
     - "Personal workflow automation: bashrc (brownbag sharing session). proxy login (built own and used another) - documented and shared with team."
@@ -24,11 +24,11 @@ contact:
     icon: /img/cv/location.svg
   - icon: /img/cv/stackoverflow.svg
     stackoverflow:
-      reputation: <strong>7.3k</strong>
+      reputation: <strong>7.5k</strong>
       badges:
         gold: 3
-        silver: 30
-        bronze: 81
+        silver: 31
+        bronze: 83
     link: https://stackexchange.com/users/7783437/jeremysprofile?tab=accounts
   - text: jeremysprofile
     icon: /img/cv/github.svg
@@ -107,20 +107,21 @@ main:
         date: Sep 2018 - Current
         duration: '>2 yr 6 mo'
         data:
-          - text: 'Took ownership of all Python applications, including docs, mentoring, <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>, and DevOps infrastructure'
+          - text: 'Took ownership of all Python applications, including docs, <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>, and DevOps infrastructure'
             open: True
             details:
-              - 'Spearheaded Python 3 migration; set up Nexus PyPI server, linters, Python server install via Puppet; brought all packages up to 80% code coverage'
+              - 'Enabled Python 3 migration; set up Nexus <abbr title="Python Package Index">PyPI</abbr> server, linters, Python server install via Puppet; brought all packages up to 80% code coverage'
+              - 'Mentored junior developers in Python and programming best practices'
             hidden:
               - 'Meticulously documented python development setup process for Windows and Mac users, including package structure, virtual environments, and test writing for use by other developers'
-              - 'Mentored junior developers in Python and programming best practices'
               - 'Set up Nasdaq-internal <a href="https://pypi.org/"><abbr title="Python Package Index">PyPI</abbr></a> server via <a href="https://www.sonatype.com/nexus/repository-pro">Nexus</a>'
             tools: "Python 2 and 3, PyCharm, Vim, Poetry, pip, pytest, pre-commit, GitLab-CI"
           - text: 'Added auto-updating internal dependencies, version incrementing, and container tagging to <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipelines across application suite'
-          - text: 'Loaned to adjacent teams to help meet tight deadlines'
+          - text: 'Readily joined understaffed projects, quickly gained domain knowledge and worked diligently to achieve business goals'
+            # 'Loaned to adjacent teams to help meet tight deadlines'
             hidden:
                - 'Joined the TradeGuard Reporting team at different points to enable horizontal scaling for trade data processing and to help with <a href="https://www.catnmsplan.com/"><abbr title="Consolidated Audit Trail">CAT</abbr></a> go-live.'
-          - text: 'Collaborated on productizing financial message relay application: ported existing setup to <abbr title="Amazon Web Services">AWS</abbr> and Kubernetes; utilized Terraform and Helm for <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>; and improved reliability during outages'
+          - text: 'Collaborated on productizing financial message relay application: ported existing setup to <abbr title="Amazon Web Services">AWS</abbr> and Kubernetes, and improved reliability during outages'
             hidden: 'improved reliability by using Kafka better, basically'
         hidden:
           - text: 'Diagnosed and resolved time-sensitive production incidents during on-call rotations'
@@ -135,7 +136,7 @@ main:
         data:
           - text: 'Created neural network to classify <abbr title="Code Division Multiple Access">CDMA</abbr> radio signals at negative signal-to-noise ratios'
             bullets:
-              - '<strong>Awarded trade secret</strong> for work, which was presented in internal symposium and used in classified space'
+              - 'Awarded trade secret for work, which was presented in internal symposium and used in classified space'
             details:
               - '<abbr title="Code Division Multiple Access">CDMA</abbr> is a way to share bandwidth with cooperating simultaneous users via sets of spreading sequences, which are psuedorandom binary sequences designed to minimally interfere with each other. My goal was to detect usage of a subset of these sequences in a target bandwidth'
             hidden:
@@ -170,18 +171,18 @@ main:
         date: Jan 2016 - Dec 2016
         duration: 1 yr
         data:
-          - text: 'Created Bash scripts to capture performance and reliability metrics for populations of hundreds of <abbr title="Hard Disk Drive">HDDs</abbr> over multiple days'
+          - text: 'Wrote Bash scripts to run multi-day performance and reliability tests on populations of hundreds of <abbr title="Hard Disk Drive">HDDs</abbr>'
             hidden:
               - 'Created Bash scripts to capture performance and reliability metrics for populations of hundreds of <abbr title="Hard Disk Drive">HDDs</abbr> over multiple days'
               - 'Drives were both <abbr title="Serial Attached SCSI (Small Computer System Interface)">SAS</abbr> and <abbr title="Serial ATA (AT Attachment)">SATA</abbr>, different capacities, and different architectures, including <abbr title="Conventional Magnetic Recording">CMR</abbr> and <abbr title="Host-Aware">HA</abbr> <abbr title="Shingled Magnetic Recording">SMR</abbr>.'
               - text: 'Updated <abbr title="Conventional Magnetic Recording">CMR</abbr>-style tests for <abbr title="Host-Aware">HA</abbr> <abbr title="Shingled Magnetic Recording">SMR</abbr> drives'
                 hidden: 'SMR drive tracks overlap so you have to write tracks in order; you can''t just rewrite a small part of the track, you have to rewrite the whole track'
-          - text: "<strong>Decreased customer's total qualifications test time 20%</strong>"
+          - text: "Decreased customer's total qualifications test time 20%"
             hidden:
               - 'Wrote tests to be 9% more efficient.'
               - 'The other 11% time reduction was due to increased automation (previously, all tests were kicked off manually during the workday, meaning a test finishing at 6 P.M. would leave the system idle for 14 hours).'
 
-          - text: 'Automated log backup, system setup on all test systems'
+          - text: 'Automated log backup and system setup on all test systems'
             hidden:
               - 'The log backup was a cron job to call a service which was just glorified <code>rsync</code> and some logic to put everything into timestamped folders on a secondary server.'
               - 'The system setup and end-to-end test run were slightly fault-tolerant Bash scripts.'
@@ -201,10 +202,9 @@ footer:
       - school: University of Colorado Boulder
         icon: /img/cv/cu-icon.svg
         degree: B.S. Mechanical Engineering
-        gpa: <strong>3.8</strong>
+        gpa: 3.8
         data:
-          - text: '<i><strong>Magna cum laude</strong></i>'
-          - text: 'Invented <a href="http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=10,429,838">patent no. 10,429,838</a> for drone landing patterns'
+          - text: 'Invented <a href="http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=10,429,838">patent 10,429,838</a> for drone landing patterns'
             hidden:
               - text: Senior project – drones leave station, get GPS coordinates, determine optimal paths based on obstacles, and fly to targets
                 details:
@@ -245,7 +245,7 @@ footer:
       - school: University of Oklahoma
         icon: /img/cv/ou-icon.svg
         degree: B.A. Economics
-        gpa: <strong>3.96</strong>
+        gpa: 3.96
         data:
           - 'Minors: Psychology, Mathematics'
 
