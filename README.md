@@ -39,7 +39,10 @@ Also, their docs page is way prettier than Jekyll's.~~
 My current plan is now [MkDocs](https://www.mkdocs.org/), because it's Python, we're using it at my [work](./resume) (TODO fix link), and I avoided touching this projejct for 4 months because that's how little I wanted to deal with Nanoc.
 I don't love the fact that it's using [Jinja](https://jinja.palletsprojects.com/) for templating, but given that [Pelican uses Jinja](https://docs.getpelican.com/en/stable/themes.html) and [Jekyll uses Liquid which looks extremely similar at a glance](https://jekyllrb.com/docs/liquid/), I guess I have to accept this is The Way Things are Done<sup>TM</sup> and move on.
 
-#### Flexbox vs Grid
+#### Custom Theme
+So with MkDocs, you can style your markdown pages by choosing no default theme and setting a `theme.custom_dir` to the place where your custom layout is, which needs at least a `main.html`.
+
+##### Flexbox vs Grid
 CSS [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) ~~feels like~~ is the more modern framework.
 There are CSS properties that [were supposed to work on both frameworks](https://github.com/w3c/csswg-drafts/issues/592) but are [only implemented for grid by most browsers](https://caniuse.com/#search=row-gap).
 
@@ -53,6 +56,13 @@ That being said, I want Flexbox to support my idea syntax of "thing1 thing2 thin
 The answers boil down to "use inner `<div>`s between your elements" and "set left and right margins, and then set negative margins on your container".
 This is because, while `gap` exists in CSS for use with flexbox, [no one besides Firefox bothered to support it](https://caniuse.com/#feat=flexbox-gap).~~
 That's no longer true, [Chrome also supports `gap`, and Safari has it in preview](https://caniuse.com/?search=flexbox-gap), so it's used at least some places on this site (like my resume!).
+
+##### Code Block Syntax Highlighting
+[MkDocs uses](https://www.mkdocs.org/user-guide/styling-your-docs/#mkdocs) [`highlight.js`](https://highlightjs.org/).
+The default MkDocs theme has some config options for it, including provided languages, style, and enabled.
+I only plan to allow changing the style (because I want to have a [dark and light mode](#TODO) anyway).
+
+[Adding `highlist.js` was pretty simple; I pretty much just copied how MkDocs does it.](https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/base.html)
 
 ### Knowledge Base
 I really like [GitLab's page formatting](https://docs.gitlab.com/ee/ci/yaml/) with the sidebars and automatic scrolling.

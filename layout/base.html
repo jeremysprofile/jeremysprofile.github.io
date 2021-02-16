@@ -11,8 +11,23 @@
     {% else %}<meta name="description" content="{{ page.meta.description }}">{% endif %}
   {%- endblock %}
 
+
+  {%- block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ 'css/base.css'|url }}" media="screen, print"/>
+
+    {%- if config.theme.highlightjs %}
+      <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/{{ config.theme.hljs_style }}.min.css"/>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+
+      {%- for lang in config.theme.hljs_languages %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/languages/{{lang}}.min.js"></script>
+      {%- endfor %}
+      <script>hljs.initHighlightingOnLoad();</script>
+    {%- endif %}
+  {%- endblock %}
+
   <link rel="icon" type="image/svg+xml" href="{{ 'img/j.svg'|url }}">
-  <link rel="stylesheet" type="text/css" href="{{ 'css/stylesheet.css'|url }}" media="screen"/>
 
   {%- block extraheadings %}
   {%- endblock %}

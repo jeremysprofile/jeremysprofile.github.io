@@ -1,0 +1,4 @@
+# Warning
+# A theme's configuration defined in a mkdocs_theme.yml file is not loaded from theme.custom_dir. When an entire theme exists in theme.custom_dir and theme.name is set to null, then the entire theme configuration must be defined in the theme configuration option in the mkdocs.yml file.
+# 
+# However, when a theme is packaged up for distribution, and loaded using the theme.name configuration option, then a mkdocs_theme.yml file is required for the theme.
