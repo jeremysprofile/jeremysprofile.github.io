@@ -1,11 +1,8 @@
 {%- extends "base.html" %}
 
-{%- block extraheadings %}
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet"> 
-
-  <link rel="stylesheet" type="text/css" href="{{ 'css/resume_stylesheet.css'|url }}" media="screen, print"/>
-{%- endblock %}
+  {% block extraheadings %}
+    <link rel="stylesheet" type="text/css" href="{{ 'css/resume_stylesheet.css'|url }}" media="screen, print"/>
+  {% endblock %}
 
 {%- macro format_sections(sections) -%}
   {%- for section in sections -%}
@@ -48,9 +45,7 @@
     </div>
     <div class="flex base-align wrap">
       <div class="org">
-        {%- if item.icon -%}
-          <img src="{{ item.icon }}" class="icon right-padded">
-        {%- endif -%}
+        {{ icon_image(item, "right-padded") }}
         {%- if item.subtitle or item.company or item.school -%}
           <h4>{{ item.subtitle or item.company or item.school }}</h4>
         {%- endif -%}
@@ -64,6 +59,20 @@
       {%- endif -%}
     </div>
   </div>
+{%- endmacro -%}
+
+
+{%- macro icon_image(item, classes="") -%}
+  {%- if item.icon -%}
+    <img src="{{ item.icon }}" 
+    {%- if item.icon_title -%}
+       title="{{ item.icon_title }}" 
+    {%- endif -%}
+    {%- if item.icon_alt -%}
+       alt="{{ item.icon_alt }}" 
+    {%- endif -%}
+     class="icon {{ classes }}">
+  {%- endif -%}
 {%- endmacro -%}
 
 {%- macro stackoverflow(content) -%}
@@ -100,9 +109,9 @@
     {%- if info.stackoverflow -%}
       {{ stackoverflow(info.stackoverflow) }}
     {%- endif -%}
-    {%- if info.icon -%}
-      <img src="{{ info.icon }}" class="icon green-filter left-padded">
-    {%- endif -%}
+
+    {{ icon_image(info, "green-filter left-padded") }}
+
     {%- if info.bullets -%}
       <ul>
         {%- for bullet in info.bullets -%}
@@ -135,9 +144,9 @@
 {%- block body -%}
 
 <div class="flex column" id="resume">
-  <!-- Wow, you're reading this HTML?
-    If you're that invested, you're probably better off looking at the
-    templates that generated it by clicking on the GitHub link -->
+  <!-- This HTML is poorly formatted because I wanted the templating to be
+    more readable than the finished product. You're probably better off looking
+    at the templates that generated it by clicking on the GitHub link -->
   <div class="flex" id="header">
     <div class="flex column">
       <h1 class="name">{{ page.meta.name }}</h1>

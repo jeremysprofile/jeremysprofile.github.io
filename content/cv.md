@@ -16,13 +16,21 @@ summary:
 contact:
   - text: me@richards.dev
     icon: /img/cv/mail.svg
+    icon_title: mail
+    icon_alt: envelope
     link: mailto:jeremy@richards.dev
   - icon: /img/cv/website.svg
+    icon_title: website
+    icon_alt: web browser
     text: jeremy.richards.dev
     link: https://jeremy.richards.dev
   - text: Denver, CO
     icon: /img/cv/location.svg
+    icon_title: location
+    icon_alt: location pin
   - icon: /img/cv/stackoverflow.svg
+    icon_title: StackOverflow
+    icon_alt: StackOverflow logo
     stackoverflow:
       reputation: <strong>7.5k</strong>
       badges:
@@ -32,9 +40,11 @@ contact:
     link: https://stackexchange.com/users/7783437/jeremysprofile?tab=accounts
   - text: jeremysprofile
     icon: /img/cv/github.svg
+    icon_title: git repo
     link: https://github.com/jeremysprofile/jeremysprofile.github.io
   - text: /in/richards-dev
     icon: /img/cv/linkedin.svg
+    icon_title: LinkedIn
     link: https://www.linkedin.com/in/richards-dev
 
 
@@ -46,7 +56,6 @@ sidebar:
           - Python
           - Bash
           - text: Java
-            open: True
             details:
               - Maven
               - Spring Boot
@@ -69,6 +78,7 @@ sidebar:
         data:
           - Helm
           - Terraform
+        hidden:
           - Puppet
       - title: Other
         data:
@@ -103,25 +113,25 @@ main:
     sections:
       - company: Nasdaq
         icon: /img/cv/nasdaq-icon.svg
+        icon_alt: Nasdaq logo
         position: 'Contractor → SW Engineer II → SW Engineer III'
         date: Sep 2018 - Current
         duration: '>2 yr 6 mo'
         data:
-          - text: 'Took ownership of all Python applications, including docs, <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>, and DevOps infrastructure'
+          - text: 'Took ownership of all Python applications, including docs, <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>, mentoring, and DevOps infrastructure'
             open: True
             details:
-              - 'Enabled Python 3 migration; set up Nexus <abbr title="Python Package Index">PyPI</abbr> server, linters, Python server install via Puppet; brought all packages up to 80% code coverage'
-              - 'Mentored junior developers in Python and programming best practices'
+              - 'Enabled Python 3 migration; set up linters, Nexus <abbr title="Python Package Index">PyPI</abbr> server, and Puppet module; brought all packages up to 80% code coverage'
             hidden:
               - 'Meticulously documented python development setup process for Windows and Mac users, including package structure, virtual environments, and test writing for use by other developers'
               - 'Set up Nasdaq-internal <a href="https://pypi.org/"><abbr title="Python Package Index">PyPI</abbr></a> server via <a href="https://www.sonatype.com/nexus/repository-pro">Nexus</a>'
             tools: "Python 2 and 3, PyCharm, Vim, Poetry, pip, pytest, pre-commit, GitLab-CI"
           - text: 'Added auto-updating internal dependencies, version incrementing, and container tagging to <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipelines across application suite'
-          - text: 'Readily joined understaffed projects, quickly gained domain knowledge and worked diligently to achieve business goals'
-            # 'Loaned to adjacent teams to help meet tight deadlines'
+          - text: 'Repeatedly brought onto understaffed projects, quickly gained domain knowledge and helped meet tight deadlines'
             hidden:
+               - 'Loaned to adjacent teams to help meet tight deadlines'
                - 'Joined the TradeGuard Reporting team at different points to enable horizontal scaling for trade data processing and to help with <a href="https://www.catnmsplan.com/"><abbr title="Consolidated Audit Trail">CAT</abbr></a> go-live.'
-          - text: 'Collaborated on productizing financial message relay application: ported existing setup to <abbr title="Amazon Web Services">AWS</abbr> and Kubernetes, and improved reliability during outages'
+          - text: 'Collaborated on productizing financial message relay application: ported existing setup to <abbr title="Amazon Web Services">AWS</abbr> and Kubernetes and improved reliability with Kafka'
             hidden: 'improved reliability by using Kafka better, basically'
         hidden:
           - text: 'Diagnosed and resolved time-sensitive production incidents during on-call rotations'
@@ -130,11 +140,12 @@ main:
 
       - company: Northrop Grumman
         icon: /img/cv/northrop-icon.png
+        icon_alt: Northrop Grumman logo
         position: SW Engineer I
         date: Jun 2017 - Sep 2018
         duration: 1 yr 3 mo
         data:
-          - text: 'Created neural network to classify <abbr title="Code Division Multiple Access">CDMA</abbr> radio signals at negative signal-to-noise ratios'
+          - text: 'Created neural network to classify <abbr title="Code Division Multiple Access">CDMA</abbr> radio signals at negative <abbr title="Signal-to-Noise Ratios">SNRs</abbr>'
             bullets:
               - 'Awarded trade secret for work, which was presented in internal symposium and used in classified space'
             details:
@@ -152,7 +163,7 @@ main:
                   - "A convolutional neural network (CNN) is named for the convolutional layers it uses. These layers use a kernel of a specified size (a small contiguous section of the data) and convolve over the input data (matrix multiplication between the trained weights of that kernel and the input values), looking for features of some level of complexity. In the case of images, the standard example is that an initial layer will look for gradients and edges, which intermediate layers will view and interpret into simple shapes, in turn being used to recognize complex shapes, like faces. My task was to apply this to certain types of spreading codes with varying levels of noise."
                   - "I used Keras and TensorFlow in Python."
               - "This was exploratory research. I found that in modeled data with added noise, I was able to determine which Gold code was used in a given sample through different clock offsets and negative signal-to-noise ratios. There was no customer for this work and I was taken off the project when Northrop found a non-overhead charge code I could use."
-          - text: 'Explored machine learning tools to detect novel inputs to trained <abbr title="Convolutional Neural Network">CNNs</abbr> via intermediate layer activations'
+          - text: 'Explored machine learning tools to detect novel inputs to trained <abbr title="Convolutional Neural Networks">CNNs</abbr> via intermediate layer activations'
             details:
               - 'A <abbr title="Convolutional Neural Network">CNN</abbr> is pretrained on certain categories and outputs how "likely" a sample is to belong to each category, but cannot determine if a sample belongs to none of the categories. My goal was to leverage the feature detection of the network via tools not requiring pretraining to detect these outlier samples'
               - 'Tested isolation forests, support vector machines, principal component analysis, <abbr title="Least Absolute Shrinkage and Selection Operator">LASSO</abbr>, and k-nearest neighbor analysis'
@@ -167,13 +178,14 @@ main:
 
       - company: Seagate Technology
         icon: /img/cv/seagate-icon.svg
+        icon_alt: Seagate logo
         position: Applications Engineering Intern
         date: Jan 2016 - Dec 2016
         duration: 1 yr
         data:
-          - text: 'Wrote Bash scripts to run multi-day performance and reliability tests on populations of hundreds of <abbr title="Hard Disk Drive">HDDs</abbr>'
+          - text: 'Wrote Bash scripts to run multi-day performance and reliability tests on populations of hundreds of <abbr title="Hard Disk Drives">HDDs</abbr>'
             hidden:
-              - 'Created Bash scripts to capture performance and reliability metrics for populations of hundreds of <abbr title="Hard Disk Drive">HDDs</abbr> over multiple days'
+              - 'Created Bash scripts to capture performance and reliability metrics for populations of hundreds of <abbr title="Hard Disk Drives">HDDs</abbr> over multiple days'
               - 'Drives were both <abbr title="Serial Attached SCSI (Small Computer System Interface)">SAS</abbr> and <abbr title="Serial ATA (AT Attachment)">SATA</abbr>, different capacities, and different architectures, including <abbr title="Conventional Magnetic Recording">CMR</abbr> and <abbr title="Host-Aware">HA</abbr> <abbr title="Shingled Magnetic Recording">SMR</abbr>.'
               - text: 'Updated <abbr title="Conventional Magnetic Recording">CMR</abbr>-style tests for <abbr title="Host-Aware">HA</abbr> <abbr title="Shingled Magnetic Recording">SMR</abbr> drives'
                 hidden: 'SMR drive tracks overlap so you have to write tracks in order; you can''t just rewrite a small part of the track, you have to rewrite the whole track'
@@ -201,10 +213,11 @@ footer:
     sections:
       - school: University of Colorado Boulder
         icon: /img/cv/cu-icon.svg
+        icon_alt: CU logo
         degree: B.S. Mechanical Engineering
         gpa: 3.8
         data:
-          - text: 'Invented <a href="http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=10,429,838">patent 10,429,838</a> for drone landing patterns'
+          - text: 'Invented <a href="http://appft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&p=1&u=%2Fnetahtml%2FPTO%2Fsearch-bool.html&r=1&f=G&l=50&co1=AND&d=PG01&s1=%2210,429,838%22&OS=%2210,429,838%22&RS=%2210,429,838%22">patent 10,429,838</a> for drone landings'
             hidden:
               - text: Senior project – drones leave station, get GPS coordinates, determine optimal paths based on obstacles, and fly to targets
                 details:
@@ -217,9 +230,9 @@ footer:
                   - In the end, we had individual working pieces, but not a end-to-end success.
                   - Drones could land successfully at landing pads by vision and QR code recognition, plot courses around pre-configured obstacles, and fly to GPS waypoints.
                   - Lack of experience with project planning meant we didn't give ourselves even close to enough time for integration and testing.
-          - text: 'Software team lead in autonomous robot soccer competition'
+          - text: 'Software team lead in robot soccer competition'
             bullets:
-              - 'Team placed second of twelve. <a href="https://www.youtube.com/watch?v=tI_wfxj9qU8">Watch match videos</a>'
+              - 'Team placed second of twelve. <a href="https://www.youtube.com/watch?v=tI_wfxj9qU8">Match videos</a>'
             hidden:
               - 'Team designed, built, and programmed robot from off-the-shelf and 3D-printed components'
               - 'Wrote all Arduino (C++) code for tracking ball & goal via IR sensors, determining relative position on field and estimated ball distance, shooting, and goalie behavior'
@@ -244,6 +257,7 @@ footer:
 
       - school: University of Oklahoma
         icon: /img/cv/ou-icon.svg
+        icon_alt: OU logo
         degree: B.A. Economics
         gpa: 3.96
         data:

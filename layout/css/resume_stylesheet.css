@@ -1,108 +1,97 @@
+/* Redefine some styles just so the resume stylesheet is completely
+self-contained */
+
 :root {
   /* Define our color variables here */
 
   /* light mode */
   --bg-color: white;
   --text-color: #000d04;
+  /* "highlight" is an overstatement */
+  --highlight-text-color: black;
+  --muted-text-color: #404040;
 
-  --name-color: black;
-  --muted-color: #404040;
-
-  --accent-color: #8dc26e;
-
-  --title-color: darkgreen;
-  --subtitle-color: #01230b;
-  --bullet-color: forestgreen;
+  --color: darkgreen;
+  --brighter-color: #8dc26e;
+  --brightest-color: forestgreen;
 }
 
+.green-filter {
+  /* As calculated by https://stackoverflow.com/a/43960991/5889131
+   * For 'forestgreen' aka rgb(34, 139, 34)
+   */
+  /*filter: invert(20%) sepia(97%) saturate(3230%) hue-rotate(124deg) brightness(100%) contrast(73%);
 
-* {
-  margin: 0;
-  padding: 0;
-  color: var(--text-color);
-}
-body {
-  font-size: 16px;
-}
-p {
-  margin: 1rem 0;
-}
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 500;
-  color: inherit;
-}
-h1 {
-  font-size: 3.2rem;
-}
-h2 {
-  font-size: 1.8rem;
-}
-h3 {
-  font-size: 1.4rem;
-}
-h4 {
-  font-size: 1.2rem;
-}
-h5 {
-  font-size: 1rem;
-}
-hr {
-  width: 95%;
-  background-color: var(--title-color);
-  height: 2px;
-  border: 0;
-}
-b, strong {
-  font-weight: 700;
+  /* As calculated by https://stackoverflow.com/a/43960991/5889131
+   * For 'darkgreen' aka rgb(0, 100, 0)
+   */
+  filter: invert(21%) sepia(30%) saturate(6459%) hue-rotate(103deg) brightness(92%) contrast(111%);
 }
 
 
 #resume {
-  /*border: solid var(--accent-color);*/
-  height: 297mm;
-  width: 210mm;
-  /* half-inch margins */
-  padding: 1.27cm;
+  box-sizing: border-box;
+  /*border: solid var(--brighter-color);*/
+  /* half-inch margins - A4 */
+  /*
+  height: calc(297mm - 1.27cm);
+  width: calc(210mm - 1.27cm);
+  */
+  /* half-inch margins - Letter */
+  height: calc(11in - 0.5in);
+  width: calc(8.5in - 0.5in);
+  margin: 5vh auto 10vh auto;
+  /*
+  outline: 2px solid green;
+  */
 }
-.flex {
+
+#resume *, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+#resume .flex {
   display: flex;
   justify-content: space-between;
   /* Late 2020 hype! */
   grid-column-gap: 2rem;
 }
-.column {
+#resume .column {
   flex-direction: column;
 }
-.grow {
+#resume .grow {
   flex-grow: 1;
 }
-.max-content {
+#resume .max-content {
   min-width: max-content;
 }
-.right-align {
+#resume .right-align {
   text-align: right;
 }
-.summary {
+#resume .summary {
   font-style: oblique 7deg;
   padding-top: 0.2rem;
 }
 
-section {
+#resume section {
   margin-top: 0.8rem;
 }
 
-ul {
+
+#resume ul {
   /* Indent slightly as bullets have 0 spacing before, while text has a small
   amount. This also indents the line-wrapped bullet text a bit, but I don't
   mind how that looks. */
   margin-left: 0.2rem;
   list-style: inside square;
 }
-ul ul {
+#resume ul ul {
   padding-left: 1.5rem;
   margin: 0;
 }
-li {
+#resume li {
   margin: 0;
   margin: 0.3rem 0;
 }
@@ -121,101 +110,197 @@ Safari would be off since I don't know anyone who uses it on desktop.
 */
 
 /* Style the bullets properly */
-.details {
+#resume .details {
   list-style: none;
 }
-li::marker {
-  color: var(--bullet-color);
+#resume li::marker {
+  color: var(--brightest-color);
 }
 /* Chrome doesn't use the same amount of space after a bullet as the details
 icon, so we force them to be the same */
-summary::-webkit-details-marker {
+#resume summary::-webkit-details-marker {
   padding-right: 0.35rem;
-  color: var(--bullet-color);
+  color: var(--brightest-color);
 }
 /* and so in firefox we only have font sizing, not padding, to get the lines
 to start at the same point */
-summary::marker {
+#resume summary::marker {
   font-size: 0.8em;
-  color: var(--bullet-color);
+  color: var(--brightest-color);
+}
+
+#resume p {
+  margin: 1rem 0;
+}
+#resume h1 {
+  font-size: 2.8rem;
+}
+#resume h2 {
+  font-size: 1.6rem;
+}
+#resume h3 {
+  font-size: 1.4rem;
+}
+#resume h4 {
+  font-size: 1.2rem;
+}
+#resume h5 {
+  font-size: 1rem;
+}
+#resume b, strong {
+  font-weight: 700;
 }
 
 
-.name {
-  color: var(--name-color);
+#resume .name {
+  color: var(--highlight-text-color);
 }
-.title {
-  color: var(--title-color);
+#resume .title {
+  color: var(--color);
 }
-.base-align {
+#resume .base-align {
   align-items: baseline;
 }
-.wrap {
+#resume .wrap {
   flex-wrap: wrap;
 }
-.date {
+#resume .date {
   /* italic */
-  font-style: oblique 14deg;
-  color: var(--title-color);
+  font-style: italic;
+  color: var(--color);
 }
-.org {
+#resume .org {
   display: flex;
   align-items: baseline;
   justify-content: flex-start;
 }
 
 
-.icon {
+#resume .icon {
   height: 1em;
   vertical-align: middle;
 }
-.right-padded {
+#resume .right-padded {
   padding-right: 0.5ch;
 }
-.left-padded {
+#resume .left-padded {
   padding-left: 0.5ch;
 }
 
 
 /* Style links and hoverable elements */
-a {
+#resume a {
   padding: 0.125rem;
   border-radius: 8px;
   text-decoration: underline;
 }
-a:link,a:visited {
+#resume a:link,a:visited {
   color: inherit;
 }
-a:hover {
+#resume a:hover {
   /* https://html.spec.whatwg.org/multipage/rendering.html#phrasing-content-3 */
   text-decoration: underline;
   /* TODO better color */
-  background-color: var(--accent-color);
+  background-color: var(--brighter-color);
 }
-abbr {
+#resume abbr {
   cursor: help;
   text-decoration: dotted underline;
 }
-summary:hover {
-  border: 2px solid var(--accent-color);
+#resume summary:hover {
+  border: 2px solid var(--brighter-color);
   border-radius: 4px;
   margin: -2px;
   cursor: pointer;
 }
-summary:focus, summary:active {
-  outline: none;
+
+/* outlines serve a purpose, even if they're ugly:
+https://www.a11yproject.com/posts/2013-01-25-never-remove-css-outlines/
+*/
+
+#resume body {
+  font-size: 16px;
+}
+#resume hr {
+  width: 100%;
+  background-color: var(--color);
+  height: 2px;
+  border: 0;
+}
+#resume h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  color: inherit;
+}
+#resume ul {
+  list-style: inside square;
 }
 
-.green-filter {
-  /* As calculated by https://stackoverflow.com/a/43960991/5889131
-   * For 'forestgreen' aka rgb(34, 139, 34)
-   */
-  /*filter: invert(20%) sepia(97%) saturate(3230%) hue-rotate(124deg) brightness(100%) contrast(73%);
 
-  /* As calculated by https://stackoverflow.com/a/43960991/5889131
-   * For 'darkgreen' aka rgb(0, 100, 0)
+
+
+@media screen and (max-width: 8.5in) {
+  #resume {
+    width: 100%;
+  }
+  /* marginally responsive, which is more than good enough.
+     Really, I just want to have a one-column option for ATS.
    */
-  filter: invert(21%) sepia(30%) saturate(6459%) hue-rotate(103deg) brightness(92%) contrast(111%);
+  #resume * {
+    flex-direction: column;
+  }
+}
+
+@media print {
+  body {
+    width: 100%;
+  }
+  #resume {
+    margin: 0;
+    padding: 0;
+  }
+  #resume abbr {
+    text-decoration: none;
+  }
+  @page {
+    margin: 0.5in;
+    size: letter portrait;
+  }
+
+  #resume summary {
+    list-style: none;
+  }
+  #resume summary::-webkit-details-marker {
+    display: none;
+  }
+  #resume summary::before {
+    color: var(--brightest-color);
+    content: "■";
+    margin-right: 0.4rem;
+    vertical-align: 0.1em;
+    margin-left: -1px;
+    font-size: 0.8rem;
+  }
   /*
+   Problems: ::marker can't set padding/margin.
+   summary::before won't have spacing match different chrome and firefox defaults.
+   li::before doesn't work cleanly with multi-line summaries.
+   li::before and summary::before doesn't work because you can't turn off
+     li::before based on li's children (could with JS but I don't wanna).
+
+   Solution: use @support to write some chrome-specific CSS (as seen on
+     https://stackoverflow.com/a/32455002/5889131 ).
+   This is a hack that probably won't work long-term, but it's only for
+     printing, so I just don't care enough.
   */
+  @supports (-webkit-font-smoothing:none) {
+     #resume summary::before {
+       margin-right: 1rem;
+       vertical-align: 0.1em;
+       margin-left: -1px;
+       font-size: 0.9rem;
+     }
+  }
 }
+
+
+
