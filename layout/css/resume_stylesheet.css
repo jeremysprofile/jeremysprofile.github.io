@@ -31,19 +31,21 @@ self-contained */
 
 #resume {
   box-sizing: border-box;
-  /*border: solid var(--brighter-color);*/
-  /* half-inch margins - A4 */
+  /*border: solid var(--brighter-color); */
+  /* half-inch margins on each side - A4 */
   /*
-  height: calc(297mm - 1.27cm);
-  width: calc(210mm - 1.27cm);
+  height: calc(297mm - 2.54cm);
+  width: calc(210mm - 2.54cm);
   */
-  /* half-inch margins - Letter */
-  height: calc(11in - 0.5in);
-  width: calc(8.5in - 0.5in);
+  /* half-inch margins on EACH side - Letter (but don't use height on webpage) */
+  /* height: calc(11in - 1in); */
+  width: calc(8.5in - 1in);
   margin: 5vh auto 10vh auto;
   /*
   outline: 2px solid green;
   */
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #resume *, *::before, *::after {
@@ -56,7 +58,7 @@ self-contained */
   display: flex;
   justify-content: space-between;
   /* Late 2020 hype! */
-  grid-column-gap: 2rem;
+  grid-column-gap: 1.5rem;
 }
 #resume .column {
   flex-direction: column;
@@ -70,7 +72,7 @@ self-contained */
 #resume .right-align {
   text-align: right;
 }
-#resume .summary {
+#resume .personal-summary {
   font-style: oblique 7deg;
   padding-top: 0.2rem;
 }
@@ -125,7 +127,7 @@ icon, so we force them to be the same */
 /* and so in firefox we only have font sizing, not padding, to get the lines
 to start at the same point */
 #resume summary::marker {
-  font-size: 0.8em;
+  font-size: 0.8rem;
   color: var(--brightest-color);
 }
 
@@ -218,9 +220,6 @@ to start at the same point */
 https://www.a11yproject.com/posts/2013-01-25-never-remove-css-outlines/
 */
 
-#resume body {
-  font-size: 16px;
-}
 #resume hr {
   width: 100%;
   background-color: var(--color);
@@ -255,8 +254,10 @@ https://www.a11yproject.com/posts/2013-01-25-never-remove-css-outlines/
     width: 100%;
   }
   #resume {
+    height: calc(11in - 1in);
     margin: 0;
     padding: 0;
+    font-size: 14px;
   }
   #resume abbr {
     text-decoration: none;

@@ -29,8 +29,8 @@ contact:
     icon_title: location
     icon_alt: location pin
   - icon: /img/cv/stackoverflow.svg
-    icon_title: StackOverflow
-    icon_alt: StackOverflow logo
+    icon_title: Stack Overflow
+    icon_alt: Stack Overflow logo
     stackoverflow:
       reputation: <strong>7.5k</strong>
       badges:
@@ -118,8 +118,7 @@ main:
         date: Sep 2018 - Current
         duration: '>2 yr 6 mo'
         data:
-          - text: 'Took ownership of all Python applications, including docs, <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>, mentoring, and DevOps infrastructure'
-            open: True
+          - text: 'Took ownership of all Python applications, including architecture, docs, tests, <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>, mentoring, and DevOps infrastructure'
             details:
               - 'Enabled Python 3 migration; set up linters, Nexus <abbr title="Python Package Index">PyPI</abbr> server, and Puppet module; brought all packages up to 80% code coverage'
             hidden:
@@ -263,8 +262,6 @@ footer:
         data:
           - 'Minors: Psychology, Mathematics'
 
-
-
 ---
 This resume template is made up of 3 sections: a header, a body, and a footer.
 This could be made much more modular, with each section being customizable, but right now, there is exactly one user, so I haven't bothered.
@@ -295,6 +292,9 @@ Here is the definition of a `subsection`:
   gpa: "string"
   # uses a base directory of /content, where / is the root of the git repo
   icon: filepath/to/image
+  # set alt and title text for any images used. Very unnecessary.
+  icon_title: "string"
+  icon_alt: "string"
   # Only the first existing key of subtitle, company, or school will be used
   subtitle: "string"
   company: "string"
@@ -327,16 +327,7 @@ data:
   - Optional(plaintext or HTML)
 ```
 
-
-TODO:
-  * this:
 <!-- This became pure HTML once I wanted too many HTML elements and markdown stopped being sufficient -->
-<!-- TODO why doesn't this display -->
-<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="8e0e38c6-6407-4c4a-8c6d-48ee835a6e67" data-share-badge-host="https://www.youracclaim.com"></div><script type="text/javascript" async src="//cdn.youracclaim.com/assets/utilities/embed.js"></script>
-<a href="https://www.youracclaim.com/badges/8e0e38c6-6407-4c4a-8c6d-48ee835a6e67/public_url"><img src="https://images.youracclaim.com/size/340x340/images/1fdcf6a9-de8e-4e35-96b0-e801d8411506/AWS-CloudPractitioner.png" alt="AWS Certified Cloud Practitioner Badge" width=120></a>
-
-change commit email and name?
-
 
 <!-- vim: filetype=yaml
--->
+  -->

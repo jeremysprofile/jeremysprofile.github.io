@@ -1,8 +1,17 @@
 {%- extends "base.html" %}
 
-  {% block extraheadings %}
-    <link rel="stylesheet" type="text/css" href="{{ 'css/resume_stylesheet.css'|url }}" media="screen, print"/>
-  {% endblock %}
+<!--
+  Author: Jeremy Richards
+  License: CC-BY-SA-NC 4.0
+  https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+  TL:DR; Use this, don't sell it, keep my name in the HTML comments, and share
+    any different versions you make based on it.
+-->
+
+{% block extraheadings %}
+  <link rel="stylesheet" type="text/css" href="{{ 'css/resume_stylesheet.css'|url }}" media="screen, print"/>
+{% endblock %}
 
 {%- macro format_sections(sections) -%}
   {%- for section in sections -%}
@@ -154,7 +163,7 @@
         <h3 class="title">{{ page.meta.position }}</h3>
       {%- endif -%}
       {%- if page.meta.summary -%}
-        <div class="summary">
+        <div class="personal-summary">
           {{ format_data(page.meta.summary) }}
         </div>
       {%- endif -%}
