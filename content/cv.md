@@ -7,7 +7,7 @@ logo: '/img/cv/j_light.svg'
 name: Jeremy Richards
 position: Backend | DevOps
 summary:
-  text: 'Software engineer focused on fault-tolerance and push-button deployments. Strong technical writer. Track record of improving automation, both in <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> and personal workflow.'
+  text: 'Software engineer focused on fault-tolerance and push-button deployments. Strong technical writer. Proven track record of improving automation, both in <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> and personal workflow.'
   hidden:
     - "CI/CD automation: see Nasdaq gains"
     - "Personal workflow automation: bashrc (brownbag sharing session). proxy login (built own and used another) - documented and shared with team."
