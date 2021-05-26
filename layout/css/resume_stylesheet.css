@@ -31,14 +31,12 @@ self-contained */
 
 #resume {
   box-sizing: border-box;
-  /*border: solid var(--brighter-color); */
   /* half-inch margins on each side - A4 */
   /*
   height: calc(297mm - 2.54cm);
   width: calc(210mm - 2.54cm);
   */
   /* half-inch margins on EACH side - Letter (but don't use height on webpage) */
-  /* height: calc(11in - 1in); */
   width: calc(8.5in - 1in);
   margin: 5vh auto 10vh auto;
   /*
@@ -46,6 +44,11 @@ self-contained */
   */
   font-size: 16px;
   font-family: 'Montserrat', sans-serif;
+  /* View print style 
+  border: solid var(--brighter-color);
+  height: calc(11in - 1in);
+  font-size: 14px;
+  */
 }
 
 #resume *, *::before, *::after {

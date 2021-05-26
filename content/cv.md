@@ -116,7 +116,7 @@ main:
         icon_alt: Nasdaq logo
         position: 'Contractor → SW Engineer II → SW Engineer III'
         date: Sep 2018 - Current
-        duration: '>2 yr 6 mo'
+        duration: '>2 yr 9 mo'
         data:
           - text: 'Took ownership of all Python applications, including architecture, docs, tests, <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>, mentoring, and DevOps infrastructure'
             details:
@@ -130,8 +130,9 @@ main:
             hidden:
                - 'Loaned to adjacent teams to help meet tight deadlines'
                - 'Joined the TradeGuard Reporting team at different points to enable horizontal scaling for trade data processing and to help with <a href="https://www.catnmsplan.com/"><abbr title="Consolidated Audit Trail">CAT</abbr></a> go-live.'
-          - text: 'Collaborated on productizing financial message relay application: ported existing setup to <abbr title="Amazon Web Services">AWS</abbr> and Kubernetes and improved reliability with Kafka'
-            hidden: 'improved reliability by using Kafka better, basically'
+          - text: 'Identified and eliminated multiple potential avenues for missing messages in Java <abbr title="Extract, Transform, Load">ETL</abbr> pipeline during port to Kubernetes / <abbr title="Amazon Web Services">AWS</abbr> / Kafka.'
+            hidden: "Previous on-prem implementation would read 1, write 1. Porting to Kafka meant we had to batch our messages, but there were a lot of edge cases involved in batching in terms of duplicate or missed messages. We had to implement Kafka transactions to ensure we accurately tracked message counts and did not lose messages or add duplicates on pod failures. Also had to make sure to split the kafka nodes across EC2 instances and availability zones for redundancy, make sure that topics were created with the right configuration (topics get created on read OR write and we only had configs on the writer microservice)"
+          - text: 'Reduced <abbr title="Amazon Web Services">AWS</abbr> costs via scheduled after-hours shutdown of dev services.'
         hidden:
           - text: 'Diagnosed and resolved time-sensitive production incidents during on-call rotations'
             hidden:
@@ -182,8 +183,9 @@ main:
         date: Jan 2016 - Dec 2016
         duration: 1 yr
         data:
-          - text: 'Wrote Bash scripts to run multi-day performance and reliability tests on populations of hundreds of <abbr title="Hard Disk Drives">HDDs</abbr>'
+          - text: 'Wrote Bash scripts to test <abbr title="Hard Disk Drive">HDD</abbr> reliability and performance data'
             hidden:
+              - 'Wrote Bash scripts to run multi-day performance and reliability tests on populations of hundreds of <abbr title="Hard Disk Drives">HDDs</abbr>'
               - 'Created Bash scripts to capture performance and reliability metrics for populations of hundreds of <abbr title="Hard Disk Drives">HDDs</abbr> over multiple days'
               - 'Drives were both <abbr title="Serial Attached SCSI (Small Computer System Interface)">SAS</abbr> and <abbr title="Serial ATA (AT Attachment)">SATA</abbr>, different capacities, and different architectures, including <abbr title="Conventional Magnetic Recording">CMR</abbr> and <abbr title="Host-Aware">HA</abbr> <abbr title="Shingled Magnetic Recording">SMR</abbr>.'
               - text: 'Updated <abbr title="Conventional Magnetic Recording">CMR</abbr>-style tests for <abbr title="Host-Aware">HA</abbr> <abbr title="Shingled Magnetic Recording">SMR</abbr> drives'
