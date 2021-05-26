@@ -126,7 +126,7 @@ main:
               - 'Set up Nasdaq-internal <a href="https://pypi.org/"><abbr title="Python Package Index">PyPI</abbr></a> server via <a href="https://www.sonatype.com/nexus/repository-pro">Nexus</a>'
             tools: "Python 2 and 3, PyCharm, Vim, Poetry, pip, pytest, pre-commit, GitLab-CI"
           - text: 'Added auto-updating internal dependencies, version incrementing, and container tagging to <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipelines across application suite'
-          - text: 'Repeatedly brought onto understaffed projects, quickly gained domain knowledge and helped meet tight deadlines'
+          - text: 'Repeatedly brought onto understaffed projects, quickly gained domain knowledge and helped meet ambitious deadlines'
             hidden:
                - 'Loaned to adjacent teams to help meet tight deadlines'
                - 'Joined the TradeGuard Reporting team at different points to enable horizontal scaling for trade data processing and to help with <a href="https://www.catnmsplan.com/"><abbr title="Consolidated Audit Trail">CAT</abbr></a> go-live.'
