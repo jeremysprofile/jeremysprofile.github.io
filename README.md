@@ -1,4 +1,8 @@
-NOTE to forgetful future me: I set up forwarding from `[jeremy.]richards.dev[/*]` to `https://jeremy.richards.dev/cv` because my website is not in a state that provides a positive signal to people who might hire me.
+NOTE to forgetful future me: I added
+```html
+<meta http-equiv="refresh" content="0; URL=https://jeremy.richards.dev/cv/" />
+```
+to `layout/main.html` because my website is not in a state that provides a positive signal to people who might hire me. Just take out the `extraheadings` block when you're ready for the website to work normally again.
 
 # Jeremy's wobsite
 I don't know what I'm doing (before starting this in early 2020, I knew no CSS or javascript).
