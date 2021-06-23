@@ -15,4 +15,6 @@ jobs:
       - name: gh-deploy
         run: |
           pip3 install mkdocs
+          python3 --version
+          mkdocs --version
           mkdocs gh-deploy
