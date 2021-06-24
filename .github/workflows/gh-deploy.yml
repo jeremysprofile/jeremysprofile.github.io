@@ -14,9 +14,7 @@ jobs:
 
       - name: gh-deploy
         run: |
+          git config --global user.name 'JeremyBot'
+          git config --global user.email 'jeremysprofile@users.noreply.github.com'
           pip3 install "mkdocs==1.2.1" "jinja2==3.0.1"
-          python3 --version
-          mkdocs --version
-          python -c 'import jinja2; print(jinja2.__version__)'
-          echo "wtf"
           mkdocs gh-deploy
