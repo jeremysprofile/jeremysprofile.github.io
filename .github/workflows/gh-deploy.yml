@@ -14,7 +14,7 @@ jobs:
 
       - name: gh-deploy
         run: |
-          pip3 install mkdocs
+          pip3 install "mkdocs==1.2.1" "jinja2==3.0.1"
           python3 --version
           mkdocs --version
           python -c 'import jinja2; print(jinja2.__version__)'
