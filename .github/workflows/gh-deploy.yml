@@ -17,4 +17,6 @@ jobs:
           pip3 install mkdocs
           python3 --version
           mkdocs --version
+          python -c 'import jinja2; print(jinja2.__version__)'
+          echo "wtf"
           mkdocs gh-deploy
