@@ -17,4 +17,4 @@ jobs:
           git config --global user.name 'JeremyBot'
           git config --global user.email 'jeremysprofile@users.noreply.github.com'
           pip3 install "mkdocs==1.2.1" "jinja2==3.0.1"
-          mkdocs gh-deploy
+          mkdocs gh-deploy --force
