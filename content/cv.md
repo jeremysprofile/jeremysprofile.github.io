@@ -3,7 +3,7 @@ template: cv.html
 # Mkdocs really wants this to be a markdown file with YAML frontmatter.
 # We'll pretend, but all the content lives in the "frontmatter".
 
-logo: '/img/cv/j_light.svg'
+logo: '/cv/img/j_light.svg'
 name: Jeremy Richards
 position: Backend | DevOps
 summary:
@@ -15,20 +15,20 @@ summary:
 # Icons sourced from https://uxwing.com and https://systemuicons.com/
 contact:
   - text: me@richards.dev
-    icon: /img/cv/mail.svg
+    icon: /cv/img/mail.svg
     icon_title: mail
     icon_alt: envelope
     link: mailto:jeremy@richards.dev
-  - icon: /img/cv/website.svg
+  - icon: /cv/img/website.svg
     icon_title: website
     icon_alt: web browser
     text: jeremy.richards.dev
     link: https://jeremy.richards.dev
   - text: Denver, CO
-    icon: /img/cv/location.svg
+    icon: /cv/img/location.svg
     icon_title: location
     icon_alt: location pin
-  - icon: /img/cv/stackoverflow.svg
+  - icon: /cv/img/stackoverflow.svg
     icon_title: Stack Overflow
     icon_alt: Stack Overflow logo
     stackoverflow:
@@ -39,11 +39,11 @@ contact:
         bronze: 83
     link: https://stackexchange.com/users/7783437/jeremysprofile?tab=accounts
   - text: jeremysprofile
-    icon: /img/cv/github.svg
+    icon: /cv/img/github.svg
     icon_title: git repo
     link: https://github.com/jeremysprofile/jeremysprofile.github.io
   - text: /in/richards-dev
-    icon: /img/cv/linkedin.svg
+    icon: /cv/img/linkedin.svg
     icon_title: LinkedIn
     link: https://www.linkedin.com/in/richards-dev
 
@@ -112,7 +112,7 @@ main:
   - title: Professional Experience
     sections:
       - company: Nasdaq
-        icon: /img/cv/nasdaq-icon.svg
+        icon: /cv/img/nasdaq-icon.svg
         icon_alt: Nasdaq logo
         position: 'Contractor → SW Engineer II → SW Engineer III'
         date: Sep 2018 - Current
@@ -139,7 +139,7 @@ main:
               - 'Included manual failover, fixing configuration, <abbr title="Root Cause Analysis">RCA</abbr>, providing post-mortem to the team, and writing tickets for any discovered bugs'
 
       - company: Northrop Grumman
-        icon: /img/cv/northrop-icon.png
+        icon: /cv/img/northrop-icon.png
         icon_alt: Northrop Grumman logo
         position: SW Engineer I
         date: Jun 2017 - Sep 2018
@@ -177,7 +177,7 @@ main:
               - 'Achieved only 92% accuracy due to poor data - some mines had been abandoned and revegetated, and some mine coordinates did not have enough precision to display the mine at sufficient resolution for training'
 
       - company: Seagate Technology
-        icon: /img/cv/seagate-icon.svg
+        icon: /cv/img/seagate-icon.svg
         icon_alt: Seagate logo
         position: Applications Engineering Intern
         date: Jan 2016 - Dec 2016
@@ -213,7 +213,7 @@ footer:
     classes: "flex"
     sections:
       - school: University of Colorado Boulder
-        icon: /img/cv/cu-icon.svg
+        icon: /cv/img/cu-icon.svg
         icon_alt: CU logo
         degree: B.S. Mechanical Engineering
         gpa: 3.8
@@ -257,7 +257,7 @@ footer:
                  Without the multiplexing, we would have been able to average readings and have much more robust data collection.
 
       - school: University of Oklahoma
-        icon: /img/cv/ou-icon.svg
+        icon: /cv/img/ou-icon.svg
         icon_alt: OU logo
         degree: B.A. Economics
         gpa: 3.96

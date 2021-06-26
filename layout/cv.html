@@ -1,18 +1,3 @@
-{%- extends "base.html" %}
-
-<!--
-  Author: Jeremy Richards
-  License: CC-BY-SA-NC 4.0
-  https://creativecommons.org/licenses/by-nc-sa/4.0/
-
-  TL:DR; Use this, don't sell it, keep my name in the HTML comments, and share
-    any different versions you make based on it.
--->
-
-{% block extraheadings %}
-  <link rel="stylesheet" type="text/css" href="{{ 'css/resume_stylesheet.css'|url }}" media="screen, print"/>
-{% endblock %}
-
 {%- macro format_sections(sections) -%}
   {%- for section in sections -%}
     <section class="flex column">
@@ -74,12 +59,12 @@
 {%- macro icon_image(item, classes="") -%}
   {%- if item.icon -%}
     <img src="{{ item.icon }}" 
-    {%- if item.icon_title -%}
+    {% if item.icon_title -%}
        title="{{ item.icon_title }}" 
-    {%- endif -%}
+    {% endif -%}
     {%- if item.icon_alt -%}
        alt="{{ item.icon_alt }}" 
-    {%- endif -%}
+    {% endif -%}
      class="icon {{ classes }}">
   {%- endif -%}
 {%- endmacro -%}
@@ -150,8 +135,41 @@
   {%- endif -%}
 {%- endmacro -%}
 
-{%- block body -%}
 
+<!DOCTYPE HTML>
+<html>
+<head>
+{%- block head %}
+  {%- block meta %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="{{ page.meta.name }}">
+    <title>{{ page.title }}</title>
+    {% if not page %}<meta name="description" content="{{ config.site_description }}">
+    {% else %}<meta name="description" content="{{ page.meta.description }}">{% endif %}
+  {%- endblock %}
+
+
+  {%- block styles %}
+    <link rel="stylesheet" type="text/css" href="{{ 'css/resume_stylesheet.css'|url }}" media="screen, print"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet"> 
+  {%- endblock %}
+
+  <link rel="icon" type="image/svg+xml" href="{{ 'img/j.svg'|url }}">
+{%- endblock %}
+</head>
+
+<body>
+{%- block body -%}
+<!--
+  Author: Jeremy Richards
+  License: CC-BY-SA-NC 4.0
+  https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+  TL:DR; Use this, don't sell it, keep my name in the HTML comments, and share
+    any different versions you make based on it.
+-->
 <div class="flex column" id="resume">
   <!-- This HTML is poorly formatted because I wanted the templating to be
     more readable than the finished product. You're probably better off looking
@@ -192,5 +210,10 @@
     {{ format_sections(page.meta.footer) }}
   </div>
 </div>
-
 {% endblock %}
+</body>
+</html>
+<!--
+MkDocs version : {{ mkdocs_version }}
+Build Date UTC : {{ build_date_utc }}
+-->
