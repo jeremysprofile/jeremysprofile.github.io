@@ -1,22 +1,8 @@
 site_name: Jeremy.Richards.Dev
 site_url: https://jeremy.richards.dev
 repo_url: https://github.com/jeremysprofile/jeremysprofile.github.io
-blurb: "A website to showcase how little I know about web dev."
 
-docs_dir: content/
 theme:
   name: null
   custom_dir: layout/
-  static_templates:
-    - '404.html'
-    - 'search.html'
-    - 'sitemap.xml'
-  highlightjs: true
-  hljs_languages: []
-  hljs_style: idea
 
-nav:
-  - Resume: 'cv.md'
-  - Contact: 'contact.md'
-  - Knowledge Base: 'kb'
-  - Links: 'links'
