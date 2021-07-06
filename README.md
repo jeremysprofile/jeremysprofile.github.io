@@ -11,7 +11,14 @@ You're welcome to use it!
 ## How do I use it?
 ### Add your content
 Add your content to the [`cv.md`](./docs/cv.md) file.
-TODO.
+See the [cv-spec](./cv-spec.md) for how to do this.
+I would definitely recommend [having a browser opened to `localhost:8000` to view your changes as your make them](#view-your-content).
+
+#### Edit the layout
+Don't like the colors? Change then in [`./layout/css/cv.css`](./layout/css/cv.css).
+
+Don't like the font? Just grep for all the instances of `Montserrat` and replace the name and source with your choice (namely [`./layout/css/cv.css`](./layout/css/cv.css) and [`./layout/cv.html`](./layout/cv.html)).
+
 ### View your content
 #### Install pre-reqs
 You need Python3 and `pip`.
@@ -22,12 +29,8 @@ pip install -U mkdocs jinja2
 ```bash
 mkdocs serve
 ```
+View your page at `localhost:8000`.
 It auto-reloads when you save changes to any of the relevant files.
-
-### Edit the layout
-Don't like the colors? Change then in [`./layout/css/cv.css`](./layout/css/cv.css).
-
-Don't like the font? Just grep for all the instances of `Montserrat` and replace the name and source with your choice (namely [`./layout/css/cv.css`](./layout/css/cv.css) and [`./layout/cv.html`](./layout/cv.html)).
 
 ### Save your content as a PDF
 In your browser, just print to PDF. **Make sure you turn off any page headers/footers and turn on printing background colors and images.**
@@ -37,9 +40,10 @@ In your browser, just print to PDF. **Make sure you turn off any page headers/fo
 
 #### Publish your content to your site
 ##### Create as the only content on your static site
-1. Fork this repo to `<USERNAME>.github.io`.
-2. Turn on GitHub Pages by going to Settings and then Pages.
-3. If you have a custom domain, set up a CNAME record in your domain's DNS records to point to `<USERNAME>.github.io` and create `./docs/CNAME` with your custom domain as the only content.
+1. Fork this repo, then go to Settings and rename it to `<USERNAME>.github.io`.
+2. Turn on GitHub Pages by going to Settings and then Pages and setting the source to be the `gh-pages` branch.
+3. If you have a custom domain, set up a CNAME record in your domain's DNS records to point to `<USERNAME>.github.io` and create `./docs/CNAME` with your custom domain as the only content. 
+4. Make all your other desired changes to the `resume` branch, commit them, and then build your site with `mkdocs gh-deploy`, which should automatically upload your generated site to `gh-pages`.
 4. Test! Access your site via `<USERNAME>.github.io`, via your custom domain (e.g., `jeremy.richards.dev`) and via your domain with the `cv/` suffix (e.g., `jeremy.richards.dev/cv/`). Note that your DNS records may take up to 48 hours to be available.
 
 This will set up your custom domain to redirect `/` to `/cv/`. If you do not want this behavior, you'll have to edit `./layout/main.html`.
