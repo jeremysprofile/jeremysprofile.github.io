@@ -4,26 +4,26 @@ template: cv.html
 # putting all our content in the "frontmatter".
 
 logo: '/cv/img/j_light.svg'
-name: Jeremy Richards
-position: Backend | DevOps
+name: Lorem Ipsum
+position: Software Engineer
 summary:
-  text: 'Software engineer focused on fault-tolerance and push-button deployments. Strong technical writer. Proven track record of improving automation, both in <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> and personal workflow.'
+  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  # You can put a 'hidden' key anywhere to keep notes or ideas that won't end up being displayed.
   hidden:
-    - "CI/CD automation: see Nasdaq gains"
-    - "Personal workflow automation: bashrc (brownbag sharing session). proxy login (built own and used another) - documented and shared with team."
+    - 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
 
 # Icons sourced from https://uxwing.com and https://systemuicons.com/
 contact:
-  - text: me@richards.dev
+  - text: some_email@example.com
     icon: /cv/img/mail.svg
     icon_title: mail
     icon_alt: envelope
-    link: mailto:jeremy@richards.dev
+    link: mailto:some_email@example.com
   - icon: /cv/img/website.svg
     icon_title: website
     icon_alt: web browser
-    text: jeremy.richards.dev
-    link: https://jeremy.richards.dev
+    text: example.com
+    link: https://example.com
   - text: Denver, CO
     icon: /cv/img/location.svg
     icon_title: location
@@ -32,20 +32,20 @@ contact:
     icon_title: Stack Overflow
     icon_alt: Stack Overflow logo
     stackoverflow:
-      reputation: <strong>7.5k</strong>
+      reputation: 12345
       badges:
-        gold: 3
-        silver: 31
-        bronze: 83
+        gold: 6
+        silver: 7
+        bronze: 89
     link: https://stackexchange.com/users/7783437/jeremysprofile?tab=accounts
-  - text: jeremysprofile
+  - text: github username
     icon: /cv/img/github.svg
     icon_title: git repo
-    link: https://github.com/jeremysprofile/jeremysprofile.github.io
-  - text: /in/richards-dev
+    link: https://github.com/jeremysprofile/jeremysprofile.github.io/tree/resume
+  - text: /in/linkedin-username
     icon: /cv/img/linkedin.svg
     icon_title: LinkedIn
-    link: https://www.linkedin.com/in/richards-dev
+    link: https://www.linkedin.com/in/linkedin-username
 
 
 sidebar:
@@ -55,11 +55,7 @@ sidebar:
         data:
           - Python
           - Bash
-          - text: Java
-            details:
-              - Maven
-              - Spring Boot
-              - Kotlin
+          - Java
       - title: Platforms
         data:
           - text: Linux
@@ -71,9 +67,7 @@ sidebar:
           - Windows
           - Docker
           - Kubernetes
-          - text: AWS
-            details:
-              - <a href="https://www.youracclaim.com/badges/8e0e38c6-6407-4c4a-8c6d-48ee835a6e67">Certified Cloud Practioner</a>
+          - AWS
       - title: <abbr title="Infrastructure as Code">IaC</abbr>
         data:
           - Helm
@@ -84,90 +78,73 @@ sidebar:
           - Git
           - Kafka
           - Scrum / Agile
-          - Tutoring
-
 
 main:
   - title: Professional Experience
     sections:
-      - company: Nasdaq
-        icon: /cv/img/nasdaq-icon.svg
-        icon_alt: Nasdaq logo
-        position: 'Contractor → SW Engineer II → SW Engineer III'
-        date: Sep 2018 - Current
-        duration: '>2 yr 9 mo'
+      - company: Company1
+        icon: /cv/img/website.svg
+        icon_alt: Company1 logo
+        position: 'Software Engineer IX'
+        date: Sep 2018 - July 2021
+        duration: '2 yr 10 mo'
         data:
-          - text: 'Took ownership of all Python applications, including architecture, docs, tests, <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>, mentoring, and DevOps infrastructure'
+          - text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
             details:
-              - 'Enabled Python 3 migration; set up linters, Nexus <abbr title="Python Package Index">PyPI</abbr> server, and Puppet module; brought all packages up to 80% code coverage'
+              - 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. '
             hidden:
-              - 'Meticulously documented python development setup process for Windows and Mac users, including package structure, virtual environments, and test writing for use by other developers'
-              - 'Set up Nasdaq-internal <a href="https://pypi.org/"><abbr title="Python Package Index">PyPI</abbr></a> server via <a href="https://www.sonatype.com/nexus/repository-pro">Nexus</a>'
-            tools: "Python 2 and 3, PyCharm, Vim, Poetry, pip, pytest, pre-commit, GitLab-CI"
-          - text: 'Added auto-updating internal dependencies, version incrementing, and container tagging to <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipelines across application suite'
-          - text: 'Repeatedly brought onto understaffed projects, quickly gained domain knowledge and helped meet ambitious deadlines'
-          - text: 'Identified and eliminated multiple potential avenues for missing messages in Java <abbr title="Extract, Transform, Load">ETL</abbr> pipeline during port to Kubernetes / <abbr title="Amazon Web Services">AWS</abbr> / Kafka.'
-          - text: 'Reduced <abbr title="Amazon Web Services">AWS</abbr> costs via scheduled after-hours shutdown of dev services.'
+              - 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. '
+          - text: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          - text: 'Lorem ipsum <a href="https://github.com/jeremysprofile/jeremysprofile.github.io/tree/resume">dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</a> incididunt ut labore et dolore magna aliqua.'
 
-      - company: Northrop Grumman
-        icon: /cv/img/northrop-icon.png
-        icon_alt: Northrop Grumman logo
+      - company: Company2
+        icon: /cv/img/location.svg
+        icon_alt: Company2 logo
         position: SW Engineer I
         date: Jun 2017 - Sep 2018
         duration: 1 yr 3 mo
         data:
-          - text: 'Created neural network to classify <abbr title="Code Division Multiple Access">CDMA</abbr> radio signals at negative <abbr title="Signal-to-Noise Ratios">SNRs</abbr>'
+          - text: 'Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
             bullets:
-              - 'Awarded trade secret for work, which was presented in internal symposium and used in classified space'
+              - 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
             details:
-              - '<abbr title="Code Division Multiple Access">CDMA</abbr> is a way to share bandwidth with cooperating simultaneous users via sets of spreading sequences, which are psuedorandom binary sequences designed to minimally interfere with each other. My goal was to detect usage of a subset of these sequences in a target bandwidth'
-              - "This was exploratory research. I found that in modeled data with added noise, I was able to determine which Gold code was used in a given sample through different clock offsets and negative signal-to-noise ratios. There was no customer for this work and I was taken off the project when Northrop found a non-overhead charge code I could use."
-          - text: 'Explored machine learning tools to detect novel inputs to trained <abbr title="Convolutional Neural Networks">CNNs</abbr> via intermediate layer activations'
+              - 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+              - 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+          - text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
             details:
-              - 'A <abbr title="Convolutional Neural Network">CNN</abbr> is pretrained on certain categories and outputs how "likely" a sample is to belong to each category, but cannot determine if a sample belongs to none of the categories. My goal was to leverage the feature detection of the network via tools not requiring pretraining to detect these outlier samples'
-              - 'Tested isolation forests, support vector machines, principal component analysis, <abbr title="Least Absolute Shrinkage and Selection Operator">LASSO</abbr>, and k-nearest neighbor analysis'
-            hidden:
-              - 'Layperson explanation: the last layer in a deep neural network has one neuron per possible classification - a network trained to distinguish images of cats versus images of dogs would have two neurons in the final layer, and whichever neuron is most activated is what the image gets classified as. Intermediate layers will have learned to detect lower-level information about the images (e.g., one neuron could detect the existence of a muzzle, another could detect more dog-like ears). My goal was to see if I could determine if the network had seen a novel image (e.g., a picture of a person) from examining the activations of the intermediate layers, since presumably these images would result in unusual combinations of activations.'
+              - 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+              - 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        # You can make hidden as a key on the section to keep bullets you aren't sure you want.
         hidden:
-          - text: 'Created convolutional neural network (CNN) to detect mining sites in satellite images'
+          - text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
             details:
-              - 'Created training data using Google Earth API and list of GPS coordinates of current (and former) mines'
-            hidden:
-              - 'Achieved only 92% accuracy due to poor data - some mines had been abandoned and revegetated, and some mine coordinates did not have enough precision to display the mine at sufficient resolution for training'
+              - 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
 
-      - company: Seagate Technology
-        icon: /cv/img/seagate-icon.svg
-        icon_alt: Seagate logo
-        position: Applications Engineering Intern
+      - company: Company3
+        icon: /cv/img/location.svg
+        icon_alt: Company3 logo
+        position: Engineering Intern
         date: Jan 2016 - Dec 2016
         duration: 1 yr
         data:
-          - text: 'Wrote Bash scripts to test <abbr title="Hard Disk Drive">HDD</abbr> reliability and performance data'
-          - text: "Decreased customer's total qualifications test time 20%"
-          - text: 'Automated log backup and system setup on all test systems'
+          - text: 'Lorem <abbr title="ipsum dolor">i.d.</abbr> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+          - text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+          - text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
 
 footer:
   - title: Education
     classes: "flex"
     sections:
-      - school: University of Colorado Boulder
-        icon: /cv/img/cu-icon.svg
-        icon_alt: CU logo
+      - school: University of Schooling
+        icon: /cv/img/mail.svg
+        icon_alt: US logo
         degree: B.S. Mechanical Engineering
         gpa: 3.8
         data:
-          - text: 'Invented <a href="http://appft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&p=1&u=%2Fnetahtml%2FPTO%2Fsearch-bool.html&r=1&f=G&l=50&co1=AND&d=PG01&s1=%2210,429,838%22&OS=%2210,429,838%22&RS=%2210,429,838%22">patent 10,429,838</a> for drone landings'
-          - text: 'Software team lead in robot soccer competition'
+          - text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+          - text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
             bullets:
-              - 'Team placed second of twelve. <a href="https://www.youtube.com/watch?v=tI_wfxj9qU8">Match videos</a>'
-
-      - school: University of Oklahoma
-        icon: /cv/img/ou-icon.svg
-        icon_alt: OU logo
-        degree: B.A. Economics
-        gpa: 3.96
-        data:
-          - 'Minors: Psychology, Mathematics'
+              - 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
 
 ---
 
