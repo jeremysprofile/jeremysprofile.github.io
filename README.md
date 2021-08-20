@@ -17,7 +17,7 @@ I would definitely recommend [having a browser opened to `localhost:8000` to vie
 #### Edit the layout
 Don't like the colors? Change then in [`./layout/css/cv.css`](./layout/css/cv.css).
 
-Don't like the font? Just grep for all the instances of `Montserrat` and replace the name and source with your choice (namely [`./layout/css/cv.css`](./layout/css/cv.css) and [`./layout/cv.html`](./layout/cv.html)).
+Don't like the font? `grep` for all the instances of `Montserrat` and replace the name and source with your choice (namely [`./layout/css/cv.css`](./layout/css/cv.css) and [`./layout/cv.html`](./layout/cv.html)).
 
 ### View your content
 #### Install pre-reqs
@@ -34,6 +34,8 @@ It auto-reloads when you save changes to any of the relevant files.
 
 ### Save your content as a PDF
 In your browser, just print to PDF. **Make sure you turn off any page headers/footers and turn on printing background colors and images.**
+
+That being said, links won't work on the PDF version, so the actual webpage (either via your site or as a `.html` might be better).
 
 ![Firefox print options](./firefox_print_options.png)
 ![Chrome print options](./chrome_print_options.png)
