@@ -89,8 +89,9 @@ self-contained */
   /* Indent slightly as bullets have 0 spacing before, while text has a small
   amount. This also indents the line-wrapped bullet text a bit, but I don't
   mind how that looks. */
-  margin-left: 0.2rem;
-  list-style: inside square;
+  padding-left: 1rem;
+  margin-left: 0;
+  list-style: outside square;
 }
 #resume ul ul {
   padding-left: 1.5rem;
@@ -233,10 +234,6 @@ https://www.a11yproject.com/posts/2013-01-25-never-remove-css-outlines/
   font-weight: 500;
   color: inherit;
 }
-#resume ul {
-  list-style: inside square;
-}
-
 
 
 
