@@ -87,6 +87,9 @@
 
 {%- macro format_data(info) -%}
   {%- if info is mapping -%}
+    {%- if info.hover -%}
+      <span title="{{ info.hover }}">
+    {%- endif -%}
     {%- if info.link -%}
       <a href="{{ info.link }}">
     {%- endif -%}
@@ -119,6 +122,9 @@
     {%- endif -%}
     {%- if info.link -%}
       </a>
+    {%- endif -%}
+    {%- if info.hover -%}
+      </span>
     {%- endif -%}
   {%- elif info is string -%}
     {{ info }}
