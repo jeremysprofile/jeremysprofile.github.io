@@ -69,22 +69,6 @@
   {%- endif -%}
 {%- endmacro -%}
 
-{%- macro stackoverflow(content) -%}
-  {%- if content.reputation -%}
-    {{ content.reputation }}
-  {%- endif -%}
-
-  {%- if content.badges -%}
-    <span> ●{{ content.badges.gold }}</span>
-    <span>●{{ content.badges.silver }}</span>
-    <span>●{{ content.badges.bronze }}</span>
-  {%- endif -%}
-
-  {%- if content.link -%}
-    </a>
-  {%- endif -%}
-{%- endmacro -%}
-
 {%- macro format_data(info) -%}
   {%- if info is mapping -%}
     {%- if info.hover -%}
@@ -102,9 +86,6 @@
       {%- else -%}
         {{ info.text }}
       {%- endif -%}
-    {%- endif -%}
-    {%- if info.stackoverflow -%}
-      {{ stackoverflow(info.stackoverflow) }}
     {%- endif -%}
 
     {{ icon_image(info, "green-filter left-padded") }}
