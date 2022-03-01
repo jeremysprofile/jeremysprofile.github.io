@@ -78,14 +78,7 @@
       <a href="{{ info.link }}">
     {%- endif -%}
     {%- if info.text -%}
-      {%- if info.details -%}
-        <details {{ 'open' if info.open is true }}>
-          <summary>{{ info.text }}</summary>
-          {{ format_data(info.details) }}
-        </details>
-      {%- else -%}
-        {{ info.text }}
-      {%- endif -%}
+      {{ info.text }}
     {%- endif -%}
 
     {{ icon_image(info, "green-filter left-padded") }}
@@ -93,11 +86,7 @@
     {%- if info.bullets -%}
       <ul>
         {%- for bullet in info.bullets -%}
-          {%- if bullet.details -%}
-            <li class="details">{{ format_data(bullet) }}</li>
-          {%- else -%}
-            <li>{{ format_data(bullet) }}</li>
-          {%- endif -%}
+          <li>{{ format_data(bullet) }}</li>
         {%- endfor -%}
       </ul>
     {%- endif -%}
@@ -112,11 +101,7 @@
   {%- else -%}
     <ul>
       {%- for datum in info -%}
-        {%- if datum.details -%}
-          <li class="details">{{ format_data(datum) }}</li>
-        {%- else -%}
-          <li>{{ format_data(datum) }}</li>
-        {%- endif -%}
+        <li>{{ format_data(datum) }}</li>
       {%- endfor -%}
     </ul>
   {%- endif -%}
