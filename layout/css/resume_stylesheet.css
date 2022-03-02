@@ -101,37 +101,8 @@ self-contained */
   margin: 0;
   margin: 0.3rem 0;
 }
-/*
-Styling these bullets across Chrome/Firefox/Safari was kind of a pain, since
-all browsers use different methods to determine the spacing between a bullets
-and the text content, and I want to use different bullets (square and the
-details triangle).
 
-I tried customizing the bullets with ::before and using `list-style: none;` but
-Firefox made the `content: counter(list-item, square);` bullets way too large.
-
-Eventually I gave up on something that felt "clean" and customized Chrome with
-summary::-webkit-details-marker and Firefox with summary::marker and accepted
-Safari would be off since I don't know anyone who uses it on desktop.
-*/
-
-/* Style the bullets properly */
-#resume .details {
-  list-style: none;
-}
 #resume li::marker {
-  color: var(--brightest-color);
-}
-/* Chrome doesn't use the same amount of space after a bullet as the details
-icon, so we force them to be the same */
-#resume summary::-webkit-details-marker {
-  padding-right: 0.35rem;
-  color: var(--brightest-color);
-}
-/* and so in firefox we only have font sizing, not padding, to get the lines
-to start at the same point */
-#resume summary::marker {
-  font-size: 0.8rem;
   color: var(--brightest-color);
 }
 
@@ -265,41 +236,6 @@ https://www.a11yproject.com/posts/2013-01-25-never-remove-css-outlines/
   @page {
     margin: 0.5in;
     size: letter portrait;
-  }
-
-  #resume summary {
-    list-style: none;
-  }
-  #resume summary::-webkit-details-marker {
-    display: none;
-  }
-  #resume summary::before {
-    color: var(--brightest-color);
-    content: "■";
-    margin-right: 0.4rem;
-    vertical-align: 0.1em;
-    margin-left: -1px;
-    font-size: 0.8rem;
-  }
-  /*
-   Problems: ::marker can't set padding/margin.
-   summary::before won't have spacing match different chrome and firefox defaults.
-   li::before doesn't work cleanly with multi-line summaries.
-   li::before and summary::before doesn't work because you can't turn off
-     li::before based on li's children (could with JS but I don't wanna).
-
-   Solution: use @support to write some chrome-specific CSS (as seen on
-     https://stackoverflow.com/a/32455002/5889131 ).
-   This is a hack that probably won't work long-term, but it's only for
-     printing, so I just don't care enough.
-  */
-  @supports (-webkit-font-smoothing:none) {
-     #resume summary::before {
-       margin-right: 1rem;
-       vertical-align: 0.1em;
-       margin-left: -1px;
-       font-size: 0.9rem;
-     }
   }
 }
 
