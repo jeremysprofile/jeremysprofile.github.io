@@ -42,12 +42,19 @@ self-contained */
   /*
   outline: 2px solid green;
   */
-  font-size: 16px;
+  font-size: 14pt;
   font-family: 'Montserrat', sans-serif;
-  /* View print style 
+
+  /* Works the same as setting 
+    kebab -> More tools -> Rendering -> Emulate CSS media type to "print"
+    That is *not* the same as print to PDF. You cannot expect it to exactly
+    match the output when using print preview / print to PDF / printing.
   border: solid var(--brighter-color);
+  box-sizing: border-box;
   height: calc(11in - 1in);
-  font-size: 14px;
+  font-size: 10.5pt;
+  margin: 0;
+  padding: 0;
   */
 }
 
@@ -228,7 +235,8 @@ https://www.a11yproject.com/posts/2013-01-25-never-remove-css-outlines/
     height: calc(11in - 1in);
     margin: 0;
     padding: 0;
-    font-size: 14px;
+    /* Looks similar to Arial at 11pt. 10.5pt = 14px */
+    font-size: 10.5pt;
   }
   #resume abbr {
     text-decoration: none;
@@ -238,6 +246,4 @@ https://www.a11yproject.com/posts/2013-01-25-never-remove-css-outlines/
     size: letter portrait;
   }
 }
-
-
 
