@@ -73,13 +73,11 @@ sidebar:
           - Kafka
           - GitLab <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>
           - Scrum / Agile
-          - Git
+            # - Git
 
-      # - Vim
-      # - title: Tools
+        # - Vim
         # - Vim, Alacritty, Tmux, IntelliJ, PyCharm
-      # - title: Misc
-        # - Documentation, Scrum / Agile, Tutoring
+        # - Tutoring
 
       # Barely: HTML, CSS, Jinja, Kotlin, Groovy, SQL, C++
       # Middleware: Kafka
@@ -87,7 +85,6 @@ sidebar:
         # - Keras, TensorFlow, CNNs
       # - title: Containers
         # - Docker, Kubernetes, Helm
-
 
 main:
   - title: Professional Experience
