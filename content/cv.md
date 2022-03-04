@@ -6,7 +6,7 @@ template: cv.html
 name: Jeremy Richards
 position: Backend | DevOps
 summary:
-  text: 'Software engineer focused on fault-tolerance and push-button deployments. Strong technical writer. Proven track record of improving automation, both in <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> and personal workflow.'
+  text: 'Software engineer focused on fault-tolerance and push-button deployments. Strong technical writer. Proven track record improving automation, both in <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> and personal workflow.'
   hidden:
     - "CI/CD automation: see Nasdaq gains"
     - "Personal workflow automation: bashrc (brownbag sharing session), vim binds, github action to deploy this site. proxy login (built own and used another) - documented and shared with team."
@@ -97,6 +97,7 @@ main:
         date: Sep 2018 - Current
         duration: '>3 yr 6 mo'
         data:
+          - text: 'Promoted three times in four years (contractor to full-time employee; mid-level to mid-senior to senior software engineer).'
           - text: 'Led team responsible for ETL pipeline to read and standardize >1 billion trade messages per day from >30 exchanges and pass to frontend.'
           - text: 'Championed, designed, and implemented <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipeline, DevOps Infrastructure for Python application suite, including linting, Puppet module, <abbr title="Python Package Index">PyPI</abbr> server, unit tests, docs, and mentoring junior developers.'
             hidden:
@@ -107,7 +108,6 @@ main:
           - text: 'Migrated application from on-prem <abbr title="Virtual Machines">VMs</abbr> to Kubernetes in <abbr title="Elastic Kubernetes Service">EKS</abbr>, including metrics via DataDog, <abbr title="Transport Layer Security">TLS</abbr> via Istio, creating Helm charts and Terraform modules.'
           - text: 'Reduced monthly <abbr title="Amazon Web Services">AWS</abbr> costs by $2700 by reducing microservice memory footprint, shutting down dev <abbr title="Elastic Kubernetes Service">EKS</abbr> cluster outside business hours, migrating from Strimzi to <abbr title="Managed Streaming for Kafka">MSK</abbr>, adding data compression, and consuming from the closest Kafka replica.'
             hidden: 'reducing microservice memory footprint ($500/mo), shutting down dev <abbr title="Elastic Kubernetes Service">EKS</abbr> cluster outside business hours ($700/mo), migrating from Strimzi to <abbr title="Managed Streaming for Kafka">MSK</abbr> ($400/mo), adding data compression ($1000/mo), and consuming from the closest Kafka replica ($100/mo).'
-          - text: 'Promoted three times in four years (contractor to full-time employee; mid-level to mid-senior to senior software engineer).'
         hidden:
           - text: 'Added auto-updating internal dependencies, version incrementing, and container tagging to <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipelines across application suite'
           - text: 'Identified and eliminated multiple potential avenues for missing messages in Java <abbr title="Extract, Transform, Load">ETL</abbr> pipeline during port to Kubernetes / <abbr title="Amazon Web Services">AWS</abbr> / Kafka.'
