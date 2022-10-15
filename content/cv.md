@@ -98,15 +98,15 @@ main:
         data:
           - text: 'Promoted three times in four years, culminating in senior engineer.'
             hidden: '(contractor to full-time employee; mid-level to mid-senior to senior software engineer)'
-          - text: 'Led team responsible for ETL pipeline to ingest, standardize, and transmit >1 billion trade messages per day per client.'
+          - text: 'Led team responsible for <abbr title="Extract, Transform, Load">ETL</abbr> pipeline to ingest, standardize, and transmit >1 billion trade messages per day per client.'
             hidden: 'from >30 exchanges'
-          - text: 'Championed, designed, and implemented <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipeline, DevOps infrastructure for Python application suite, including linting, Puppet module, <abbr title="Python Package Index">PyPI</abbr> server, unit tests, documentation, and mentoring junior developers.'
+          - text: 'Championed, designed, and implemented <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipeline and DevOps infrastructure for Python application suite, including linting, Puppet module, <abbr title="Python Package Index">PyPI</abbr> server, unit tests, documentation, and mentoring junior developers.'
             hidden:
               - 'Enabled Python 3 migration; set up linters, Nexus <abbr title="Python Package Index">PyPI</abbr> server, and Puppet module; brought all packages up to 80% code coverage'
               - 'Meticulously documented python development setup process for Windows and Mac users, including package structure, virtual environments, and test writing for use by other developers'
               - 'Set up Nasdaq-internal <a href="https://pypi.org/"><abbr title="Python Package Index">PyPI</abbr></a> server via <a href="https://www.sonatype.com/nexus/repository-pro">Nexus</a>'
               - "Python 2 and 3, PyCharm, Vim, Poetry, pip, pytest, pre-commit, GitLab-CI"
-          - text: 'Migrated application from on-prem <abbr title="Virtual Machines">VMs</abbr> to Kubernetes in <abbr title="Elastic Kubernetes Service">EKS</abbr>, adding DataDog, Splunk, and Istio. Created Helm charts with auto-update triggers for internal dependencies and Terraform modules to deploy all <abbr title="Amazon Web Services">AWS</abbr> resources.'
+          - text: 'Migrated application from on-prem <abbr title="Virtual Machines">VMs</abbr> to Kubernetes in <abbr title="Elastic Kubernetes Service">EKS</abbr>. Created Helm charts with auto-update triggers for internal dependencies, DataDog and Splunk alerting, and Terraform modules to deploy all <abbr title="Amazon Web Services">AWS</abbr> resources.'
           - text: 'Reduced monthly <abbr title="Amazon Web Services">AWS</abbr> costs by 50% through strategies such as scaling down aggressively during off-hours and examining tradeoffs in managed services.'
             hidden:
               - 'reducing microservice memory footprint ($500/mo), shutting down dev <abbr title="Elastic Kubernetes Service">EKS</abbr> cluster outside business hours ($700/mo), migrating from Strimzi to <abbr title="Managed Streaming for Kafka">MSK</abbr> ($600/mo), adding data compression ($1000/mo), consuming from the closest Kafka replica ($100/mo), sharing account with frontend (~$1k/mo?), and optimizing <abbr title="Elastic Compute Cloud">EC2</abbr> node size ($60/mo).'
