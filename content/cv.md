@@ -6,7 +6,7 @@ template: cv.html
 name: Jeremy Richards
 position: Backend | DevOps
 summary:
-  text: 'Software engineer focused on fault-tolerance and push-button deployments. Strong technical writer. Proven track record improving automation, both in <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> and personal workflow.'
+  text: 'Software engineer focused on fault-tolerance and push-button deployments. Dedicated to clear documentation. Proven track record improving automation, both in <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> and personal workflow.'
   hidden:
     - "CI/CD automation: see Nasdaq gains"
     - "Personal workflow automation: bashrc (brownbag sharing session), vim binds, github action to deploy this site. proxy login (built own and used another) - documented and shared with team."
@@ -30,7 +30,7 @@ contact:
   - icon: /cv/img/stackoverflow.svg
     hover: Stack Overflow reputation
     icon_alt: Stack Overflow logo
-    text: 7.8k ●4 ●27 ●47
+    text: 8.7k ●4 ●31 ●48
     link: https://stackexchange.com/users/7783437/jeremysprofile?tab=accounts
   - text: jeremysprofile
     hover: git repo for this resume
@@ -51,27 +51,26 @@ sidebar:
         data:
           - Python
           - Bash
-          - Java (Spring Boot, Maven)
+          - Java (Spring Boot)
       - title: Platforms
         data:
-          - Linux (RHEL / CentOS, Alpine)
-          - Mac
-          - Docker
-          - Kubernetes
+          - Linux
           - AWS
-      - title: <abbr title="Infrastructure as Code">IaC</abbr>
+          - Kubernetes
+          - Docker
+          - Kafka
+        hidden:
+          - Puppet
+      - title: '<abbr title="Infrastructure as Code">IaC</abbr>'
         data:
           - Helm
           - Terraform
-        hidden:
-          - Puppet
-      - title: Other
+          - GitLab <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>
+      - title: Soft Skills
         data:
           - Cross-team collaboration
           - Technical documentation
           - Mentoring
-          - Kafka
-          - GitLab <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>
           - Scrum / Agile
             # - Git
 
@@ -93,22 +92,27 @@ main:
         icon: /cv/img/nasdaq-icon.svg
         icon_alt: Nasdaq logo
         icon_title: Nasdaq logo
-        position: 'Contractor → <abbr title="Software Engineer">SWE</abbr> II → <abbr title="Software Engineer">SWE</abbr> III → <abbr title="Software Engineer">SWE</abbr> IV'
+        position: 'Contractor → <abbr title="Full-time Employee">FTE</abbr> <abbr title="Software Engineer">SWE</abbr> II → <abbr title="Software Engineer">SWE</abbr> III → <abbr title="Software Engineer">SWE</abbr> IV'
         date: Sep 2018 - Current
-        duration: '>3 yr 6 mo'
+        duration: '>4 yr'
         data:
-          - text: 'Promoted three times in four years (contractor to full-time employee; mid-level to mid-senior to senior software engineer).'
-          - text: 'Led team responsible for ETL pipeline to read and standardize >1 billion trade messages per day from >30 exchanges and pass to frontend.'
-          - text: 'Championed, designed, and implemented <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipeline, DevOps Infrastructure for Python application suite, including linting, Puppet module, <abbr title="Python Package Index">PyPI</abbr> server, unit tests, docs, and mentoring junior developers.'
+          - text: 'Promoted three times in four years, culminating in senior engineer.'
+            hidden: '(contractor to full-time employee; mid-level to mid-senior to senior software engineer)'
+          - text: 'Led team responsible for ETL pipeline to ingest, standardize, and transmit >1 billion trade messages per day per client.'
+            hidden: 'from >30 exchanges'
+          - text: 'Championed, designed, and implemented <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipeline, DevOps infrastructure for Python application suite, including linting, Puppet module, <abbr title="Python Package Index">PyPI</abbr> server, unit tests, documentation, and mentoring junior developers.'
             hidden:
               - 'Enabled Python 3 migration; set up linters, Nexus <abbr title="Python Package Index">PyPI</abbr> server, and Puppet module; brought all packages up to 80% code coverage'
               - 'Meticulously documented python development setup process for Windows and Mac users, including package structure, virtual environments, and test writing for use by other developers'
               - 'Set up Nasdaq-internal <a href="https://pypi.org/"><abbr title="Python Package Index">PyPI</abbr></a> server via <a href="https://www.sonatype.com/nexus/repository-pro">Nexus</a>'
               - "Python 2 and 3, PyCharm, Vim, Poetry, pip, pytest, pre-commit, GitLab-CI"
-          - text: 'Migrated application from on-prem <abbr title="Virtual Machines">VMs</abbr> to Kubernetes in <abbr title="Elastic Kubernetes Service">EKS</abbr>, including metrics via DataDog, <abbr title="Transport Layer Security">TLS</abbr> via Istio, creating Helm charts and Terraform modules.'
-          - text: 'Reduced monthly <abbr title="Amazon Web Services">AWS</abbr> costs by $2700 by reducing microservice memory footprint, shutting down dev <abbr title="Elastic Kubernetes Service">EKS</abbr> cluster outside business hours, migrating from Strimzi to <abbr title="Managed Streaming for Kafka">MSK</abbr>, adding data compression, and consuming from the closest Kafka replica.'
-            hidden: 'reducing microservice memory footprint ($500/mo), shutting down dev <abbr title="Elastic Kubernetes Service">EKS</abbr> cluster outside business hours ($700/mo), migrating from Strimzi to <abbr title="Managed Streaming for Kafka">MSK</abbr> ($400/mo), adding data compression ($1000/mo), and consuming from the closest Kafka replica ($100/mo).'
+          - text: 'Migrated application from on-prem <abbr title="Virtual Machines">VMs</abbr> to Kubernetes in <abbr title="Elastic Kubernetes Service">EKS</abbr>, including use of DataDog, Splunk, and Istio. Created Helm charts with auto-update triggers for internal dependencies and Terraform modules to deploy all <abbr title="Amazon Web Services">AWS</abbr> resources.'
+          - text: 'Reduced monthly <abbr title="Amazon Web Services">AWS</abbr> costs by 50% through strategies like scaling down aggressively during off-hours and examining tradeoffs in managed services.'
+            hidden:
+              - 'reducing microservice memory footprint ($500/mo), shutting down dev <abbr title="Elastic Kubernetes Service">EKS</abbr> cluster outside business hours ($700/mo), migrating from Strimzi to <abbr title="Managed Streaming for Kafka">MSK</abbr> ($600/mo), adding data compression ($1000/mo), consuming from the closest Kafka replica ($100/mo), sharing account with frontend (~$1k/mo?), and optimizing <abbr title="Elastic Compute Cloud">EC2</abbr> node size ($60/mo).'
+          - text: 'Prioritized creation and maintenance of documentation including architectural diagrams, runbooks, onboarding materials, budget forecasting, sprint retrospectives, and detailed post-mortems including <abbr title="Root Cause Analysis">RCA</abbr>, debugging and recovery steps, and future process improvements.'
         hidden:
+          - text: 'Reduced incident rate by 20%'
           - text: 'Added auto-updating internal dependencies, version incrementing, and container tagging to <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipelines across application suite'
           - text: 'Identified and eliminated multiple potential avenues for missing messages in Java <abbr title="Extract, Transform, Load">ETL</abbr> pipeline during port to Kubernetes / <abbr title="Amazon Web Services">AWS</abbr> / Kafka.'
             hidden: "Previous on-prem implementation would read 1, write 1. Porting to Kafka meant we had to batch our messages, but there were a lot of edge cases involved in batching in terms of duplicate or missed messages. We had to implement Kafka transactions to ensure we accurately tracked message counts and did not lose messages or add duplicates on pod failures. Also had to make sure to split the kafka nodes across EC2 instances and availability zones for redundancy, make sure that topics were created with the right configuration (topics get created on read OR write and we only had configs on the writer microservice)"
@@ -128,9 +132,7 @@ main:
         date: Jun 2017 - Sep 2018
         duration: 1 yr 3 mo
         data:
-          - text: 'Created neural network to classify <abbr title="Code Division Multiple Access">CDMA</abbr> radio signals at negative <abbr title="Signal-to-Noise Ratios">SNRs</abbr>.'
-            bullets:
-              - 'Awarded trade secret for work, which was presented in internal symposium and used in classified space.'
+          - text: 'Created neural network to classify <abbr title="Code Division Multiple Access">CDMA</abbr> radio signals at negative <abbr title="Signal-to-Noise Ratios">SNRs</abbr>. Awarded trade secret for work, which was presented in internal symposium.'
             hidden:
               - '<abbr title="Code Division Multiple Access">CDMA</abbr> is a way to share bandwidth with cooperating simultaneous users via sets of spreading sequences, which are psuedorandom binary sequences designed to minimally interfere with each other. My goal was to detect usage of a subset of these sequences in a target bandwidth'
               - text: Spread spectrum
@@ -164,9 +166,9 @@ main:
         date: Jan 2016 - Dec 2016
         duration: 1 yr
         data:
-          - text: "Decreased key customer's <abbr title='Hard Disk Drive'>HDD</abbr> qualifications test time by 20%."
-          - text: "Automated log backup and system setup on customer's test systems."
+          - text: "Decreased high-profile customer's <abbr title='Hard Disk Drive'>HDD</abbr> qualifications test time by 20%."
         hidden:
+          - text: "Automated log backup and system setup on customer's test systems."
           - text: 'Wrote Bash scripts to test <abbr title="Hard Disk Drive">HDD</abbr> reliability and performance data'
             hidden:
               - 'Wrote Bash scripts to run multi-day performance and reliability tests on populations of hundreds of <abbr title="Hard Disk Drives">HDDs</abbr>'
@@ -201,7 +203,7 @@ footer:
         degree: B.S. Mechanical Engineering
         gpa: 3.8
         data:
-          - text: 'Inventor, <a href="http://appft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&p=1&u=%2Fnetahtml%2FPTO%2Fsearch-bool.html&r=1&f=G&l=50&co1=AND&d=PG01&s1=%2210,429,838%22&OS=%2210,429,838%22&RS=%2210,429,838%22">patent 10,429,838</a> for drone landings'
+          - text: 'Inventor, <a href="https://ppubs.uspto.gov/pubwebapp/external.html?q=10,429,838.pn.&db=USPAT">patent 10,429,838</a> for drone landings'
         hidden:
           - text: Senior project – drones leave station, get GPS coordinates, determine optimal paths based on obstacles, and fly to targets
             bullets:
