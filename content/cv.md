@@ -89,16 +89,15 @@ main:
   - title: Professional Experience
     sections:
       - company: Trumid
-        icon: /cv/img/trumid-icon.svg
+        icon: /cv/img/trumid-icon.png
         icon_alt: Trumid logo
         icon_title: Trumid logo
         position: 'Senior <abbr title="Site Reliability Engineer">SRE</abbr>'
         date: Jan 2023 - current
-        duration: ???
+        duration: '???'
         data:
           - text: 'Saved ~7% on AWS costs (~75k per month) by optimizing <abbr title="Elastic Compute Cloud">EC2</abbr> usage.'
-            hidden: "switched from `[mr]5d.*` nodes to `[mr]5.*` lol.Jan '23 AWS nonprod cost: $380.1k, cost due to `*d.*` nodes: $204.6k, savings due to converting to `s/d\././` nodes: 30.7k (m5d.xlarge: .226 m5.xlarge: .192, i.e., 15% decrease in cost from m5d to m5), Jan '23 AWS prod cost: $716.7k, cost due to `*d.*` nodes: $293.1k, savings due to converting to `s/d\././` nodes: $44k. Total % savings in nonprod: 8%, % savings in prod: 6%, total % savings 6.8%"
-
+            hidden: "switched from `[mr]5d.*` nodes to `[mr]5.*` lol. Jan '23 AWS nonprod cost: $380.1k, cost due to `*d.*` nodes: $204.6k, savings due to converting to `s/d\\././` nodes: 30.7k (m5d.xlarge: .226 m5.xlarge: .192, i.e., 15% decrease in cost from m5d to m5), Jan '23 AWS prod cost: $716.7k, cost due to `*d.*` nodes: $293.1k, savings due to converting to `s/d\\././` nodes: $44k. Total % savings in nonprod: 8%, % savings in prod: 6%, total % savings 6.8%"
       - company: Nasdaq
         icon: /cv/img/nasdaq-icon.svg
         icon_alt: Nasdaq logo

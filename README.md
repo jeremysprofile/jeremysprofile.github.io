@@ -89,7 +89,8 @@ Honestly, the only reason I went with GitHub was because I knew about GitHub Pag
 ## Install
 ```bash
 unset {HTTP,HTTPS,FTP,NO}_PROXY {http,https,ftp,socks,no}_proxy
-pip install mkdocs --index-url https://pypi.python.org/simple
+# need pip? brew install python
+pip3 install mkdocs --index-url https://pypi.python.org/simple
 ```
 [Source](https://mkdocs.readthedocs.io/en/latest/#installation)
 
