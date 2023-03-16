@@ -188,6 +188,7 @@ self-contained */
   background-color: var(--brighter-color);
 }
 #resume abbr {
+  color: inherit;
   cursor: help;
   text-decoration: dotted underline;
 }
