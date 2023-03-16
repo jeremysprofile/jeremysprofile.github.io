@@ -4,7 +4,7 @@ template: cv.html
 # We'll pretend, but all the content lives in the "frontmatter".
 
 name: Jeremy Richards
-position: Backend | DevOps
+position: Backend | DevOps | <abbr title="Site Reliability Engineer">SRE</abbr>
 summary:
   text: 'Software engineer focused on fault-tolerance and push-button deployments. Dedicated to clear documentation. Proven track record improving automation, both in <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> and personal workflow.'
   hidden:
@@ -92,7 +92,7 @@ main:
         icon: /cv/img/trumid-icon.png
         icon_alt: Trumid logo
         icon_title: Trumid logo
-        position: 'Senior <abbr title="Site Reliability Engineer">SRE</abbr>'
+        position: 'Senior Site Reliability Engineer'
         date: Jan 2023 - current
         duration: '???'
         data:
