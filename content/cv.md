@@ -171,39 +171,39 @@ main:
               - 'Created training data using Google Earth API and list of GPS coordinates of current (and former) mines.'
               - 'Achieved only 92% accuracy due to poor data - some mines had been abandoned and revegetated, and some mine coordinates did not have enough precision to display the mine at sufficient resolution for training'
 
-      - company: Seagate Technology
-        icon: /cv/img/seagate-icon.svg
-        icon_alt: Seagate logo
-        icon_title: Seagate logo
-        position: Applications Engineering Intern
-        date: Jan 2016 - Dec 2016
-        duration: 1 yr
-        data:
-          - text: "Decreased high-profile customer's <abbr title='Hard Disk Drive'>HDD</abbr> qualifications test time by 20%."
-        hidden:
-          - text: "Automated log backup and system setup on customer's test systems."
-          - text: 'Wrote Bash scripts to test <abbr title="Hard Disk Drive">HDD</abbr> reliability and performance data'
-            hidden:
-              - 'Wrote Bash scripts to run multi-day performance and reliability tests on populations of hundreds of <abbr title="Hard Disk Drives">HDDs</abbr>'
-              - 'Created Bash scripts to capture performance and reliability metrics for populations of hundreds of <abbr title="Hard Disk Drives">HDDs</abbr> over multiple days'
-              - 'Drives were both <abbr title="Serial Attached SCSI (Small Computer System Interface)">SAS</abbr> and <abbr title="Serial ATA (AT Attachment)">SATA</abbr>, different capacities, and different architectures, including <abbr title="Conventional Magnetic Recording">CMR</abbr> and <abbr title="Host-Aware">HA</abbr> <abbr title="Shingled Magnetic Recording">SMR</abbr>.'
-              - text: 'Updated <abbr title="Conventional Magnetic Recording">CMR</abbr>-style tests for <abbr title="Host-Aware">HA</abbr> <abbr title="Shingled Magnetic Recording">SMR</abbr> drives'
-                hidden: 'SMR drive tracks overlap so you have to write tracks in order; you can''t just rewrite a small part of the track, you have to rewrite the whole track'
-          - text: "Decreased customer's total qualifications test time 20%"
-            hidden:
-              - 'Wrote tests to be 9% more efficient.'
-              - 'The other 11% time reduction was due to increased automation (previously, all tests were kicked off manually during the workday, meaning a test finishing at 6 P.M. would leave the system idle for 14 hours).'
-          - text: 'Automated log backup and system setup on all test systems'
-            hidden:
-              - 'The log backup was a cron job to call a service which was just glorified <code>rsync</code> and some logic to put everything into timestamped folders on a secondary server.'
-              - 'The system setup and end-to-end test run were slightly fault-tolerant Bash scripts.'
-          - text: 'Automated tests to qualify Seagate <abbr title="Hard Disk Drives">HDDs</abbr> in customer environments'
-            hidden: 'Worked with Fortune 100 cloud company as final qualifications gate to ensure interoperability between our drives and their racks'
-
-          - text: 'Created Python parsers to generate graphs, pivot tables, and conditionally-highlighted statistics from >20,000 log files'
-            hidden:
-              - 'Created pivot tables with automatic highlighting, graphs, and summary data output in top workbook with raw data in other workbooks.'
-              - 'Read in text log files created from our various tests and output data to Excel via <a href="https://pypi.org/project/XlsxWriter/"><code>XlsxWriter</code></a>.'
+      # - company: Seagate Technology
+        # icon: /cv/img/seagate-icon.svg
+        # icon_alt: Seagate logo
+        # icon_title: Seagate logo
+        # position: Applications Engineering Intern
+        # date: Jan 2016 - Dec 2016
+        # duration: 1 yr
+        # data:
+          # - text: "Decreased high-profile customer's <abbr title='Hard Disk Drive'>HDD</abbr> qualifications test time by 20%."
+        # hidden:
+          # - text: "Automated log backup and system setup on customer's test systems."
+          # - text: 'Wrote Bash scripts to test <abbr title="Hard Disk Drive">HDD</abbr> reliability and performance data'
+            # hidden:
+              # - 'Wrote Bash scripts to run multi-day performance and reliability tests on populations of hundreds of <abbr title="Hard Disk Drives">HDDs</abbr>'
+              # - 'Created Bash scripts to capture performance and reliability metrics for populations of hundreds of <abbr title="Hard Disk Drives">HDDs</abbr> over multiple days'
+              # - 'Drives were both <abbr title="Serial Attached SCSI (Small Computer System Interface)">SAS</abbr> and <abbr title="Serial ATA (AT Attachment)">SATA</abbr>, different capacities, and different architectures, including <abbr title="Conventional Magnetic Recording">CMR</abbr> and <abbr title="Host-Aware">HA</abbr> <abbr title="Shingled Magnetic Recording">SMR</abbr>.'
+              # - text: 'Updated <abbr title="Conventional Magnetic Recording">CMR</abbr>-style tests for <abbr title="Host-Aware">HA</abbr> <abbr title="Shingled Magnetic Recording">SMR</abbr> drives'
+                # hidden: 'SMR drive tracks overlap so you have to write tracks in order; you can''t just rewrite a small part of the track, you have to rewrite the whole track'
+          # - text: "Decreased customer's total qualifications test time 20%"
+            # hidden:
+              # - 'Wrote tests to be 9% more efficient.'
+              # - 'The other 11% time reduction was due to increased automation (previously, all tests were kicked off manually during the workday, meaning a test finishing at 6 P.M. would leave the system idle for 14 hours).'
+          # - text: 'Automated log backup and system setup on all test systems'
+            # hidden:
+              # - 'The log backup was a cron job to call a service which was just glorified <code>rsync</code> and some logic to put everything into timestamped folders on a secondary server.'
+              # - 'The system setup and end-to-end test run were slightly fault-tolerant Bash scripts.'
+          # - text: 'Automated tests to qualify Seagate <abbr title="Hard Disk Drives">HDDs</abbr> in customer environments'
+            # hidden: 'Worked with Fortune 100 cloud company as final qualifications gate to ensure interoperability between our drives and their racks'
+# 
+          # - text: 'Created Python parsers to generate graphs, pivot tables, and conditionally-highlighted statistics from >20,000 log files'
+            # hidden:
+              # - 'Created pivot tables with automatic highlighting, graphs, and summary data output in top workbook with raw data in other workbooks.'
+              # - 'Read in text log files created from our various tests and output data to Excel via <a href="https://pypi.org/project/XlsxWriter/"><code>XlsxWriter</code></a>.'
 
 footer:
   - title: Education
