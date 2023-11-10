@@ -4,7 +4,7 @@ template: cv.html
 # We'll pretend, but all the content lives in the "frontmatter".
 
 name: Jeremy Richards
-position: Backend | DevOps | <abbr title="Site Reliability Engineer">SRE</abbr>
+position: Backend | <abbr title="Developer Experience">DevEx</abbr> | <abbr title="Site Reliability Engineer">SRE</abbr>
 summary:
   text: 'Software engineer focused on fault-tolerance and push-button deployments. Dedicated to clear documentation. Proven track record improving automation, both in <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> and personal workflow.'
   hidden:
@@ -30,7 +30,7 @@ contact:
   - icon: /cv/img/stackoverflow.svg
     hover: Stack Overflow reputation
     icon_alt: Stack Overflow logo
-    text: 9.5k ●4 ●35 ●52
+    text: 10.1k ●4 ●35 ●56
     link: https://stackexchange.com/users/7783437/jeremysprofile?tab=accounts
   - text: jeremysprofile
     hover: git repo for this resume
@@ -60,11 +60,13 @@ sidebar:
           - Docker
           - Kafka
         hidden:
+          - Jenkins
           - Puppet
       - title: '<abbr title="Infrastructure as Code">IaC</abbr>'
         data:
           - Helm
           - Terraform
+          - ArgoCD
           - GitLab <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>
       - title: Soft Skills
         data:
@@ -94,7 +96,7 @@ main:
         icon_title: Trumid logo
         position: 'Senior Site Reliability Engineer'
         date: Jan 2023 - current
-        duration: '???'
+        duration: 1 yr
         data:
           - text: 'Saved 7% on AWS costs ($75k/month) by optimizing <abbr title="Elastic Compute Cloud">EC2</abbr> usage.'
             hidden: "switched from `[mr]5d.*` nodes to `[mr]5.*` lol. Jan '23 AWS nonprod cost: $380.1k, cost due to `*d.*` nodes: $204.6k, savings due to converting to `s/d\\././` nodes: 30.7k (m5d.xlarge: .226 m5.xlarge: .192, i.e., 15% decrease in cost from m5d to m5), Jan '23 AWS prod cost: $716.7k, cost due to `*d.*` nodes: $293.1k, savings due to converting to `s/d\\././` nodes: $44k. Total % savings in nonprod: 8%, % savings in prod: 6%, total % savings 6.8%"
