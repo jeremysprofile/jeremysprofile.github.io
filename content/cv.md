@@ -30,7 +30,7 @@ contact:
   - icon: /cv/img/stackoverflow.svg
     hover: Stack Overflow reputation
     icon_alt: Stack Overflow logo
-    text: 10.1k ●4 ●35 ●56
+    text: 10.4k ●4 ●38 ●59
     link: https://stackexchange.com/users/7783437/jeremysprofile?tab=accounts
   - text: jeremysprofile
     hover: git repo for this resume
