@@ -51,7 +51,7 @@ sidebar:
         data:
           - Python
           - Bash
-          - Java (Spring Boot)
+          - Java
           - Go
       - title: Platforms
         data:
