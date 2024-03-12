@@ -99,9 +99,9 @@ main:
         date: Jan 2023 - current
         duration: 1 yr
         data:
-          - text: 'Saved 7% on <abbr title="Amazon Web Services">AWS</abbr> costs ($75k/month) by optimizing <abbr title="Elastic Compute Cloud">EC2</abbr> usage.'
+          - text: 'Saved 7% on company-wide <abbr title="Amazon Web Services">AWS</abbr> costs ($75k/month) by optimizing <abbr title="Elastic Compute Cloud">EC2</abbr> usage.'
             hidden: "switched from `[mr]5d.*` nodes to `[mr]5.*` lol. Jan '23 AWS nonprod cost: $380.1k, cost due to `*d.*` nodes: $204.6k, savings due to converting to `s/d\\././` nodes: 30.7k (m5d.xlarge: .226 m5.xlarge: .192, i.e., 15% decrease in cost from m5d to m5), Jan '23 AWS prod cost: $716.7k, cost due to `*d.*` nodes: $293.1k, savings due to converting to `s/d\\././` nodes: $44k. Total % savings in nonprod: 8%, % savings in prod: 6%, total % savings 6.8%"
-          - text: 'Increased service resilience to <abbr title="Amazon Web Services">AWS</abbr> <abbr title="Availability Zone">AZ</abbr>-level outages while saving 75% on storage costs via <abbr title="Elastic Block Store">EBS</abbr> migration to a combination of <abbr title="Elastic File System">EFS</abbr> and ephemeral-storage'
+          - text: 'Increased resilience to <abbr title="Amazon Web Services">AWS</abbr> <abbr title="Availability Zone">AZ</abbr> outages while saving 75% on storage costs via <abbr title="Elastic Block Store">EBS</abbr> migration to a combination of <abbr title="Elastic File System">EFS</abbr> and ephemeral-storage.'
             hidden: "Saved on cost because I determined we were using EBS unnecessarily - we had some logs that were backed up to S3 on a regular schedule via sidecar, so moved those files to ephermeral-storage, and the session level logs were a fraction of the size (MiB vs GiB) and only needed to be persisted for less than 24h and could be saved cheaply in EFS with elastic throughput - .5Gi on EFS and rest on ephemeral-storage vs 8Gi on EBS - ephemeral storage effectively free because other services use so little, as long as you mark your resource.requests.ephemeral-storage it all works out"
         hidden:
           - text: 'Set up automatic reloading on our HAProxy instance to allow intra-day routing updates'
