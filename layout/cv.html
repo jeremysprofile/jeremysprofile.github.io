@@ -168,10 +168,11 @@
   </div>
 
   <div class="flex" id="body">
-
-    <div id="sidebar">
-      {{ format_sections(page.meta.sidebar) }}
-    </div>
+    {%- if page.meta.sidebar -%}
+      <div id="sidebar">
+        {{ format_sections(page.meta.sidebar) }}
+      </div>
+    {%- endif -%}
 
     <div id="main">
       {{ format_sections(page.meta.main) }}

@@ -46,35 +46,40 @@ contact:
 
 sidebar:
   - title: Skills
+    data: "testing"
     sections:
-      - title: Languages
+      - subtitle: Languages
         data:
+          - Go
           - Python
           - Bash
           - Java
-          - Go
-      - title: Platforms
+      - subtitle: Platforms
         data:
           - Linux
           - AWS
           - Kubernetes
-          - Docker
           - Kafka
         hidden:
+          - Docker
           - Jenkins
           - Puppet
-      - title: '<abbr title="Infrastructure as Code">IaC</abbr>'
+      - subtitle: '<abbr title="Infrastructure as Code">IaC</abbr>'
         data:
           - Helm
           - Terraform
           - ArgoCD
           - GitLab <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>
-      - title: Soft Skills
+      - subtitle: Observability
+        data:
+          - Prometheus / Grafana
+          - Datadog
+      - subtitle: Soft Skills
         data:
           - Cross-team collaboration
           - Technical documentation
           - Mentoring
-          - Scrum / Agile
+          - Agile / Scrum
             # - Git
 
         # - Vim
@@ -99,11 +104,13 @@ main:
         date: Jan 2023 - current
         duration: 1 yr
         data:
-          - text: "Saved $75k/month (7% of company's total <abbr title='Amazon Web Services'>AWS</abbr> costs) by optimizing <abbr title='Elastic Compute Cloud'>EC2</abbr> usage."
+          - text: "Saved $75k/month (7% of company's <abbr title='Amazon Web Services'>AWS</abbr> costs) by optimizing <abbr title='Elastic Compute Cloud'>EC2</abbr> usage."
             hidden: "switched from `[mr]5d.*` nodes to `[mr]5.*` lol. Jan '23 AWS nonprod cost: $380.1k, cost due to `*d.*` nodes: $204.6k, savings due to converting to `s/d\\././` nodes: 30.7k (m5d.xlarge: .226 m5.xlarge: .192, i.e., 15% decrease in cost from m5d to m5), Jan '23 AWS prod cost: $716.7k, cost due to `*d.*` nodes: $293.1k, savings due to converting to `s/d\\././` nodes: $44k. Total % savings in nonprod: 8%, % savings in prod: 6%, total % savings 6.8%"
           - text: 'Increased resilience to availability zone outages and lowered storage costs by 80% via migration from <abbr title="Elastic Block Store">EBS</abbr> to a combination of <abbr title="Elastic File System">EFS</abbr> and ephemeral-storage.'
             hidden: "Saved on cost because I determined we were using EBS unnecessarily - we had some logs that were backed up to S3 on a regular schedule via sidecar, so moved those files to ephermeral-storage, and the session level logs were a fraction of the size (MiB vs GiB) and only needed to be persisted for less than 24h and could be saved cheaply in EFS with elastic throughput - .5Gi on EFS and rest on ephemeral-storage vs 8Gi on EBS - ephemeral storage effectively free because other services use so little, as long as you mark your resource.requests.ephemeral-storage it all works out"
+          - text: "Instilled culture of democratic sprint retrospectives and post-mortems, initiating team's investment in continuous iteration and improvement."
         hidden:
+          - text: "Created Go microservice to install, update, and monitor Helm releases of <abbr title='Financial Information eXchange'>FIX</abbr> sessions and HAProxy routing, decreasing release cycle for customer configuration changes."
           - text: 'Set up automatic reloading on our HAProxy instance to allow intra-day routing updates'
             hidden: "Solved some issues with HAProxy limitations of line length, k8s issues of configmap size, and HAProxy issues of dynamic ACL comparisons"
       - company: Nasdaq
@@ -219,9 +226,9 @@ footer:
         icon_alt: CU logo
         icon_title: CU logo
         degree: B.S. Mechanical Engineering
-        gpa: 3.8
-        data:
-          - text: 'Inventor, <a href="https://ppubs.uspto.gov/pubwebapp/external.html?q=10,429,838.pn.&db=USPAT">patent 10,429,838</a> for drone landings'
+        # gpa: 3.8
+        # data:
+          # - text: 'Inventor, <a href="https://ppubs.uspto.gov/pubwebapp/external.html?q=10,429,838.pn.&db=USPAT">patent 10,429,838</a> for drone landings'
         hidden:
           - text: Senior project – drones leave station, get GPS coordinates, determine optimal paths based on obstacles, and fly to targets
             bullets:
@@ -264,13 +271,13 @@ footer:
         icon_alt: OU logo
         icon_title: OU logo
         degree: B.A. Economics
-        gpa: 3.96
-        data:
-          - 'Minors: Psychology, Mathematics'
+        # gpa: 3.96
+        # data:
+          # - 'Minors: Psychology, Mathematics'
 
 ---
-This resume template is made up of 3 sections: a header, a body, and a footer.
-This could be made much more modular, with each section being customizable, but right now, there is exactly one user, so I haven't bothered.
+This resume template is made up of 3 areas: a header, a body, and a footer.
+This could be made much more modular, with each area being customizable, but right now, there is exactly one user, so I haven't bothered.
 
 ## Header
 The header is a row flexbox with "name / target role / summary" on the left, and contact links on the right.
