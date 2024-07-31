@@ -3,9 +3,11 @@
     <section class="flex column">
       {{ format_title(section.title) }}
       <div class="{{ section.classes }}">
+        {# Jinja2 syntax for "if x is list" is this. That's sad. <https://stackoverflow.com/a/39453833/5889131> #}
+        {%- if section.sections is iterable and (section.sections is not string and section.sections is not mapping) -%}
         {%- for subsection in section.sections -%}
           <section>
-            {{ format_subtitle(subsection) }}
+            {{ format_subsection_title(subsection) }}
             {%- if subsection.data -%}
               <div class="data">
                 {{ format_data(subsection.data) }}
@@ -13,6 +15,7 @@
             {%- endif -%}
           </section>
         {%- endfor -%}
+        {%- endif -%}
       </div>
     </section>
   {%- endfor -%}
@@ -25,34 +28,39 @@
   </div>
 {%- endmacro -%}
 
-{%- macro format_subtitle(item) -%}
-  <div class="subtitle">
-    <div class="flex base-align wrap">
-      {%- if item.title or item.position or item.degree -%}
-        <h3>{{ item.title or item.position or item.degree }}</h3>
-      {%- endif -%}
-      {%- if item.gpa -%}
-        <h4>GPA: {{ item.gpa }}</h4>
-      {%- elif item.location -%}
-        <h5>{{ item.location }}</h5>
-      {%- endif -%}
-    </div>
-    <div class="flex base-align wrap">
-      <div class="org">
-        {{ icon_image(item, "right-padded") }}
-        {%- if item.subtitle or item.company or item.school -%}
-          <h4>{{ item.subtitle or item.company or item.school }}</h4>
+{%- macro format_subsection_title(item) -%}
+  {%- if item.title or item.position or item.degree 
+      or item.gpa or item.location 
+      or item.subtitle or item.company or item.school or item.date 
+  -%}
+    <div class="subsection_title">
+      <div class="flex base-align wrap">
+        {%- if item.title or item.position or item.degree -%}
+          <h3>{{ item.title or item.position or item.degree }}</h3>
+        {%- endif -%}
+        {%- if item.gpa -%}
+          <h4>GPA: {{ item.gpa }}</h4>
+        {%- elif item.location -%}
+          <h5>{{ item.location }}</h5>
         {%- endif -%}
       </div>
-      {%- if item.date -%}
-        {%- if item.duration -%}
-          <h5 class="date" title="{{ item.duration }}">{{ item.date }}</h5>
-        {%- else -%}
-          <h5 class="date">{{ item.date }}</h5>
+      <div class="flex base-align wrap">
+        <div class="org">
+          {{ icon_image(item, "right-padded") }}
+          {%- if item.subtitle or item.company or item.school -%}
+            <h4>{{ item.subtitle or item.company or item.school }}</h4>
+          {%- endif -%}
+        </div>
+        {%- if item.date -%}
+          {%- if item.duration -%}
+            <h5 class="date" title="{{ item.duration }}">{{ item.date }}</h5>
+          {%- else -%}
+            <h5 class="date">{{ item.date }}</h5>
+          {%- endif -%}
         {%- endif -%}
-      {%- endif -%}
+      </div>
     </div>
-  </div>
+  {%- endif -%}
 {%- endmacro -%}
 
 
@@ -77,18 +85,27 @@
     {%- if info.link -%}
       <a href="{{ info.link }}">
     {%- endif -%}
+
+    {%- if info.title -%}
+      <span class="right-padded"><strong>{{ info.title }}</strong></span>
+    {%- endif -%}
+
     {%- if info.text -%}
       {{ info.text }}
     {%- endif -%}
 
     {{ icon_image(info, "green-filter left-padded") }}
 
-    {%- if info.bullets -%}
-      <ul>
-        {%- for bullet in info.bullets -%}
-          <li>{{ format_data(bullet) }}</li>
+    {%- if info.lines -%}
+      <ul class="nobullets">
+        {%- for line in info.lines -%}
+          <li>{{ format_data(line) }}</li>
         {%- endfor -%}
       </ul>
+    {%- endif -%}
+
+    {%- if info.bullets -%}
+      {{ format_bullets(info.bullets) }}
     {%- endif -%}
     {%- if info.link -%}
       </a>
@@ -98,15 +115,19 @@
     {%- endif -%}
   {%- elif info is string -%}
     {{ info }}
-  {%- else -%}
-    <ul>
-      {%- for datum in info -%}
-        <li>{{ format_data(datum) }}</li>
-      {%- endfor -%}
-    </ul>
+  {%- else -%}{# list #}
+    {{ format_bullets(info) }}
   {%- endif -%}
 {%- endmacro -%}
 
+
+{%- macro format_bullets(bullets) -%}
+  <ul class="bullets">
+    {%- for bullet in bullets -%}
+      <li>{{ format_data(bullet) }}</li>
+    {%- endfor -%}
+  </ul>
+{%- endmacro -%}
 
 <!DOCTYPE HTML>
 <html>
@@ -168,19 +189,27 @@
   </div>
 
   <div class="flex" id="body">
-    {%- if page.meta.sidebar -%}
+    {%- if page.meta.body.sidebar -%}
       <div id="sidebar">
-        {{ format_sections(page.meta.sidebar) }}
+        {{ format_sections(page.meta.body.sidebar) }}
       </div>
     {%- endif -%}
 
-    <div id="main">
-      {{ format_sections(page.meta.main) }}
+    <div class="main grow">
+      {{ format_sections(page.meta.body.main) }}
     </div>
   </div>
 
-  <div id="footer">
-    {{ format_sections(page.meta.footer) }}
+  <div class="flex" id="footer">
+    {%- if page.meta.footer.sidebar -%}
+      <div id="sidebar">
+        {{ format_sections(page.meta.footer.sidebar) }}
+      </div>
+    {%- endif -%}
+
+    <div class="main grow">
+      {{ format_sections(page.meta.footer.main) }}
+    </div>
   </div>
 </div>
 {% endblock %}

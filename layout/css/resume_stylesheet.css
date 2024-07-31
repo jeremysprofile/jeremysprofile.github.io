@@ -67,8 +67,7 @@ self-contained */
 #resume .flex {
   display: flex;
   justify-content: space-between;
-  /* Late 2020 hype! */
-  grid-column-gap: 1.5rem;
+  column-gap: 1.5em;
 }
 #resume .column {
   flex-direction: column;
@@ -84,29 +83,33 @@ self-contained */
 }
 #resume .personal-summary {
   font-style: oblique 7deg;
-  padding-top: 0.2rem;
+  padding-top: 0.2em;
 }
 
 #resume section {
-  margin-top: 0.8rem;
+  margin-top: 0.8em;
 }
 
 
-#resume ul {
+#resume ul.nobullets {
+  list-style: none;
+}
+#resume ul.bullets {
   /* Indent slightly as bullets have 0 spacing before, while text has a small
   amount. This also indents the line-wrapped bullet text a bit, but I don't
   mind how that looks. */
-  padding-left: 1rem;
+  padding-left: 1em;
   margin-left: 0;
   list-style: outside square;
 }
-#resume ul ul {
-  padding-left: 1.5rem;
+/* the .bullets might be on the wrong thing here, or maybe it should be on both? */
+#resume ul ul.bullets {
+  padding-left: 1.5em;
   margin: 0;
 }
 #resume li {
   margin: 0;
-  margin: 0.3rem 0;
+  margin: 0.3em 0;
 }
 
 #resume li::marker {
@@ -114,25 +117,25 @@ self-contained */
 }
 
 #resume p {
-  margin: 1rem 0;
+  margin: 1em 0;
 }
 #resume h1 {
-  font-size: 2.8rem;
+  font-size: 2.8em;
 }
 #resume h2 {
-  font-size: 1.6rem;
+  font-size: 1.6em;
 }
 #resume h3 {
-  font-size: 1.4rem;
+  font-size: 1.4em;
 }
 #resume h4 {
-  font-size: 1.2rem;
+  font-size: 1.2em;
 }
 #resume h5 {
-  font-size: 1rem;
+  font-size: 1em;
 }
 #resume b, strong {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 
@@ -141,6 +144,9 @@ self-contained */
 }
 #resume .title {
   color: var(--color);
+}
+# resume .inline-title {
+
 }
 #resume .base-align {
   align-items: baseline;
@@ -174,7 +180,7 @@ self-contained */
 
 /* Style links and hoverable elements */
 #resume a {
-  padding: 0.125rem;
+  padding: 0.125em;
   border-radius: 8px;
   text-decoration: underline;
 }
@@ -233,11 +239,11 @@ https://www.a11yproject.com/posts/2013-01-25-never-remove-css-outlines/
     width: 100%;
   }
   #resume {
+    /* Looks similar to Arial at 11pt. 10.5pt = 14px */
+    font-size: 10.5pt;
     height: calc(11in - 1in);
     margin: 0;
     padding: 0;
-    /* Looks similar to Arial at 11pt. 10.5pt = 14px */
-    font-size: 10.5pt;
   }
   #resume abbr {
     text-decoration: none;
