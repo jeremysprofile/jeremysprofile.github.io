@@ -1,0 +1,256 @@
+/* Redefine some styles just so the resume stylesheet is completely
+self-contained */
+
+:root {
+  /* Define our color variables here */
+
+  /* light mode */
+  --bg-color: white;
+  --text-color: #000d04;
+  /* "highlight" is an overstatement */
+  --highlight-text-color: black;
+  --muted-text-color: #404040;
+
+  --color: darkgreen;
+  --brighter-color: #8dc26e;
+  --brightest-color: forestgreen;
+}
+
+.green-filter {
+  /* As calculated by https://stackoverflow.com/a/43960991/5889131
+   * For 'forestgreen' aka rgb(34, 139, 34)
+   */
+  /*filter: invert(20%) sepia(97%) saturate(3230%) hue-rotate(124deg) brightness(100%) contrast(73%);
+
+  /* As calculated by https://stackoverflow.com/a/43960991/5889131
+   * For 'darkgreen' aka rgb(0, 100, 0)
+   */
+  filter: invert(21%) sepia(30%) saturate(6459%) hue-rotate(103deg) brightness(92%) contrast(111%);
+}
+
+
+#resume {
+  box-sizing: border-box;
+  /* half-inch margins on each side - A4 */
+  /*
+  height: calc(297mm - 2.54cm);
+  width: calc(210mm - 2.54cm);
+  */
+  /* half-inch margins on EACH side - Letter (but don't use height on webpage) */
+  width: calc(8.5in - 1in);
+  margin: 5vh auto 10vh auto;
+  /*
+  outline: 2px solid green;
+  */
+  font-size: 14pt;
+  font-family: 'Montserrat', sans-serif;
+
+  /* Works the same as setting 
+    kebab -> More tools -> Rendering -> Emulate CSS media type to "print"
+    That is *not* the same as print to PDF. You cannot expect it to exactly
+    match the output when using print preview / print to PDF / printing.
+  border: solid var(--brighter-color);
+  box-sizing: border-box;
+  height: calc(11in - 1in);
+  font-size: 10.5pt;
+  margin: 0;
+  padding: 0;
+  */
+}
+
+#resume *, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+#resume .flex {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1.5em;
+}
+#resume .column {
+  flex-direction: column;
+}
+#resume .grow {
+  flex-grow: 1;
+}
+#resume .max-content {
+  min-width: max-content;
+}
+#resume .right-align {
+  text-align: right;
+}
+#resume .personal-summary {
+  font-style: oblique 7deg;
+  padding-top: 0.2em;
+}
+
+#resume section {
+  margin-top: 0.8em;
+}
+
+
+#resume ul.nobullets {
+  list-style: none;
+}
+#resume ul.bullets {
+  /* Indent slightly as bullets have 0 spacing before, while text has a small
+  amount. This also indents the line-wrapped bullet text a bit, but I don't
+  mind how that looks. */
+  padding-left: 1em;
+  margin-left: 0;
+  list-style: outside square;
+}
+/* the .bullets might be on the wrong thing here, or maybe it should be on both? */
+#resume ul ul.bullets {
+  padding-left: 1.5em;
+  margin: 0;
+}
+#resume li {
+  margin: 0;
+  margin: 0.3em 0;
+}
+
+#resume li::marker {
+  color: var(--brightest-color);
+}
+
+#resume p {
+  margin: 1em 0;
+}
+#resume h1 {
+  font-size: 2.8em;
+}
+#resume h2 {
+  font-size: 1.6em;
+}
+#resume h3 {
+  font-size: 1.4em;
+}
+#resume h4 {
+  font-size: 1.2em;
+}
+#resume h5 {
+  font-size: 1em;
+}
+#resume b, strong {
+  font-weight: 600;
+}
+
+
+#resume .name {
+  color: var(--highlight-text-color);
+}
+#resume .title {
+  color: var(--color);
+}
+# resume .inline-title {
+
+}
+#resume .base-align {
+  align-items: baseline;
+}
+#resume .wrap {
+  flex-wrap: wrap;
+}
+#resume .date {
+  /* italic */
+  font-style: italic;
+  color: var(--color);
+}
+#resume .org {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+}
+
+
+#resume .icon {
+  height: 1em;
+  vertical-align: middle;
+}
+#resume .right-padded {
+  padding-right: 0.5ch;
+}
+#resume .left-padded {
+  padding-left: 0.5ch;
+}
+
+
+/* Style links and hoverable elements */
+#resume a {
+  padding: 0.125em;
+  border-radius: 8px;
+  text-decoration: underline;
+}
+#resume a:link,a:visited {
+  color: inherit;
+}
+#resume a:hover {
+  /* https://html.spec.whatwg.org/multipage/rendering.html#phrasing-content-3 */
+  text-decoration: underline;
+  /* TODO better color */
+  background-color: var(--brighter-color);
+}
+#resume abbr {
+  color: inherit;
+  cursor: help;
+  text-decoration: dotted underline;
+}
+#resume summary:hover {
+  border: 2px solid var(--brighter-color);
+  border-radius: 4px;
+  margin: -2px;
+  cursor: pointer;
+}
+
+/* outlines serve a purpose, even if they're ugly:
+https://www.a11yproject.com/posts/2013-01-25-never-remove-css-outlines/
+*/
+
+#resume hr {
+  width: 100%;
+  background-color: var(--color);
+  height: 2px;
+  border: 0;
+}
+#resume h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  color: inherit;
+}
+
+
+
+@media screen and (max-width: 8.5in) {
+  #resume {
+    width: 100%;
+  }
+  /* marginally responsive, which is more than good enough.
+     Really, I just want to have a one-column option for ATS.
+   */
+  #resume * {
+    flex-direction: column;
+  }
+}
+
+@media print {
+  body {
+    width: 100%;
+  }
+  #resume {
+    /* Looks similar to Arial at 11pt. 10.5pt = 14px */
+    font-size: 10.5pt;
+    height: calc(11in - 1in);
+    margin: 0;
+    padding: 0;
+  }
+  #resume abbr {
+    text-decoration: none;
+  }
+  @page {
+    margin: 0.5in;
+    size: letter portrait;
+  }
+}
+
