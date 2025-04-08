@@ -27,7 +27,7 @@ contact:
   - icon: /cv/img/stackoverflow.svg
     hover: Stack Overflow reputation
     icon_alt: Stack Overflow logo
-    text: 10.8k ●4 ●41 ●61
+    text: 11.5k ●4 ●44 ●63
     link: https://stackexchange.com/users/7783437/jeremysprofile?tab=accounts
   - text: jeremysprofile
     hover: git repo for this resume
@@ -50,7 +50,7 @@ body:
           icon_title: Trumid logo
           position: 'Senior Site Reliability Engineer'
           date: Jan 2023 - current
-          duration: 1 yr
+          duration: 2 yr
           data:
             - text: "Saved $75k / month (7% of company's <abbr title='Amazon Web Services'>AWS</abbr> costs) by optimizing <abbr title='Elastic Compute Cloud'>EC2</abbr> instance selection."
               hidden: "switched from `[mr]5d.*` nodes to `[mr]5.*` lol. Jan '23 AWS nonprod cost: $380.1k, cost due to `*d.*` nodes: $204.6k, savings due to converting to `s/d\\././` nodes: 30.7k (m5d.xlarge: .226 m5.xlarge: .192, i.e., 15% decrease in cost from m5d to m5), Jan '23 AWS prod cost: $716.7k, cost due to `*d.*` nodes: $293.1k, savings due to converting to `s/d\\././` nodes: $44k. Total % savings in nonprod: 8%, % savings in prod: 6%, total % savings 6.8%"
@@ -76,7 +76,7 @@ body:
               hidden: '(contractor to full-time employee; mid-level to mid-senior to senior software engineer)'
             - text: 'Led team responsible for <abbr title="Extract, Transform, Load">ETL</abbr> pipeline to ingest and standardize >1 billion <abbr title="Financial Information eXchange">FIX</abbr> messages / day / client.'
               hidden: 'from >30 exchanges'
-            - text: 'Championed, designed, and implemented <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipeline and DevOps infrastructure for Python application suite, including static typing, linting, Puppet module, <abbr title="Python Package Index">PyPI</abbr> server, unit tests, documentation, and mentoring junior developers.'
+            - text: 'Championed and designed <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipeline and DevOps infrastructure for Python application suite, including static typing, linting, Puppet module, <abbr title="Python Package Index">PyPI</abbr> server, unit tests, docs, and mentoring juniors.'
               hidden:
                 - 'Enabled Python 3 migration; set up linters, Nexus <abbr title="Python Package Index">PyPI</abbr> server, and Puppet module; brought all packages up to 80% code coverage'
                 - 'Meticulously documented python development setup process for Windows and Mac users, including package structure, virtual environments, and test writing for use by other developers'
@@ -177,7 +177,7 @@ body:
         - data:
             lines:
               - title: Languages
-                text: Go, Python, Bash, Java
+                text: Go, Python, Bash, TypeScript, Java
               - title: Platforms
                 text: Linux, AWS, Kubernetes, Kafka, Docker
                 hidden: Jenkins, Puppet
