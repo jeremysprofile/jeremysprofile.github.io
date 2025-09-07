@@ -98,10 +98,16 @@ Cards are mostly simultaneous action (with the exception of [combat](#combat)) ,
 Days are 4 sets of turns - morning, noon, evening, and night.
 Cards played for the day cannot be reused until the following day.
 
-You have **+1 upgrade** for cards played at noon.
-You have **-1 upgrade** for cards played at night.
-
+#### Morning
+Pick up [overheat tokens](#overheat).
+Pick up all [cards](#cards) played yesterday.
+### Noon
+[You have **+1 upgrade** for cards played at noon.](#upgrades)
 There is no benefit to +1 upgrade on maxed out cards?
+### Evening
+Nothing?
+### Night
+[ You have **-1 upgrade** for cards played at night.](#upgrades)
 There is no detriment to -1 upgrade on base cards (level 0)
 
 ## Cards
@@ -123,9 +129,9 @@ Tie winner chooses who goes first.
 Upgrade cap: 3
 
 ### 2. Coordinate
-Choose 1 + $LEVEL starting hexes, and up to 1 + $LEVEL adjacent friendly or empty destination hexes.
+Choose 1 + $LEVEL starting hexes, and up to 1 + $LEVEL adjacent [controlled](#glossary) or empty destination hexes.
 Move any number of mechs from starting hexes to destination hexes.
-Mechs cannot move more than 1 hex away.
+Each mech cannot move more than 1 hex this way.
 
 Upgrade cap: 4
 
