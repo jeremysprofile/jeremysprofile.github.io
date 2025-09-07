@@ -21,7 +21,7 @@ The only thing worth points is the number of unique hexes scanned.
 
 ## Setup
 You start with two [factories](#factories), two hexes, two [mechs](#mechs), 1 [scanner](#scanner), and 8 alloy.
-Each faction starts with the middle two hexes of their home row, with a mech and factory on each one, with matching stand colors.
+Each faction starts with the middle two hexes of their [home row](#glossary), with a mech and factory on each one, with matching stand colors.
 Each faction also gets a scanner touching their two starting hexes and the hex above them.
 
 For primaries, that means two mechs and factories of that primary color.
@@ -71,29 +71,31 @@ Cannot be moved or destroyed.
 ## Alloy
 The only resource.
 [Quarried](#5-quarry) from hexes you control.
-Goes into your personal supply.
+Goes into your personal supply; does not touch the board.
 ## Units
 Mechs and factories are units and go on hexes.
 Any unit controls a hex.
 Each unit has a stand denoting modifications.
 ### Stands
 Stands are just bases for pieces, and do nothing on their own.
-Mech stands determine where a mech can move.
-Factory stands determine what stand a mech is built with.
+
+[Mech](#mechs) stands show the modifications the mech has undergone, and thus, where the mech can move.
+
+[Factory](#factories) stands show the modified mechs an expanded factory can produce.
 
 ### Mechs
 By default, mechs have 1 move, 1 attack, and 1 defense.
 See [movement](#movement) or [combat](#combat) for details.
 
 ### Factories
-Can be expanded for extra defense and mech spawning. Can be stolen (damaged).
+Can be expanded for extra defense and mech spawning. Can be stolen (damaged) in [combat](#combat).
 Factory stands determine what colors a mech can spawn with - not where a factory can exist.
 
 Factory number of expansions is the number of colors - 0 expansions: white, 1: primary, 2: secondary, 3: black.
 Factories spawn as level 2 (1 expansion).
 Factories stolen from enemies become unexpanded (level 1 / 0 expansions).
 
-You can choose to spawn units of fewer colors than the factory, as long as they can occupy the hex.
+See [Manufacture](#6-manufacture) to details on mech production.
 
 ## Turns
 Simultaneous declaration - reveal action cards at the same time.
@@ -221,6 +223,7 @@ Upgrade cap: 5
 
 ## Movement
 By default, mechs have a speed of 1, meaning they can only move from a hex to an adjacent hex.
+No other [pieces](#pieces) can be moved.
 
 Upgrading the [Explore](#3-explore) action allow you to move mechs at speed 2.
 Mechs can only move through friendly or empty hexes that they can stand in.
@@ -237,14 +240,16 @@ Factories will enter lockdown during combat - you'll have to spend some explosiv
 
 Combat is just 1:1 - attacker sacrifices X units to destroy X defender units.
 Each factory expansion counts as a unit (each mech counts as one unit regardless of modifications).
-If you successfully invade a hex with a factory, place an unexpanded factory on the hex.
+If you successfully invade a hex with a factory, destroy your opponent's factory and place an unexpanded factory (white stand) on the hex.
 
-You can unsuccessfully attack a hex if you want to cull your opponent's forces but don't have enough to overwhelm.
+You can choose to attack with fewer units if you want to weaken your opponent's forces, though you won't gain control of the hex.
+A tie means the territory becomes unoccupied - any factories are completely destroyed.
+Remember to remove the [overheat](#overheat) token after any attack where you don't [control](#glossary) the hex.
 
 ## Overheat
 *Significant effort can cause mechs to overheat. You'll need to let them idle before they can be used.*
 
-Mark target hexes for your Explore and Annex actions with an overheat token.
+Mark target hexes for your [Explore](#3-explore) and [Annex](4-annex) actions with an overheat token.
 After your turn has completed, if you don't control the hex, remove the overheat token you placed.
 
 All mechs in a hex marked with an overheat token are overheated.
