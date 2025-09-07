@@ -2,10 +2,11 @@
 template: no-redirect.html
 ---
 
-# Board Game
-ExoGIS (geographical information system)
+# ExoGIS
+*Exoplanet Geographical Information System*
 
-Area control with objectives and light engine building - rune wars meets terra mystica
+Area control with objectives and light engine building.
+Rune Wars (4-turn cycle, 8 card action hand) meets Terra Mystica (hexes with terraforming) meets Scythe (upgrades, light engine building).
 
 ## Flavor
 *You are AIs owned by rival surveying corporations collecting geospatial data on an inhospitable exoplanet.*
@@ -13,8 +14,10 @@ Area control with objectives and light engine building - rune wars meets terra m
 *You'll need to adapt to the terrain, harvest resources, create more factories and mechs, and deploy scanners to retrieve the most complete picture of the planet to sell to colonists or mining companies.*
 
 ## Goal
-[Scan the highest number of hexes](#scoring) before the [game ends](#game-over).
+You win by scoring the most points.
+The only thing worth points is the number of unique hexes scanned.
 
+[Scan the highest number of hexes](#scoring) before the [game ends](#game-over).
 
 ## Setup
 You start with two [factories](#factories), two hexes, two [mechs](#mechs), 1 [scanner](#scanner), and 8 alloy.
@@ -59,6 +62,7 @@ There are [stands](#stands) of every color.
 Everyone can gather [alloy](#alloy).
 There are, in some vague sense, [objective tokens](#objectives).
 There are [overheat tokens](#overheat).
+There are no piece limits.
 ## Scanners
 Placed with the [scan](#8-scan) action to scan 1 or more hexes.
 Scanners are *not* units, do not go on hexes, and cannot be destroyed.
@@ -67,6 +71,7 @@ Cannot be moved or destroyed.
 ## Alloy
 The only resource.
 [Quarried](#5-quarry) from hexes you control.
+Goes into your personal supply.
 ## Units
 Mechs and factories are units and go on hexes.
 Any unit controls a hex.
@@ -216,7 +221,7 @@ Upgrade cap: 5
 ## Movement
 By default, mechs have a speed of 1, meaning they can only move from a hex to an adjacent hex.
 
-Upgrading the Explore action allow you to move mechs at speed 2.
+Upgrading the [Explore](#3-explore) action allow you to move mechs at speed 2.
 Mechs can only move through friendly or empty hexes that they can stand in.
 
 Upgrading the Explore action again allows you to blink between hexes of the same color that are less than 2 hexes apart.
@@ -242,10 +247,10 @@ Mark target hexes for your Explore and Annex actions with an overheat token.
 After your turn has completed, if you don't control the hex, remove the overheat token you placed.
 
 All mechs in a hex marked with an overheat token are overheated.
-Overheated mechs cannot leave and cannot perform any "With mech" action (Develop, Coordinate, Explore, Annex, and Scan).
+Overheated mechs cannot leave and cannot perform any "With mech" action ([Develop](#1-develop), [Coordinate](#2-coordinate), [Explore](#3-explore), [Annex](#4-annex), and [Scan](#8-scan)).
 Moving **into** an overheated area is allowed - you may attack or reinfoce areas with overheated mechs.
 
-Remove all overheat tokens from the board at the start of each morning.
+Remove all overheat tokens from the board at the start of each [morning](#morning).
 
 ## Objectives
 *Your technology wasn't designed with this particular planet's environment in mind. Gather more training data to make actions more efficient.*
@@ -260,7 +265,7 @@ Upgrading involves ~~grabbing the higher number card of that name~~ adding a tal
 You may upgrade any card, regardless of whether it has been played today.
 Upgrading the currently played card does not change your current action.
 
-There are a total of 27 possible upgrades, but only 12 objectives.
+There are a total of 27 possible upgrades, but only 17 objectives.
 
 When objective tokens run out, [game ends that **night**](#game-over).
 
@@ -290,7 +295,8 @@ How much? No idea - 2-3: 8/p, 4: 7/p, 5-6: 6/p
 ^ These are probably too long.
 
 ### Scoring
-Winner is most hex data uploaded back to civilization.
+*Surveying is zero-sum - miners and colonizers will buy from whomever has the most complete data set. The winner is the faction with the most hex data uploaded back to the Core Worlds.*
+
 Each unique hex covered by a scanner is worth 1 point.
 Ties are broken by number of upgrades.
 
