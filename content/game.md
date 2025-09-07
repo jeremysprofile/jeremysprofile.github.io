@@ -13,7 +13,20 @@ Area control with objectives and light engine building - rune wars meets terra m
 *You'll need to adapt to the terrain, harvest resources, create more factories and mechs, and deploy scanners to retrieve the most complete picture of the planet to sell to colonists or mining companies.*
 
 ## Goal
-Scan the highest number of hexes before the game ends.
+[Scan the highest number of hexes](#scoring) before the [game ends](#game-over).
+
+
+## Setup
+You start with two [factories](#factories), two hexes, two [mechs](#mechs), 1 [scanner](#scanner), and 8 alloy.
+Each faction starts with the middle two hexes of their home row, with a mech and factory on each one, with matching stand colors.
+Each faction also gets a scanner touching their two starting hexes and the hex above them.
+
+For primaries, that means two mechs and factories of that primary color.
+For secondaries, that means a mech and factory of each of their neighboring primary colors.
+
+See the setup diagram, though it only shows the mechs, factories, and scanner for the red faction.
+
+![Setup](game/setup.png)
 
 ## Board
 ### Hexes
@@ -23,6 +36,7 @@ Blue modifications are additives to inhibit microbe growth and discourage fauna 
 Yellow modifications are paints and greases to prevent chemical corrosion.*
 
 Hexes have color-coded requirements for occupation:
+
 * White: no modifications necessary
 * Red / Blue / Yellow: Red, blue, and yellow modifications, respectively
 * Purple: Red and blue
@@ -40,14 +54,25 @@ Hexes have color-coded requirements for occupation:
 TBD - expansion lol
 
 ## Pieces
-You have scanners, mechs, factories, and stands.
+You have [scanners](#scanners), [mechs](#mechs), [factories](#factories) in your color.
+There are [stands](#stands) of every color.
+Everyone can gather [alloy](#alloy).
+There are, in some vague sense, [objective tokens](#objectives).
+There are [overheat tokens](#overheat).
+## Scanners
+Placed with the [scan](#8-scan) action to scan 1 or more hexes.
 Scanners are *not* units, do not go on hexes, and cannot be destroyed.
-Stands are just bases for pieces, and do nothing on their own.
+Placed without stand.
+Cannot be moved or destroyed.
+## Alloy
+The only resource.
+[Quarried](#5-quarry) from hexes you control.
 ## Units
 Mechs and factories are units and go on hexes.
 Any unit controls a hex.
 Each unit has a stand denoting modifications.
 ### Stands
+Stands are just bases for pieces, and do nothing on their own.
 Mech stands determine where a mech can move.
 Factory stands determine what stand a mech is built with.
 
@@ -67,7 +92,7 @@ You can choose to spawn units of fewer colors than the factory, as long as they 
 
 ## Turns
 Simultaneous declaration - reveal action cards at the same time.
-Cards are mostly simultaneous action, but if someone requests, cards can be ordered as described under [cards](#cards) below.
+Cards are mostly simultaneous action (with the exception of [combat](#combat)) , but if someone requests, [other cards can be ordered as well](#cards).
 
 ### Days
 Days are 4 sets of turns - morning, noon, evening, and night.
@@ -82,11 +107,11 @@ There is no detriment to -1 upgrade on base cards (level 0)
 ## Cards
 *Think Rune Wars, but no supremacy bonuses, only upgrades.*
 
-Cards can be upgraded for better effect.
+Cards can be [upgraded](#upgrades) for better effect.
 On cards with multiple actions (Develop and Streamline) you may take any number of the actions in order.
 
-Cards are resolved in numbered order, though most cards can be resolved simultaneously.
-Ties are resolved by completed objectives, then unused alloy, then bidding alloy (say a number, next person must bid higher or lose the tie).
+Cards are technically resolved in numbered order, though outside of [combat](#combat), most cards can be resolved simultaneously.
+Ties are resolved by [completed objectives](#objectives), then unused alloy, then bidding alloy (say a number, next person must bid higher or lose the tie).
 Tie winner chooses who goes first.
 
 ### 1. Develop
@@ -162,9 +187,11 @@ Upgrade cap: 2
 With mech: Create a scanner between hexes you control.
 
 Scanners can be placed between two hexes (on a line), or between 3 hexes (on a corner).
+Scanners can also be placed off the edge of the board if you really want.
 
 Scanner costs 6 alloy plus 1 per required mod, (with a 1 alloy discount for every scanner already present?).
 Scanner requires:
+
 * 0: all adjacent hex control
 * 1: all adjacent hex control; 3 alloy discount
 * 2: all but 1 adjacent hex control
@@ -213,32 +240,35 @@ Moving **into** an overheated area is allowed - you may attack or reinfoce areas
 
 Remove all overheat tokens from the board at the start of each morning.
 
-## Upgrades
+## Objectives
 *Your technology wasn't designed with this particular planet's environment in mind. Gather more training data to make actions more efficient.*
 
-Upgrades are per card. Upgrading involves grabbing the higher number card of that name and placing an upgrade token of your color on that objective.
+Completing objectives can only be done via the [Streamline](#streamline) action, which will let you immediately [upgrade](#upgrades) a [card](#cards).
+See the [list](#objective-list) below.
+
+### Upgrades
+Upgrades are per [card](#cards).
+Upgrading involves ~~grabbing the higher number card of that name~~ adding a tally to your card and placing an objective token of your color on that objective to mark it off.
+
+You may upgrade any card, regardless of whether it has been played today.
+Upgrading the currently played card does not change your current action.
 
 There are a total of 27 possible upgrades, but only 12 objectives.
 
-When upgrade tokens run out, game ends that **night**.
+When objective tokens run out, [game ends that **night**](#game-over).
 
-### Upgrade terms
-* **Home row**: the set of 4 outer edge hexes for each faction, including unplayed factions and your own faction.
-* **Enemy home row**: the set of 4 outer edge hexes for each **played** faction.
-* **Unlock** a color: Control a mech or a hex with that exact color.
-
-### Objectives
-* **Centrist**: Control the center hex
-* **Tourist**: Control a hex 7 away from your starting hexes
-* **Rogue**: Control a hex in an enemy's home row
+### Objective List
+* **Centrist**: [Control](#glossary) the center hex
+* **Tourist**: [Control](#glossary) a hex 7 away from your starting hexes
+* **Rogue**: Control a hex in an enemy's [home row](#glossary)
 * **Technologist**: Fully upgrade an factory
 * **Specialist**: Fully upgrade a card
-* **Settler**: Control 15 hexes (4p, 2p: 30, 3p: 20, 5-6p: 10)
-* **Linear**: Control a straight line of 5 hexes (4p, 2p: 7, 3p: 5, 5-6p: 4)
-* **Inhospitable**: Control a black hex
-* **Entrenched**: Control 4 home row hexes (secondary-advantaged)
-* **Innovative**: Unlock a secondary that includes a color you didn't start with (primary-advantaged)
-* **Flexible**: Unlock all secondaries (secondary-advantaged)
+* **Settler**: [Control](#glossary) 15 hexes (4p, 2p: 30, 3p: 20, 5-6p: 10)
+* **Linear**: [Control](#glossary) a straight line of 5 hexes (4p, 2p: 7, 3p: 5, 5-6p: 4)
+* **Inhospitable**: [Control](#glossary) a black hex
+* **Entrenched**: [Control](#glossary) 4 [home row](#glossary) hexes (secondary-advantaged)
+* **Innovative**: [Unlock](#glossary) a secondary that includes a color you didn't start with (primary-advantaged)
+* **Flexible**: [Unlock](#glossary) all secondaries (secondary-advantaged)
 * **Strategist**: Terrform 3 times
 * **Capitalist**: Control 4 factories
 * **Ruthless**: Successfully invade
@@ -247,7 +277,7 @@ When upgrade tokens run out, game ends that **night**.
 * **Hoarder**: Have 15 unspent alloy
 
 ## Game Over
-Game ends on the night of the day that ... we run out of objective markers.
+Game ends on the night of the day that we run out of objective markers?
 Or someone completes 10 objectives? 
 How much? No idea - 2-3: 8/p, 4: 7/p, 5-6: 6/p
 ^ These are probably too long.
@@ -257,13 +287,19 @@ Winner is most hex data uploaded back to civilization.
 Each unique hex covered by a scanner is worth 1 point.
 Ties are broken by number of upgrades.
 
-## Setup
-You start with two factories, two hexes, two mechs, 1 scanner, and 8 alloy.
-Primaries get two of their color, secondaries get their neighboring primaries.
+## Glossary
+* **Control**: Any [mech or factory](#units) controls the hex it occupies.
+* **Enemy**: Any opponent's faction. Unplayed factions are not enemy factions.
+* **Home row**: the set of 4 outer edge hexes for each faction, including unplayed factions and your own faction.
+* **Unit**: A [mech or factory](#units)
+* **Unlock** a color: Control a mech or a hex with that exact color.
 
 ## Questions
+* Should you get a fixed number of scanners and running out ends the game?
+* Should upgrading give you more scanners?
+* Should combat favor defenders more?
 * Should anything to do with your color be easier? Unit discount, extra harvest, farther teleport?
-	* ????
+
 * Movement is super hard - should the map be more biome-based with regions of similar color? 
 	* Yes, and I fixed it
 * How should mobilize work? The map isn't really big enough for move speed 4.
@@ -282,7 +318,6 @@ Primaries get two of their color, secondaries get their neighboring primaries.
 	* I like scanners slightly more because they require action and not combat vs just yolo combat pushing
 * Colors aren't white primary secondary black, it's exact and off-by-one, where you can expand into similar territories (terra mystica style)
 	* Boooo
-
 * Upkeep mechs - 1 plus one per mod
 	* then hexes have to produce more per color, and hexes have to produce like 3 base so each hex still nets 3? but then having 2 black units on a black hex net 0, that's terrible. 
 	* upkeep mechs: 0 plus 1 per mod? hexes produce 4 base
@@ -293,9 +328,6 @@ Primaries get two of their color, secondaries get their neighboring primaries.
 	* probs not since you're not even strongly incentivized to own hexes after deploying scanners
 * can people place scanners in the same corners?
 	* Yes
-* should you get a fixed number of scanners and running out ends the game?
-* Should upgrading give you more scanners?
-* Should combat favor defenders more?
 
 ## Good and Bad
 I like the 4 turn round setup.
