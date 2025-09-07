@@ -133,7 +133,7 @@ Upgrade cap: 4
 Place an [overheat](#overheat) token on a hex.
 Move mechs to that hex.
 
-Can only move through friendly or empty territories, and still have to match colors.
+Can only move through [controlled](#glossary) or empty territories, and still have to match colors.
 
 * 0: as described.
 * 1: Move at speed 2.
@@ -143,14 +143,14 @@ Can only move through friendly or empty territories, and still have to match col
 Upgrade cap: 3
 
 ### 4. Annex
-Place an [overheat](#overheat) token on a hex
+Place an [overheat](#overheat) token on a hex.
 Move mechs to that hex from any number of adjacent hexes.
 If combat, $LEVEL bonus combat power.
 
 Upgrade cap: 4
 
 ### 5. Quarry
-Harvest based on controlled hexes with $LEVEL bonus alloys.
+Harvest based on [controlled](#glossary) hexes with $LEVEL bonus alloys.
 
 Upgrade cap: 3
 
@@ -163,7 +163,8 @@ Mechs cost 2, plus one per modification.
 ~~Mechs of your faction color are 1 cheaper.~~
 The mech's stand is any color the base could produce that can stand on the hex.
 
-Ex: 
+Examples: 
+
 * white hex, purple factory: white, blue, red, or purple
 * yellow hex, orange factory: yellow or orange
 * green hex, green factory: green
