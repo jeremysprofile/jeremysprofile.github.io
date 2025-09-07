@@ -83,15 +83,15 @@ Factory stands determine what stand a mech is built with.
 
 ### Mechs
 By default, mechs have 1 move, 1 attack, and 1 defense.
-See [Movement](#movement) or [combat](#combat) for details.
+See [movement](#movement) or [combat](#combat) for details.
 
 ### Factories
-Can be upgraded for extra defense and mech spawning. Can be stolen (damaged).
+Can be expanded for extra defense and mech spawning. Can be stolen (damaged).
 Factory stands determine what colors a mech can spawn with - not where a factory can exist.
 
-Factory number of upgrades is the number of colors - 0 upgrades: white, 1: primary, 2: secondary, 3: black.
-Factories spawn as level 2 (1 upgrade).
-Factories stolen from enemies becomes level 1 (0 upgrades).
+Factory number of expansions is the number of colors - 0 expansions: white, 1: primary, 2: secondary, 3: black.
+Factories spawn as level 2 (1 expansion).
+Factories stolen from enemies become unexpanded (level 1 / 0 expansions).
 
 You can choose to spawn units of fewer colors than the factory, as long as they can occupy the hex.
 
@@ -113,28 +113,29 @@ There is no benefit to +1 upgrade on maxed out cards?
 Nothing?
 ### Night
 [ You have **-1 upgrade** for cards played at night.](#upgrades)
-There is no detriment to -1 upgrade on base cards (level 0)
+There is no detriment to -1 upgrade on base, non-upgraded cards.
 
 ## Cards
 *Think Rune Wars, but no supremacy bonuses, only upgrades.*
 
 Cards can be [upgraded](#upgrades) for better effect.
-On cards with multiple actions (Develop and Streamline) you may take any number of the actions in order.
+Cards start with zero upgrades.
+On cards with multiple actions ([Develop](#1-develop) and [Streamline](#7-streamline)) you may take any number of the actions **in order**.
 
 Cards are technically resolved in numbered order, though outside of [combat](#combat), most cards can be resolved simultaneously.
 Ties are resolved by [completed objectives](#objectives), then unused alloy, then bidding alloy (say a number, next person must bid higher or lose the tie).
 Tie winner chooses who goes first.
 
 ### 1. Develop
-* With mech: upgrade any number of **existing** factories by one level with 3 - $LEVEL alloy;
-* With mech: create level 2 factory with 8 - $LEVEL alloy;
-* $LEVEL defense bonus this turn on hexes with factories;
-* With mech: terraform up to 3 controlled or adjacent territories to be one color more or less using 6 - 2 * $LEVEL alloy (enemy territories can only be cleaned).
+* With mech: expand any number of **existing** factories by one level with 3 - $UPGRADE alloy;
+* With mech: spend 8 - $UPGRADE alloy to create one factory one expansion;
+* $UPGRADE defense bonus this turn on hexes with factories;
+* With mech: terraform up to 3 controlled or adjacent territories to be one color more or less using 6 - 2 * $UPGRADE alloy (enemy territories can only be cleaned).
 
 Upgrade cap: 3
 
 ### 2. Coordinate
-Choose 1 + $LEVEL starting hexes, and up to 1 + $LEVEL adjacent [controlled](#glossary) or empty destination hexes.
+Choose 1 + $UPGRADE starting hexes, and up to 1 + $UPGRADE adjacent [controlled](#glossary) or empty destination hexes.
 Move any number of mechs from starting hexes to destination hexes.
 Each mech cannot move more than 1 hex this way.
 
@@ -156,17 +157,17 @@ Upgrade cap: 3
 ### 4. Annex
 Place an [overheat](#overheat) token on a hex.
 Move mechs to that hex from any number of adjacent hexes.
-If combat, $LEVEL bonus combat power.
+If combat, $UPGRADE bonus combat power.
 
 Upgrade cap: 4
 
 ### 5. Quarry
-Harvest based on [controlled](#glossary) hexes with $LEVEL bonus alloys.
+Harvest based on [controlled](#glossary) hexes with $UPGRADE bonus alloys.
 
 Upgrade cap: 3
 
 ### 6. Manufacture
-With any number of factories: spend alloy to deploy mechs, with $LEVEL extra white mechs (can be modified as you spawn them, but you must pay for the modifications)
+With any number of factories: spend alloy to deploy mechs, with $UPGRADE extra white mechs (can be modified as you spawn them, but you must pay for the modifications)
 Factories can only spawn a number of mechs equal to their level.
 
 Mechs cost 2, plus one per modification.
@@ -187,7 +188,7 @@ Upgrade cap: 3
 Can only be played at morning.
 
 * Any number of times and hexes: combine mechs on the same hex to merge stand colors;
-* Complete one new quest (must currently meet requirements) and [upgrade](#upgrades) a card X times based on $LEVEL;
+* Complete one new quest (must currently meet requirements) and [upgrade](#upgrade) a card X times based on $UPGRADE;
 
 * 0: once
 * 1: once
@@ -235,8 +236,8 @@ Your best plan is mutually assured destruction: overload your power source and e
 Factories will enter lockdown during combat - you'll have to spend some explosive strength to damage them enough to get in and take control.*
 
 Combat is just 1:1 - attacker sacrifices X units to destroy X defender units.
-Each factory level counts as a unit (each mech counts as one unit regardless of upgrades).
-If you successfully invade a hex with a factory, place a level 1 factory on the hex.
+Each factory expansion counts as a unit (each mech counts as one unit regardless of modifications).
+If you successfully invade a hex with a factory, place an unexpanded factory on the hex.
 
 You can unsuccessfully attack a hex if you want to cull your opponent's forces but don't have enough to overwhelm.
 
@@ -259,6 +260,7 @@ Completing objectives can only be done via the [Streamline](#streamline) action,
 See the [list](#objective-list) below.
 
 ### Upgrades
+*Every action is ultimately software. Deploying patches after release is standard procedure.*
 Upgrades are per [card](#cards).
 Upgrading involves ~~grabbing the higher number card of that name~~ adding a tally to your card and placing an objective token of your color on that objective to mark it off.
 
@@ -272,8 +274,8 @@ When objective tokens run out, [game ends that **night**](#game-over).
 ### Objective List
 * **Centrist**: [Control](#glossary) the center hex
 * **Tourist**: [Control](#glossary) a hex 7 away from your starting hexes
-* **Rogue**: Control a hex in an enemy's [home row](#glossary)
-* **Technologist**: Fully upgrade an factory
+* **Rogue**: [Control](#glossary) a hex in an enemy's [home row](#glossary)
+* **Technologist**: Fully expand a factory
 * **Specialist**: Fully upgrade a card
 * **Settler**: [Control](#glossary) 15 hexes (4p, 2p: 30, 3p: 20, 5-6p: 10)
 * **Linear**: [Control](#glossary) a straight line of 5 hexes (4p, 2p: 7, 3p: 5, 5-6p: 4)
@@ -284,7 +286,7 @@ When objective tokens run out, [game ends that **night**](#game-over).
 * **Strategist**: Terrform 3 times
 * **Capitalist**: Control 4 factories
 * **Ruthless**: Successfully invade
-* **Generalist**: Upgrade a card, place a scanner, and upgrade a factory
+* **Generalist**: Upgrade a card, place a scanner, and expand a factory
 * **Surveyor**: Place 3 corner scanners
 * **Hoarder**: Have 15 unspent alloy
 
@@ -303,7 +305,8 @@ Ties are broken by number of upgrades.
 ## Glossary
 * **Control**: Any [mech or factory](#units) controls the hex it occupies.
 * **Enemy**: Any opponent's faction. Unplayed factions are not enemy factions.
-* **Home row**: the set of 4 outer edge hexes for each faction, including unplayed factions and your own faction.
+* **Expansion**: Each expansion on a factory counts as one extra unit and is capable of adding one primary color modification to mechs. An unexpanded factory is the base level, counts as one unit, and can only produce white mechs.
+* **Home row**: The set of 4 outer edge hexes for each faction, including unplayed factions and your own faction.
 * **Unit**: A [mech or factory](#units)
 * **Unlock** a color: Control a mech or a hex with that exact color.
 
