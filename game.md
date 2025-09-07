@@ -1,5 +1,5 @@
 ---
-layout: no-redirect.html
+template: no-redirect.html
 ---
 
 # Board Game
