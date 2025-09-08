@@ -129,15 +129,15 @@ Ties are resolved by [completed objectives](#objectives), then unused alloy, the
 Tie winner chooses who goes first.
 
 ### 1. Develop
-* With mech: expand any number of **existing** factories by one level with 3 - $UPGRADE alloy;
-* With mech: spend 8 - $UPGRADE alloy to create one factory one expansion;
-* $UPGRADE defense bonus this turn on hexes with factories;
-* With mech: terraform up to 3 controlled or adjacent territories to be one color more or less using 6 - 2 * $UPGRADE alloy (enemy territories can only be cleaned).
+* With mech: expand any number of **existing** factories once each with `3 - # Upgrades` alloy;
+* With mech: spend `8 - # Upgrades` alloy to create one factory one expansion;
+* `# Upgrades` defense bonus this turn on hexes with factories;
+* With mech: terraform up to 3 controlled or adjacent territories to be one color more or less using `6 - 2 * # Upgrades` alloy (enemy territories can only be cleaned).
 
 Upgrade cap: 3
 
 ### 2. Coordinate
-Choose 1 + $UPGRADE starting hexes, and up to 1 + $UPGRADE adjacent [controlled](#glossary) or empty destination hexes.
+Choose `1 + # Upgrades` starting hexes, and up to `1 + # Upgrades` adjacent [controlled](#glossary) or empty destination hexes.
 Move any number of mechs from starting hexes to destination hexes.
 Each mech cannot move more than 1 hex this way.
 
@@ -159,17 +159,17 @@ Upgrade cap: 3
 ### 4. Annex
 Place an [overheat](#overheat) token on a hex.
 Move mechs to that hex from any number of adjacent hexes.
-If combat, $UPGRADE bonus combat power.
+If combat, `# Upgrades` bonus combat power.
 
 Upgrade cap: 4
 
 ### 5. Quarry
-Harvest based on [controlled](#glossary) hexes with $UPGRADE bonus alloys.
+Harvest based on [controlled](#glossary) hexes with `# Upgrades` bonus alloys.
 
 Upgrade cap: 3
 
 ### 6. Manufacture
-With any number of factories: spend alloy to deploy mechs, with $UPGRADE extra white mechs (can be modified as you spawn them, but you must pay for the modifications)
+With any number of factories: spend alloy to deploy mechs, with `# Upgrades` extra white mechs (can be modified as you spawn them, but you must pay for the modifications)
 Factories can only spawn a number of mechs equal to their level.
 
 Mechs cost 2, plus one per modification.
@@ -190,7 +190,7 @@ Upgrade cap: 3
 Can only be played at morning.
 
 * Any number of times and hexes: combine mechs on the same hex to merge stand colors;
-* Complete one new quest (must currently meet requirements) and [upgrade](#upgrade) a card X times based on $UPGRADE;
+* Complete one new quest (must currently meet requirements) and [upgrade](#upgrade) a card X times based on `# Upgrades`;
 
 * 0: once
 * 1: once
