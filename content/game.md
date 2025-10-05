@@ -20,35 +20,29 @@ The only thing worth points is the number of unique hexes scanned.
 [Scan the highest number of hexes](#scoring) before the [game ends](#game-over).
 
 ## Setup
-You start with two [factories](#factories), two hexes, two [mechs](#mechs), 1 [scanner](#scanner), and 8 alloy.
-Each faction starts with the middle two hexes of their [home row](#glossary), with a mech and factory on each one, with matching stand colors.
-Each faction also gets a scanner touching their two starting hexes and the hex above them.
-
-For primaries, that means two mechs and factories of that primary color.
-For secondaries, that means a mech and factory of each of their neighboring primary colors.
-
-See the setup diagram, though it only shows the mechs, factories, and scanner for the red faction.
+You start with one [factory](#factories), two hexes, two [mechs](#mechs), all with [stands](#stands) of your starting color.
+You start with 8 alloy.
 
 ![Setup](game/setup.png)
 
 ## Board
 ### Hexes
-*Most of the planet is inhospitable to default mechs - you'll need to modifications to traverse certain areas, and some areas will need more than 1.
-Red modifications add electronic shielding for continued functionality in highly radioactive / electromagnetically active hexes.
-Blue modifications are additives to inhibit microbe growth and discourage fauna interaction.
-Yellow modifications are paints and greases to prevent chemical corrosion.*
+Hexes are one of 7 colors: red, blue, yellow, purple, green, orange, and black.
+Some hexes are "special" hexes, marked with ??? (some icon).
 
-Hexes have color-coded requirements for occupation:
+A [mech](#mech) can only occupy hexes that are within 1 color of its [stand](#stand).
+Within 1 color means exactly matching, or adjacent on the [color wheel](#color-wheel).
 
-* White: no modifications necessary
-* Red / Blue / Yellow: Red, blue, and yellow modifications, respectively
-* Purple: Red and blue
-* Green: Blue and yellow
-* Orange: Yellow and red
-* Black: Red, blue, and yellow
+Special hexes require an exact color match, but produce an extra [alloy](#alloy) when [quarried](#quarry).
+
+No color is adjacent to black on the [color wheel](#color-wheel).
+This means black hexes cannot be [controlled](#glossary) and must be [terraformed](#develop).
+
+#### Color Wheel
+![Color Wheel](game/colorwheel.png)
 
 ## Factions
-* 2-3p: played factions must be all primary or all secondary
+* 2-3p: played factions must be all primary colors (RBY) or all secondary colors (PGO).
 * 4p: the unplayed factions must be directly opposite each other
 * 5p: single unplayed faction gets neutral units that defend territories - TBD
 * 6p: all factions in play
@@ -61,16 +55,15 @@ You have [scanners](#scanners), [mechs](#mechs), [factories](#factories) in your
 There are [stands](#stands) of every color.
 Everyone can gather [alloy](#alloy).
 There are, in some vague sense, [objective tokens](#objectives).
-There are [overheat tokens](#overheat).
 There are no piece limits.
 ## Scanners
-Placed with the [scan](#8-scan) action to scan 1 or more hexes.
+Placed with the [scan](#scan) action to scan 1 or more hexes.
 Scanners are *not* units, do not go on hexes, and cannot be destroyed.
-Placed without stand.
+Placed without stand (really, just place any stand under them, because they'll fall over without it).
 Cannot be moved or destroyed.
 ## Alloy
 The only resource.
-[Quarried](#5-quarry) from hexes you control.
+[Quarried](#quarry) from hexes you control.
 Goes into your personal supply; does not touch the board.
 ## Units
 Mechs and factories are units and go on hexes.
@@ -81,36 +74,42 @@ Stands are just bases for pieces, and do nothing on their own.
 
 [Mech](#mechs) stands show the modifications the mech has undergone, and thus, where the mech can move.
 
-[Factory](#factories) stands show the modified mechs an expanded factory can produce.
+[Factory](#factories) stands show the modified mechs a factory can produce.
 
 ### Mechs
-By default, mechs have 1 move, 1 attack, and 1 defense.
-See [movement](#movement) or [combat](#combat) for details.
+Mechs [control](#glossary) [hexes](#hexes), [build and expand](#develop) [factories](#factories), can [move](#movement), and can engage in [combat](#combat).
+
+See other sections for details and exceptions, but in general, mechs have 1 attack, 1 defense, 2 movement.
 
 ### Factories
-Can be expanded for extra defense and mech spawning. Can be stolen (damaged) in [combat](#combat).
-Factory stands determine what colors a mech can spawn with - not where a factory can exist.
+Can be expanded for extra defense and [mech spawning](#deploy). Can be stolen (damaged) in [combat](#combat).
+
+Factory [stands](#stands) are **always** the color of the [hex](#hexes) they occupy - if the hex is [terraformed](#develop), immediately change the factory stand to match.
+Factories produce mechs with matching stands.
+
+Factories can only [deploy](#deploy) a number of mechs equal to the number of expansions.
+
+Factories add extra defense to a hex - each level counts 
 
 Factory number of expansions is the number of colors - 0 expansions: white, 1: primary, 2: secondary, 3: black.
 Factories spawn as level 2 (1 expansion).
 Factories stolen from enemies become unexpanded (level 1 / 0 expansions).
 
-See [Manufacture](#6-manufacture) to details on mech production.
+See [Manufacture](#manufacture) to details on mech production.
 
 ## Turns
 Simultaneous declaration - reveal action cards at the same time.
 Cards are mostly simultaneous action (with the exception of [combat](#combat)) , but if someone requests, [other cards can be ordered as well](#cards).
 
 ### Days
-Days are 4 sets of turns - morning, noon, evening, and night.
+Days are 3 rounds - morning, evening, and night.
+
 Cards played for the day cannot be reused until the following day.
 
 #### Morning
-Pick up [overheat tokens](#overheat).
 Pick up all [cards](#cards) played yesterday.
-### Noon
-[You have **+1 upgrade** for cards played at noon.](#upgrades)
-There is no benefit to +1 upgrade on maxed out cards?
+[You have **+1 upgrade** for cards played in the morning.](#upgrades)
+There is no benefit to +1 upgrade on maxed out cards.
 ### Evening
 Nothing?
 ### Night
@@ -122,53 +121,54 @@ There is no detriment to -1 upgrade on base, non-upgraded cards.
 
 Cards can be [upgraded](#upgrades) for better effect.
 Cards start with zero upgrades.
-On cards with multiple actions ([Develop](#1-develop) and [Streamline](#7-streamline)) you may take any number of the actions **in order**.
+On cards with multiple actions ([Develop](#develop) and [Streamline](#streamline)) you may take any number of the actions **in order**.
 
 Cards are technically resolved in numbered order, though outside of [combat](#combat), most cards can be resolved simultaneously.
 Ties are resolved by [completed objectives](#objectives), then unused alloy, then bidding alloy (say a number, next person must bid higher or lose the tie).
 Tie winner chooses who goes first.
 
-### 1. Develop
+### Develop - TBD
+Priority 1.
+
 * With mech: expand any number of **existing** factories once each with `3 - # Upgrades` alloy;
 * With mech: spend `8 - # Upgrades` alloy to create one factory one expansion;
-* `# Upgrades` defense bonus this turn on hexes with factories;
 * With mech: terraform up to 3 controlled or adjacent territories to be one color more or less using `6 - 2 * # Upgrades` alloy (enemy territories can only be cleaned).
 
 Upgrade cap: 3
 
-### 2. Coordinate
-Choose `1 + # Upgrades` starting hexes, and up to `1 + # Upgrades` adjacent [controlled](#glossary) or empty destination hexes.
-Move any number of mechs from starting hexes to destination hexes.
+### Coordinate
+Priority 2.
+Choose 2 hexes. Move mechs from those hexes to 2 **adjacent** [controlled](#glossary) or empty destination hexes.
 Each mech cannot move more than 1 hex this way.
 
-Upgrade cap: 4
+Upgrades:
 
-### 3. Explore
-Place an [overheat](#overheat) token on a hex.
-Move mechs to that hex.
+* **Multithreading**: No limit on number of hexes. Each mech may move to an adjacent [controlled](#glossary) or empty hex.
+* **Overclocking**: Mechs may move at speed 2 this way.
+
+### Explore
+Priority 3.
+Move any number of mechs from any number of hexes to a destination hex.
 
 Can only move through [controlled](#glossary) or empty territories, and still have to match colors.
 
-* 0: as described.
-* 1: Move at speed 2.
-* 2: Level 1, plus use quantum tunneling to treat identical colors 1 hex apart as adjacent.
-* 3: Level 2, plus remove the overheat token at the end of the turn (even if you control the hex).
+Upgrades:
 
-Upgrade cap: 3
+* **Quantum tunneling**: Treat identical colors separated by 1 hex as adjacent instead. (This can result in an effective speed of 4.)
+* **Overvolting**: Gain two extra [combat strength](#combat) this turn.
+* **Multiprocessing**: Choose a second destination hex.
 
-### 4. Annex
-Place an [overheat](#overheat) token on a hex.
-Move mechs to that hex from any number of adjacent hexes.
-If combat, `# Upgrades` bonus combat power.
+### Quarry
+Priority 4.
+Gain 2 alloy from each [controlled](#glossary) hex.
 
-Upgrade cap: 4
+Upgrades:
 
-### 5. Quarry
-Harvest based on [controlled](#glossary) hexes with `# Upgrades` bonus alloys.
+* **Breadth-first search**: [Normal hexes](#hexes) produce 3 alloy instead of 2.
+* **Depth-first search**: [Special hexes](#hexes) produce 5 alloy instead of 2.
 
-Upgrade cap: 3
-
-### 6. Manufacture
+### Manufacture
+Priority 5.
 With any number of factories: spend alloy to deploy mechs, with `# Upgrades` extra white mechs (can be modified as you spawn them, but you must pay for the modifications)
 Factories can only spawn a number of mechs equal to their level.
 
@@ -186,7 +186,8 @@ Examples:
 
 Upgrade cap: 3
 
-### 7. Streamline
+### Streamline
+Priority 6.
 Can only be played at morning.
 
 * Any number of times and hexes: combine mechs on the same hex to merge stand colors;
@@ -198,7 +199,8 @@ Can only be played at morning.
 
 Upgrade cap: 2
 
-### 8. Scan
+### Scan
+Priority 7.
 With mech: Create a scanner between hexes you control.
 
 Scanners can be placed between two hexes (on a line), or between 3 hexes (on a corner).
@@ -222,10 +224,10 @@ Scanners can be co-located.
 Upgrade cap: 5
 
 ## Movement
-By default, mechs have a speed of 1, meaning they can only move from a hex to an adjacent hex.
+By default, mechs have a speed of 2, meaning they can only move from a hex to an adjacent hex.
 No other [pieces](#pieces) can be moved.
 
-Upgrading the [Explore](#3-explore) action allow you to move mechs at speed 2.
+Upgrading the [Explore](#explore) action allow you to move mechs at speed 2.
 Mechs can only move through friendly or empty hexes that they can stand in.
 
 Upgrading the Explore action again allows you to blink between hexes of the same color that are less than 2 hexes apart.
@@ -249,11 +251,11 @@ Remember to remove the [overheat](#overheat) token after any attack where you do
 ## Overheat
 *Significant effort can cause mechs to overheat. You'll need to let them idle before they can be used.*
 
-Mark target hexes for your [Explore](#3-explore) and [Annex](4-annex) actions with an overheat token.
+Mark target hexes for your [Explore](#explore) and [Annex](4-annex) actions with an overheat token.
 After your turn has completed, if you don't control the hex, remove the overheat token you placed.
 
 All mechs in a hex marked with an overheat token are overheated.
-Overheated mechs cannot leave and cannot perform any "With mech" action ([Develop](#1-develop), [Coordinate](#2-coordinate), [Explore](#3-explore), [Annex](#4-annex), and [Scan](#8-scan)).
+Overheated mechs cannot leave and cannot perform any "With mech" action ([Develop](#develop), [Coordinate](#coordinate), [Explore](#explore), [Annex](#annex), and [Scan](#scan)).
 Moving **into** an overheated area is allowed - you may attack or reinfoce areas with overheated mechs.
 
 Remove all overheat tokens from the board at the start of each [morning](#morning).
@@ -288,7 +290,7 @@ When objective tokens run out, [game ends that **night**](#game-over).
 * **Entrenched**: [Control](#glossary) 4 [home row](#glossary) hexes (secondary-advantaged)
 * **Innovative**: [Unlock](#glossary) a secondary that includes a color you didn't start with (primary-advantaged)
 * **Flexible**: [Unlock](#glossary) all secondaries (secondary-advantaged)
-* **Strategist**: Terrform 3 times
+* **Strategist**: Terraform 3 times
 * **Capitalist**: Control 4 factories
 * **Ruthless**: Successfully invade
 * **Generalist**: Upgrade a card, place a scanner, and expand a factory
@@ -316,10 +318,14 @@ Ties are broken by number of upgrades.
 * **Unlock** a color: Control a mech or a hex with that exact color.
 
 ## Questions
+* What should end the game?
 * Should you get a fixed number of scanners and running out ends the game?
 * Should upgrading give you more scanners?
 * Should combat favor defenders more?
 * Should anything to do with your color be easier? Unit discount, extra harvest, farther teleport?
+* Is there a cooler word for "upgrades"? I want it to be most software themed, like builds / releases / patches, but those don't really start from zero like upgrades do.
+* I think scanner upgrades might be too necessary, is it too slow?
+* What should make each faction different?
 
 * Movement is super hard - should the map be more biome-based with regions of similar color? 
 	* Yes, and I fixed it
@@ -390,3 +396,39 @@ I don't want to have multiple material types - that's too much like scythe or ru
 
 ## Demoing
 Drop into partially completed game - each player has different upgrades, starting alloys, setup, etc.
+
+
+
+
+one factory on the first in
+
+forced asymmetry with groups of 6 hexes to start
+
+with 3 players take out the outer ring
+
+it's a puzzle and not as much a game
+
+to make it simpler, it needs to be more random
+
+could do point salad based - secret objective or secret way to earn points per faction
+
+scan upgrade could be "scan twice"
+
+streamline should be automatic every morning
+
+not completing an objective every turn felt like losing
+
+
+make certain cards more incentivized by bonus points (upgrading certain cards gives bonus points)
+
+
+
+17 objectives is hard to track
+Scythe goals match an action very clearly and you need to do it all of the times, but this has a variable number for each objective
+
+top-bottom
+
+it would be nice to make the core 3 (scan streamline quarry) not played every time
+
+
+
