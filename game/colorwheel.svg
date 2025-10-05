@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-110 -110 220 220" width="300" height="300">
+  <defs>
+    <style>
+      path { stroke: #fff; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <g transform="rotate(30)">
+    <path d="M0,0 L0,100 A100,100 0 0,0 86.6,50 Z" fill="#FF0000" />
+    <path d="M0,0 L86.6,50 A100,100 0 0,0 86.6,-50 Z" fill="#FFA500" />
+    <path d="M0,0 L86.6,-50 A100,100 0 0,0 0,-100 Z" fill="#FFFF00" />
+    <path d="M0,0 L0,-100 A100,100 0 0,0 -86.6,-50 Z" fill="#00FF00" />
+    <path d="M0,0 L-86.6,-50 A100,100 0 0,0 -86.6,50 Z" fill="#0000FF" />
+    <path d="M0,0 L-86.6,50 A100,100 0 0,0 0,100 Z" fill="#800080" />
+  </g>
+
+  <circle cx="0" cy="0" r="100" fill="none" stroke="#fff" stroke-width="1.2" />
+</svg>
