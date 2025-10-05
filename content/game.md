@@ -21,7 +21,7 @@ The only thing worth points is the number of unique hexes scanned.
 
 ## Setup
 You start with one [factory](#factories), two hexes, two [mechs](#mechs), all with [stands](#stands) of your starting color.
-You start with 8 alloy.
+You start with 8 [alloy](#alloy).
 
 ![Setup](game/setup.png)
 
@@ -36,7 +36,7 @@ Within 1 color means exactly matching, or adjacent on the [color wheel](#color-w
 Special hexes require an exact color match, but produce an extra [alloy](#alloy) when [quarried](#quarry).
 
 No color is adjacent to black on the [color wheel](#color-wheel).
-This means black hexes cannot be [controlled](#glossary) and must be [terraformed](#develop).
+This means black hexes cannot be [friendly](#glossary) and must be [terraformed](#develop).
 
 #### Color Wheel
 ![Color Wheel](game/colorwheel.png)
@@ -79,42 +79,36 @@ Stands are just bases for pieces, and do nothing on their own.
 ### Mechs
 Mechs [control](#glossary) [hexes](#hexes), [build and expand](#develop) [factories](#factories), can [move](#movement), and can engage in [combat](#combat).
 
-See other sections for details and exceptions, but in general, mechs have 1 attack, 1 defense, 2 movement.
+See other sections for details and exceptions, but in general, mechs have 1 attack, 1 defense, 2 movement, and can only move onto or through hexes within 1 color of their stand on the [color wheel](#color-wheel).
 
 ### Factories
-Can be expanded for extra defense and [mech spawning](#deploy). Can be stolen (damaged) in [combat](#combat).
+Can be expanded for extra [mech spawning](#manufacture) and [defense](#combat).
 
 Factory [stands](#stands) are **always** the color of the [hex](#hexes) they occupy - if the hex is [terraformed](#develop), immediately change the factory stand to match.
 Factories produce mechs with matching stands.
 
-Factories can only [deploy](#deploy) a number of mechs equal to the number of expansions.
+Factories can only [manufacture](#manufacture) at most a number of mechs equal to the number of expansions.
 
-Factories add extra defense to a hex - each level counts 
-
-Factory number of expansions is the number of colors - 0 expansions: white, 1: primary, 2: secondary, 3: black.
-Factories spawn as level 2 (1 expansion).
-Factories stolen from enemies become unexpanded (level 1 / 0 expansions).
-
-See [Manufacture](#manufacture) to details on mech production.
+Factories add extra defense to a hex - each story counts for one combat strength.
+A new factory will spawn with 2 stories, and factories can expand to up to 4 stories.
+Factories on hexes [successfully invaded](#combat) by an opponent will become damaged and owned by that opponent, losing all but 1 story.
 
 ## Turns
-Simultaneous declaration - reveal action cards at the same time.
+Simultaneous declaration: each player selects a [card](#cards) to play by placing it face down in front of themselves, and when everyone has selected a [card](#cards), everyone flips their [card](#cards) up at the same time.
 Cards are mostly simultaneous action (with the exception of [combat](#combat)) , but if someone requests, [other cards can be ordered as well](#cards).
 
 ### Days
 Days are 3 rounds - morning, evening, and night.
 
-Cards played for the day cannot be reused until the following day.
+Cards played each [turn](#turns) are kept face-up on the table in front of the player and cannot be reused until the following day.
 
 #### Morning
 Pick up all [cards](#cards) played yesterday.
-[You have **+1 upgrade** for cards played in the morning.](#upgrades)
-There is no benefit to +1 upgrade on maxed out cards.
 ### Evening
-Nothing?
+[You have **+1 upgrade** for cards played in the evening.](#upgrades)
+There is no benefit to +1 upgrade on maxed out cards.
 ### Night
-[ You have **-1 upgrade** for cards played at night.](#upgrades)
-There is no detriment to -1 upgrade on base, non-upgraded cards.
+???
 
 ## Cards
 *Think Rune Wars, but no supremacy bonuses, only upgrades.*
@@ -130,27 +124,31 @@ Tie winner chooses who goes first.
 ### Develop - TBD
 Priority 1.
 
-* With mech: expand any number of **existing** factories once each with `3 - # Upgrades` alloy;
-* With mech: spend `8 - # Upgrades` alloy to create one factory one expansion;
-* With mech: terraform up to 3 controlled or adjacent territories to be one color more or less using `6 - 2 * # Upgrades` alloy (enemy territories can only be cleaned).
+* With mech: expand any number of **existing** factories once each with 3 alloy;
+* With mech: spend 8 alloy to create one factory one expansion;
+* With mech: terraform up to 3 controlled or adjacent territories to be one color more or less using 6 alloy (enemy territories can only be cleaned).
 
-Upgrade cap: 3
+Upgrades:
+
+* **Constraint optimization**: Factories cost 2 less. Factory expansions cost 1 less. Terraforming costs 2 less.
 
 ### Coordinate
 Priority 2.
-Choose 2 hexes. Move mechs from those hexes to 2 **adjacent** [controlled](#glossary) or empty destination hexes.
+
+Choose 2 hexes. Move mechs from those hexes to 2 **adjacent** [friendly](#glossary) or empty destination hexes.
 Each mech cannot move more than 1 hex this way.
 
 Upgrades:
 
-* **Multithreading**: No limit on number of hexes. Each mech may move to an adjacent [controlled](#glossary) or empty hex.
-* **Overclocking**: Mechs may move at speed 2 this way.
+* **Multithreading**: No limit on number of hexes. Each mech may move to an adjacent [friendly](#glossary) or empty hex.
+* **Overclocking**: Mechs may move at speed 2 if the hex they move through is [friendly](#glossary).
 
 ### Explore
 Priority 3.
+
 Move any number of mechs from any number of hexes to a destination hex.
 
-Can only move through [controlled](#glossary) or empty territories, and still have to match colors.
+Can only move through [friendly](#glossary) or empty territories, and still have to match colors.
 
 Upgrades:
 
@@ -160,34 +158,32 @@ Upgrades:
 
 ### Quarry
 Priority 4.
-Gain 2 alloy from each [controlled](#glossary) hex.
+
+Gain 2 alloy from each [friendly](#glossary) hex.
 
 Upgrades:
 
-* **Breadth-first search**: [Normal hexes](#hexes) produce 3 alloy instead of 2.
-* **Depth-first search**: [Special hexes](#hexes) produce 5 alloy instead of 2.
+* **Breadth-first search**: [Normal hexes](#hexes) produce 3 [alloy](#alloy) instead of 2.
+* **Depth-first search**: [Special hexes](#hexes) produce 5 [alloy](#alloy) instead of 2.
 
 ### Manufacture
 Priority 5.
-With any number of factories: spend alloy to deploy mechs, with `# Upgrades` extra white mechs (can be modified as you spawn them, but you must pay for the modifications)
-Factories can only spawn a number of mechs equal to their level.
 
-Mechs cost 2, plus one per modification.
+With any number of [factories](#factories): spend 5 [alloy](#alloy) per mech to deploy [mechs](#mechs).
+Each [factory](#factories) can manufacture at most a number of mechs equal to its number of stories.
+
+The [mech](#mechs)'s [stand](#stands) color matches the [factory](#factories) [stand](#stands) color.
 
 ~~Mechs of your faction color are 1 cheaper.~~
-The mech's stand is any color the base could produce that can stand on the hex.
 
-Examples: 
+Upgrades: 
 
-* white hex, purple factory: white, blue, red, or purple
-* yellow hex, orange factory: yellow or orange
-* green hex, green factory: green
-* yellow hex, red factory: cannot build
-
-Upgrade cap: 3
+* **Garbage collecting**: Existing mechs (up to the number of factory stories) on a factory hex can be recycled for 3 alloy each. Reclaiming does not count against the manufacturing limit.
+* **Resource Scheduling**: Mechs cost 3 instead of 5.
 
 ### Streamline
 Priority 6.
+
 Can only be played at morning.
 
 * Any number of times and hexes: combine mechs on the same hex to merge stand colors;
@@ -201,31 +197,30 @@ Upgrade cap: 2
 
 ### Scan
 Priority 7.
-With mech: Create a scanner between hexes you control.
 
-Scanners can be placed between two hexes (on a line), or between 3 hexes (on a corner).
-Scanners can also be placed off the edge of the board if you really want.
+With mech: Create a [scanner](#scanners) on the intersection between 3 [friendly](#glossary) [hexes](#hexes).
 
-Scanner costs 6 alloy plus 1 per required mod, (with a 1 alloy discount for every scanner already present?).
-Scanner requires:
-
-* 0: all adjacent hex control
-* 1: all adjacent hex control; 3 alloy discount
-* 2: all but 1 adjacent hex control
-* 3: all but 1 adjacent hex control; 3 alloy discount
-* 4: all but 2 adjacent hex control
-* 5: all but 2 adjacent hex control; 3 alloy discount
+Scanners can also be placed on the edge of the planet if you really want (the missing [hex](#hexes) counts as [friendly](#glossary)).
 
 Scanners do not need a stand: they cannot be moved or destroyed once placed, regardless of terraform actions, hex control, or combat.
 Scanners can be co-located.
 
-(Level 4 does not mean you can airdrop a line scanner from anywhere; you still need an adjacent mech to deploy.)
+Scanners cost 8 [alloy](#alloy).
 
-Upgrade cap: 5
+Upgrades:
+
+* **Horizontal scaling**: You may place two scanners at two different intersections by paying alloy for each.
+* **Privilege escalation**: Only 2 of the adjacent [hexes](#hexes) must be [friendly](#glossary).
+* **Colo**: Scanners placed at an intersection where scanner(s) already exist cost 2 instead of 8.
 
 ## Movement
-By default, mechs have a speed of 2, meaning they can only move from a hex to an adjacent hex.
-No other [pieces](#pieces) can be moved.
+Mechs are the only [pieces](#pieces) that can be moved.
+
+Mechs using [Explore](#explore) have a speed of 2, meaning they can move from one hex, through another hex, to a final hex.
+By default, mechs using [Coordinate](#coordinate) have a speed of 1, meaning they can only move to an adjacent hex, though this can be upgraded to speed 2.
+
+Mechs 
+
 
 Upgrading the [Explore](#explore) action allow you to move mechs at speed 2.
 Mechs can only move through friendly or empty hexes that they can stand in.
@@ -245,20 +240,7 @@ Each factory expansion counts as a unit (each mech counts as one unit regardless
 If you successfully invade a hex with a factory, destroy your opponent's factory and place an unexpanded factory (white stand) on the hex.
 
 You can choose to attack with fewer units if you want to weaken your opponent's forces, though you won't gain control of the hex.
-A tie means the territory becomes unoccupied - any factories are completely destroyed.
-Remember to remove the [overheat](#overheat) token after any attack where you don't [control](#glossary) the hex.
-
-## Overheat
-*Significant effort can cause mechs to overheat. You'll need to let them idle before they can be used.*
-
-Mark target hexes for your [Explore](#explore) and [Annex](4-annex) actions with an overheat token.
-After your turn has completed, if you don't control the hex, remove the overheat token you placed.
-
-All mechs in a hex marked with an overheat token are overheated.
-Overheated mechs cannot leave and cannot perform any "With mech" action ([Develop](#develop), [Coordinate](#coordinate), [Explore](#explore), [Annex](#annex), and [Scan](#scan)).
-Moving **into** an overheated area is allowed - you may attack or reinfoce areas with overheated mechs.
-
-Remove all overheat tokens from the board at the start of each [morning](#morning).
+A tie means the territory becomes empty - any factories are completely destroyed.
 
 ## Objectives
 *Your technology wasn't designed with this particular planet's environment in mind. Gather more training data to make actions more efficient.*
@@ -310,39 +292,19 @@ Each unique hex covered by a scanner is worth 1 point.
 Ties are broken by number of upgrades.
 
 ## Glossary
-* **Control**: Any [mech or factory](#units) controls the hex it occupies.
-* **Enemy**: Any opponent's faction. Unplayed factions are not enemy factions.
-* **Expansion**: Each expansion on a factory counts as one extra unit and is capable of adding one primary color modification to mechs. An unexpanded factory is the base level, counts as one unit, and can only produce white mechs.
+* **Empty**: A [hex](#hexes) without [units](#units).
+* **Enemy**: A [hex](#hexes) with a [unit](#units) not matching your faction.
+* **Friendly**: A [hex](#hexes) with a [unit](#units) matching your faction.
 * **Home row**: The set of 4 outer edge hexes for each faction, including unplayed factions and your own faction.
-* **Unit**: A [mech or factory](#units)
-* **Unlock** a color: Control a mech or a hex with that exact color.
+* **Story**: Each [story on a factory](#factories) counts as one [combat strength](#combat) and increases the maximum number of [mechs](#mechs) that [factory](#factories) can [Manufacture](#manufacture).
+* **Unit**: A [mech or factory](#units).
 
 ## Questions
-* What should end the game?
-* Should you get a fixed number of scanners and running out ends the game?
-* Should upgrading give you more scanners?
-* Should combat favor defenders more?
+* Should you have a limited number of scanners and upgrading give you more scanners?
 * Should anything to do with your color be easier? Unit discount, extra harvest, farther teleport?
 * Is there a cooler word for "upgrades"? I want it to be most software themed, like builds / releases / patches, but those don't really start from zero like upgrades do.
-* I think scanner upgrades might be too necessary, is it too slow?
 * What should make each faction different?
 
-* Movement is super hard - should the map be more biome-based with regions of similar color? 
-	* Yes, and I fixed it
-* How should mobilize work? The map isn't really big enough for move speed 4.
-	* Fixed.
-* Should units automatically get your color for free?
-	* No, doesn't make sense with primary vs secondary
-* How do you gain a new color? Should the cost of adding a second or third color be more than adding a first color?
-	* Gain through factories - keep it simple, fewer things to remember, each one costs 1 more
-* What color should factories spawn with? How should you upgrade factory colors?
-	* factories spawn with a single primary color, and upgrading unlocks more colors
-* What color should units spawn with?
-	* mechs can spawn with any combination of colors based on the factory that created them
-* Dragon runes as objectives or end game scoring?
-	* Cool, but then becomes more about persistent military might, which I don't want
-* You drop down claim markers / experience tokens. Whoever has the fewest at end of game wins?
-	* I like scanners slightly more because they require action and not combat vs just yolo combat pushing
 * Colors aren't white primary secondary black, it's exact and off-by-one, where you can expand into similar territories (terra mystica style)
 	* Boooo
 * Upkeep mechs - 1 plus one per mod
@@ -405,12 +367,6 @@ one factory on the first in
 forced asymmetry with groups of 6 hexes to start
 
 with 3 players take out the outer ring
-
-it's a puzzle and not as much a game
-
-to make it simpler, it needs to be more random
-
-could do point salad based - secret objective or secret way to earn points per faction
 
 scan upgrade could be "scan twice"
 
