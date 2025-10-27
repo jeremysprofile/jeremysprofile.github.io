@@ -186,7 +186,7 @@ body:
               - title: Observability
                 text: Prometheus / Grafana / Alertmanager, Datadog, Splunk, Falcon LogScale
               - title: <abbr title="Large Language Models">LLMs</abbr>
-                text: Custom hooks, memories, documentation, and prompts for use by Claude, Cursor, Junie, and Copilot
+                text: Custom hooks, memories, docs, and prompts for use by Claude, Cursor, Junie, and Copilot
 
               # - title: Soft Skills
                 # text: Cross-team collaboration, Technical documentation, Mentoring, Agile / Scrum
