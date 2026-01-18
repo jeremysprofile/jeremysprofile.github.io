@@ -27,7 +27,7 @@ contact:
   - icon: /cv/img/stackoverflow.svg
     hover: Stack Overflow reputation
     icon_alt: Stack Overflow logo
-    text: 11.7k ●4 ●45 ●65
+    text: 11.8k ●4 ●46 ●65
     link: https://stackexchange.com/users/7783437/jeremysprofile?tab=accounts
   - text: jeremysprofile
     hover: git repo for this resume
@@ -52,15 +52,19 @@ body:
           date: Jan 2023 - current
           duration: 3 yr
           data:
-            - text: "Saved $75k / month (7% of company's <abbr title='Amazon Web Services'>AWS</abbr> costs) by optimizing <abbr title='Elastic Compute Cloud'>EC2</abbr> instance selection."
+            - text: "Saved $900k / year (7% of company's <abbr title='Amazon Web Services'>AWS</abbr> costs) by optimizing <abbr title='Elastic Compute Cloud'>EC2</abbr> instance selection."
               hidden: "switched from `[mr]5d.*` nodes to `[mr]5.*` lol. Jan '23 AWS nonprod cost: $380.1k, cost due to `*d.*` nodes: $204.6k, savings due to converting to `s/d\\././` nodes: 30.7k (m5d.xlarge: .226 m5.xlarge: .192, i.e., 15% decrease in cost from m5d to m5), Jan '23 AWS prod cost: $716.7k, cost due to `*d.*` nodes: $293.1k, savings due to converting to `s/d\\././` nodes: $44k. Total % savings in nonprod: 8%, % savings in prod: 6%, total % savings 6.8%"
-            - text: "Instilled culture of democratic sprint retrospectives, post-mortems, and internal <abbr title='Key Performance Indicators'>KPIs</abbr>, initiating team's investment in continuous process iteration and improvement."
+            - text: "Instilled culture of democratic sprint retrospectives, post-mortems, and internal <abbr title='Key Performance Indicators'>KPIs</abbr>."
               hidden: "Retro: provided channel for everyone to provide feedback to encourage everyone to speak up about what they felt needed improvement. post-mortems: RCA and any amount of thought toward future prevention. KPIs: covered team metrics like pipeline success % and sprint metrics, allowing us to plan more accurately and be a little more proactive about addressing customer pain."
-            - text: "Created Go microservice to update client <abbr title='Financial Information eXchange'>FIX</abbr> sessions, reducing lead time from weeks to minutes."
-              hidden: "UI frontend stores configs in DB, poll over gRPC for updates and install or update Helm releases. Previously, configs were stored in YAML in monorepo with very limited validation, and were only applied as part of a 2-week release cycle or out-of-band with extra manual work from the Ops team."
             - text: 'Increased resilience to availability zone outages and lowered application storage costs by 80% via migration from <abbr title="Elastic Block Store">EBS</abbr> to a combination of <abbr title="Elastic File System">EFS</abbr> and node ephemeral storage.'
               hidden: "Saved on cost because I determined we were using EBS unnecessarily - we had some logs that were backed up to S3 on a regular schedule via sidecar, so moved those files to ephermeral-storage, and the session level logs were a fraction of the size (MiB vs GiB) and only needed to be persisted for less than 24h and could be saved cheaply in EFS with elastic throughput - .5Gi on EFS and rest on ephemeral-storage vs 8Gi on EBS - ephemeral storage effectively free because other services use so little, as long as you mark your resource.requests.ephemeral-storage it all works out"
+            - text: "Reduced LogScale (Humio) costs by $375k / year from initial team's implementation."
+              hidden: "they did it terribly to start, using overly large (12xl) Nodes with limited value because they didn't understand how Karpenter calculates Node resources, added metrics from Humio into Prometheus for better alerting, created enough alerts that users wouldn't be the source of outage notifications, migrated Humio from MSK to self-hosted Kafka, fixed bugs in our ArgoCD setup like not server-side applying the Humio operator CRDs, properly using Humio's version of indices (splitting segments by source and all indices) to speed up search by 5-15x when used, moved non-prod logs to a single AZ given the risk profile and cost savings potential, reduced logged message sizes by >40% (because we were double-logging some things and quadruple logging certain metadata)"
+            - text: "Optimized LLM practices by updating configs to reference public language style guides and best practices. Added slash commands for Helm manifest rendering."
+              hidden: "Wrote hooks for myself, slash commands for use by company, updated our AI language best-practices docs (Bash to point to Google's bash style guide, and PromQL to properly understand things it kept getting wrong like inequality symbols being low/high-pass filters instead of booleans). Slash commands were for things like rendering the final helm manifest before and after your changes to see exactly what changed in which environments, since our Helm values file setup makes that somewhat unintuitive."
           hidden:
+            - text: "Created Go microservice to update client <abbr title='Financial Information eXchange'>FIX</abbr> sessions, reducing lead time from weeks to minutes."
+              hidden: "UI frontend stores configs in DB, poll over gRPC for updates and install or update Helm releases. Previously, configs were stored in YAML in monorepo with very limited validation, and were only applied as part of a 2-week release cycle or out-of-band with extra manual work from the Ops team."
             - text: "Created Go microservice to install, update, and monitor Helm releases of <abbr title='Financial Information eXchange'>FIX</abbr> sessions and HAProxy routing, decreasing release cycle for customer configuration changes."
             - text: 'Set up automatic reloading on our HAProxy instance to allow intra-day routing updates'
               hidden: "Solved some issues with HAProxy limitations of line length, k8s issues of configmap size, and HAProxy issues of dynamic ACL comparisons"
@@ -88,8 +92,8 @@ body:
               hidden:
                 - 'Reduced monthly <abbr title="Amazon Web Services">AWS</abbr> costs by 50% through strategies such as scaling down aggressively during off-hours and optimizing Kafka configuration.'
                 - 'reducing microservice memory footprint ($500/mo), shutting down dev <abbr title="Elastic Kubernetes Service">EKS</abbr> cluster outside business hours ($700/mo), migrating from Strimzi to <abbr title="Managed Streaming for Kafka">MSK</abbr> ($600/mo), adding data compression ($1000/mo), consuming from the closest Kafka replica ($100/mo), sharing account with frontend (~$1k/mo?), and optimizing <abbr title="Elastic Compute Cloud">EC2</abbr> node size ($60/mo), altogether representing a 50% cost savings.'
-            - text: 'Prioritized creation and maintenance of documentation, encompassing architectural diagrams, runbooks, onboarding materials, budget forecasting, sprint retrospectives, and detailed post-mortems including <abbr title="Root Cause Analysis">RCA</abbr>, debugging and recovery steps, and future process improvements.'
           hidden:
+            - text: 'Prioritized creation and maintenance of documentation, encompassing architectural diagrams, runbooks, onboarding materials, budget forecasting, sprint retrospectives, and detailed post-mortems including <abbr title="Root Cause Analysis">RCA</abbr>, debugging and recovery steps, and future process improvements.'
             - text: 'Reduced incident rate by 20%'
             - text: 'Independently created script to automatically login to the 5 different proxies required to work. Shared with team to save over a combined hour per week of tedious TOTP entry.'
             - text: 'Discovered and addressed bugs preventing guarantee of at-least-once delivery.'
@@ -182,11 +186,11 @@ body:
                 text: Linux, AWS, Kubernetes, Kafka, Docker
                 hidden: Jenkins, Puppet
               - title: Infrastructure as Code
-                text: Helm, Terraform, Argo <abbr title="Continuous Deployment">CD</abbr>, GitLab <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>
+                text: Helm, Terraform, Argo <abbr title="Continuous Deployment">CD</abbr>, GitLab <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>, GitHub Actions
               - title: Observability
-                text: Prometheus / Grafana / Alertmanager, Datadog, Splunk, Falcon LogScale
-              - title: <abbr title="Large Language Models">LLMs</abbr>
-                text: Custom hooks, memories, docs, and prompts for use by Claude, Cursor, Junie, and Copilot
+                text: Prometheus / Grafana / Alertmanager, Falcon LogScale (Humio), Datadog, Splunk
+              - title: <abbr title="Large Language Models">LLMs / AI</abbr>
+                text: Custom hooks, memories, docs, and slash commands for AI; experience with Claude, Cursor, ChatGPT, Gemini, Junie, and Copilot
 
               # - title: Soft Skills
                 # text: Cross-team collaboration, Technical documentation, Mentoring, Agile / Scrum
