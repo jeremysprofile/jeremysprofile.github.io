@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jeremy Richards">
+    <title>Resume</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="../css/resume_stylesheet.css" media="screen, print"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="../img/j.svg">
+</head>
+
+<body><!--
+  Author: Jeremy Richards
+  License: CC-BY-SA-NC 4.0
+  https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+  TL:DR; Use this, don't sell it, keep my name in the HTML comments, and share
+    any different versions you make based on it.
+-->
+<div class="flex column" id="resume">
+  <!-- This HTML is poorly formatted because I wanted the templating to be
+    more readable than the finished product. You're probably better off looking
+    at the templates that generated it by clicking on the GitHub link -->
+  <div class="flex" id="header">
+    <div class="flex column">
+      <h1 class="name">Jeremy Richards</h1><h3 class="title"><abbr title="Site Reliability Engineer">SRE</abbr> | Backend | <abbr title="Developer Experience">DevEx</abbr></h3><div class="personal-summary">
+          Software engineer focused on metrics, observability, and push-button deployments. Dedicated to clear documentation. Proven track record improving automation and decreasing cost.
+        </div></div>
+    <div class="max-content flex column"><div class="right-align">
+          <span title="email"><a href="mailto:jeremy@richards.dev">me@richards.dev<img src="/cv/img/mail.svg" 
+    alt="envelope" 
+    class="icon green-filter left-padded"></a></span>
+        </div><div class="right-align">
+          <span title="website"><a href="https://jeremy.richards.dev">jeremy.richards.dev<img src="/cv/img/website.svg" 
+    alt="web browser" 
+    class="icon green-filter left-padded"></a></span>
+        </div><div class="right-align">
+          <span title="Location">Denver, CO<img src="/cv/img/location.svg" 
+    alt="location pin" 
+    class="icon green-filter left-padded"></span>
+        </div><div class="right-align">
+          <span title="Stack Overflow reputation"><a href="https://stackexchange.com/users/7783437/jeremysprofile?tab=accounts">11.8k ●4 ●46 ●65<img src="/cv/img/stackoverflow.svg" 
+    alt="Stack Overflow logo" 
+    class="icon green-filter left-padded"></a></span>
+        </div><div class="right-align">
+          <span title="git repo for this resume"><a href="https://github.com/jeremysprofile/jeremysprofile.github.io">jeremysprofile<img src="/cv/img/github.svg" 
+    alt="GitHub logo" 
+    class="icon green-filter left-padded"></a></span>
+        </div><div class="right-align">
+          <span title="LinkedIn profile"><a href="https://www.linkedin.com/in/richards-dev">/in/richards-dev<img src="/cv/img/linkedin.svg" 
+    alt="LinkedIn" 
+    class="icon green-filter left-padded"></a></span>
+        </div></div>
+  </div>
+
+  <div class="flex" id="body"><div class="main grow">
+      <section class="flex column">
+      <div class="title">
+    <h2>Professional Experience</h2>
+    <hr>
+  </div>
+      <div class="">
+        <section>
+            <div class="subsection_title">
+      <div class="flex base-align wrap"><h3>Senior Site Reliability Engineer</h3></div>
+      <div class="flex base-align wrap">
+        <div class="org">
+          <img src="/cv/img/trumid-icon.png" 
+    title="Trumid logo" 
+    alt="Trumid logo" 
+    class="icon right-padded"><h4>Trumid</h4></div><h5 class="date" title="3 yr">Jan 2023 - current</h5></div>
+    </div><div class="data">
+                
+    <ul class="bullets"><li>Reduced costs: decreased LogScale (Humio) and Filebeat expenses by >$375k / year; saved $900k / year (7% of company's <abbr title='Amazon Web Services'>AWS</abbr> costs) by refining Karpenter <abbr title='Elastic Compute Cloud'>EC2</abbr> instance selection in <abbr title='Elastic Kubernetes Service'>EKS</abbr>.</li><li>Improved LLM usage by updating repo prompts, adding references to Google's language style guides, and created custom slash commands for common workflows like Helm manifest rendering.</li><li>Increased resilience to availability zone outages and lowered application storage costs by 80% via migration from <abbr title="Elastic Block Store">EBS</abbr> to a combination of <abbr title="Elastic File System">EFS</abbr> and node ephemeral storage.</li><li>Instilled culture of democratic sprint retrospectives, post-mortems, and internal <abbr title='Key Performance Indicators'>KPIs</abbr>.</li></ul>
+              </div></section><section>
+            <div class="subsection_title">
+      <div class="flex base-align wrap"><h3>Contractor → <abbr title="Full-time Employee">FTE</abbr> <abbr title="Software Engineer">SWE</abbr> II → <abbr title="Software Engineer">SWE</abbr> III → <abbr title="Software Engineer">SWE</abbr> IV</h3></div>
+      <div class="flex base-align wrap">
+        <div class="org">
+          <img src="/cv/img/nasdaq-icon.svg" 
+    title="Nasdaq logo" 
+    alt="Nasdaq logo" 
+    class="icon right-padded"><h4>Nasdaq</h4></div><h5 class="date" title="4 yr 4 mo">Sep 2018 - Jan 2023</h5></div>
+    </div><div class="data">
+                
+    <ul class="bullets"><li>Promoted three times in four years, culminating in senior engineer.</li><li>Led team responsible for <abbr title="Extract, Transform, Load">ETL</abbr> pipeline to ingest and standardize >1 billion <abbr title="Financial Information eXchange">FIX</abbr> messages / day / client.</li><li>Championed and designed <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipeline and DevOps infrastructure for Python application suite, including static typing, linting, Puppet module, <abbr title="Python Package Index">PyPI</abbr> server, unit tests, docs, and mentoring juniors.</li><li>Migrated application from on-prem <abbr title="Virtual Machines">VMs</abbr> to Kubernetes in <abbr title="Elastic Kubernetes Service">EKS</abbr>, creating Helm charts, Terraform modules, GitLab <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr> pipeline, and DataDog and Splunk alerts.</li><li>Reduced monthly <abbr title="Amazon Web Services">AWS</abbr> costs 40% via optimizing Kafka configuration and scaling down in off-hours.</li></ul>
+              </div></section><section>
+            <div class="subsection_title">
+      <div class="flex base-align wrap"><h3>Software Engineer I</h3></div>
+      <div class="flex base-align wrap">
+        <div class="org">
+          <img src="/cv/img/northrop-icon.png" 
+    title="Northrop Grumman logo" 
+    alt="Northrop Grumman logo" 
+    class="icon right-padded"><h4>Northrop Grumman</h4></div><h5 class="date" title="1 yr 3 mo">Jun 2017 - Sep 2018</h5></div>
+    </div><div class="data">
+                
+    <ul class="bullets"><li>Created convolutional neural network to classify <abbr title="Code Division Multiple Access">CDMA</abbr> radio signals at negative signal-to-noise ratios. Awarded trade secret for work, which was presented in internal symposium.</li></ul>
+              </div></section></div>
+    </section><section class="flex column">
+      <div class="title">
+    <h2>Skills</h2>
+    <hr>
+  </div>
+      <div class="">
+        <section>
+            <div class="data">
+                <ul class="nobullets"><li><span class="right-padded"><strong>Languages</strong></span>Go, Python, Bash, TypeScript, Java</li><li><span class="right-padded"><strong>Platforms</strong></span>Linux, <abbr title='Amazon Web Services'>AWS</abbr>, Kubernetes, Kafka, Docker</li><li><span class="right-padded"><strong>Networking</strong></span><abbr title='Financial Information eXchange'>FIX</abbr>, HAproxy, nginx, Istio, <abbr title='Virtual Private Cloud'>VPC</abbr>, <abbr title='Hypertext Transfer Protocol'>HTTP</abbr>, <abbr title='gRPC Remote Procedure Call'>gRPC</abbr>, WebSockets, <abbr title='Domain Name System'>DNS</abbr>, <abbr title='Transport Layer Security'>TLS</abbr></li><li><span class="right-padded"><strong>Infrastructure as Code</strong></span>Helm, Terraform, Argo <abbr title="Continuous Deployment">CD</abbr>, GitLab <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>, GitHub Actions</li><li><span class="right-padded"><strong>Observability</strong></span>Prometheus / Grafana / Alertmanager, Falcon LogScale (Humio), Datadog, Splunk</li><li><span class="right-padded"><strong><abbr title="Large Language Models">LLMs / AI</abbr></strong></span>Hooks, memories, docs, and slash commands for AI (Claude Code, Cursor, ChatGPT, Gemini)</li></ul>
+              </div></section></div>
+    </section>
+    </div>
+  </div>
+
+  <div class="flex" id="footer"><div class="main grow">
+      <section class="flex column">
+      <div class="title">
+    <h2>Education</h2>
+    <hr>
+  </div>
+      <div class="flex">
+        <section>
+            <div class="subsection_title">
+      <div class="flex base-align wrap"><h3>B.S. Mechanical Engineering</h3></div>
+      <div class="flex base-align wrap">
+        <div class="org">
+          <img src="/cv/img/cu-icon.svg" 
+    title="CU logo" 
+    alt="CU logo" 
+    class="icon right-padded"><h4>University of Colorado Boulder</h4></div></div>
+    </div></section><section>
+            <div class="subsection_title">
+      <div class="flex base-align wrap"><h3>B.A. Economics</h3></div>
+      <div class="flex base-align wrap">
+        <div class="org">
+          <img src="/cv/img/ou-icon.svg" 
+    title="OU logo" 
+    alt="OU logo" 
+    class="icon right-padded"><h4>University of Oklahoma</h4></div></div>
+    </div></section></div>
+    </section>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+<!--
+MkDocs version : 1.2.1
+Build Date UTC : 2026-01-21 01:19:15.609273+00:00
+-->

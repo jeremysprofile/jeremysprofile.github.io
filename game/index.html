@@ -1,0 +1,366 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="None">
+    <title>ExoGIS - Jeremy.Richards.Dev</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="../css/base.css" media="screen, print"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/idea.min.css"/>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+
+  <link rel="icon" type="image/svg+xml" href="../img/j.svg">
+</head>
+<body>
+  <section class="top banner">
+    <h1><a href="..">
+    Jeremy<wbr>.Richards<wbr>.dev
+    </a></h1>
+      <nav class="links">
+          <a href="../cv/" class="nav-link">Resume</a>
+          <a href="../contact/" class="nav-link">Contact</a>
+          <a href="../kb" class="nav-link">Knowledge Base</a>
+          <a href="../links" class="nav-link">Links</a>
+      </nav>
+  </section>
+  <hr>
+
+  <div class="box content">
+      <h1 id="exogis">ExoGIS</h1>
+<p><em>Exoplanet Geographical Information System</em></p>
+<p>Area control with objectives and light engine building.
+Rune Wars (4-turn cycle, 8 card action hand) meets Terra Mystica (hexes with terraforming) meets Scythe (upgrades, light engine building).</p>
+<h2 id="flavor">Flavor</h2>
+<p><em>You are AIs owned by rival surveying corporations collecting geospatial data on an inhospitable exoplanet.</em></p>
+<p><em>You'll need to adapt to the terrain, harvest resources, create more factories and mechs, and deploy scanners to retrieve the most complete picture of the planet to sell to colonists or mining companies.</em></p>
+<h2 id="goal">Goal</h2>
+<p>You win by scoring the most points.
+The only thing worth points is the number of unique hexes scanned.</p>
+<p><a href="#scoring">Scan the highest number of hexes</a> before the <a href="#game-over">game ends</a>.</p>
+<h2 id="setup">Setup</h2>
+<p>You start with one <a href="#factories">factory</a>, two hexes, two <a href="#mechs">mechs</a>, all with <a href="#stands">stands</a> of your starting color.
+You start with 8 <a href="#alloy">alloy</a>.</p>
+<p><img alt="Setup" src="setup.png" /></p>
+<h2 id="board">Board</h2>
+<h3 id="hexes">Hexes</h3>
+<p>Hexes are one of 7 colors: red, blue, yellow, purple, green, orange, and black.
+Some hexes are "special" hexes, marked with ??? (some icon).</p>
+<p>A <a href="#mech">mech</a> can only occupy hexes that are within 1 color of its <a href="#stand">stand</a>.
+Within 1 color means exactly matching, or adjacent on the <a href="#color-wheel">color wheel</a>.</p>
+<p>Special hexes require an exact color match, but produce an extra <a href="#alloy">alloy</a> when <a href="#quarry">quarried</a>.</p>
+<p>No color is adjacent to black on the <a href="#color-wheel">color wheel</a>.
+This means black hexes cannot be <a href="#glossary">friendly</a> and must be <a href="#develop">terraformed</a>.</p>
+<h4 id="color-wheel">Color Wheel</h4>
+<p><img alt="Color Wheel" src="colorwheel.png" /></p>
+<h2 id="factions">Factions</h2>
+<ul>
+<li>2-3p: played factions must be all primary colors (RBY) or all secondary colors (PGO).</li>
+<li>4p: the unplayed factions must be directly opposite each other</li>
+<li>5p: single unplayed faction gets neutral units that defend territories - TBD</li>
+<li>6p: all factions in play</li>
+</ul>
+<h3 id="faction-abilities">Faction Abilities</h3>
+<p>TBD - expansion lol</p>
+<h2 id="pieces">Pieces</h2>
+<p>You have <a href="#scanners">scanners</a>, <a href="#mechs">mechs</a>, <a href="#factories">factories</a> in your color.
+There are <a href="#stands">stands</a> of every color.
+Everyone can gather <a href="#alloy">alloy</a>.
+There are, in some vague sense, <a href="#objectives">objective tokens</a>.
+There are no piece limits.</p>
+<h2 id="scanners">Scanners</h2>
+<p>Placed with the <a href="#scan">scan</a> action to scan 1 or more hexes.
+Scanners are <em>not</em> units, do not go on hexes, and cannot be destroyed.
+Placed without stand (really, just place any stand under them, because they'll fall over without it).
+Cannot be moved or destroyed.</p>
+<h2 id="alloy">Alloy</h2>
+<p>The only resource.
+<a href="#quarry">Quarried</a> from hexes you control.
+Goes into your personal supply; does not touch the board.</p>
+<h2 id="units">Units</h2>
+<p>Mechs and factories are units and go on hexes.
+Any unit controls a hex.
+Each unit has a stand denoting modifications.</p>
+<h3 id="stands">Stands</h3>
+<p>Stands are just bases for pieces, and do nothing on their own.</p>
+<p><a href="#mechs">Mech</a> stands show the modifications the mech has undergone, and thus, where the mech can move.</p>
+<p><a href="#factories">Factory</a> stands show the modified mechs a factory can produce.</p>
+<h3 id="mechs">Mechs</h3>
+<p>Mechs <a href="#glossary">control</a> <a href="#hexes">hexes</a>, <a href="#develop">build and expand</a> <a href="#factories">factories</a>, can <a href="#movement">move</a>, and can engage in <a href="#combat">combat</a>.</p>
+<p>See other sections for details and exceptions, but in general, mechs have 1 attack, 1 defense, 2 movement, and can only move onto or through hexes within 1 color of their stand on the <a href="#color-wheel">color wheel</a>.</p>
+<h3 id="factories">Factories</h3>
+<p>Can be expanded for extra <a href="#manufacture">mech spawning</a> and <a href="#combat">defense</a>.</p>
+<p>Factory <a href="#stands">stands</a> are <strong>always</strong> the color of the <a href="#hexes">hex</a> they occupy - if the hex is <a href="#develop">terraformed</a>, immediately change the factory stand to match.
+Factories produce mechs with matching stands.</p>
+<p>Factories can only <a href="#manufacture">manufacture</a> at most a number of mechs equal to the number of expansions.</p>
+<p>Factories add extra defense to a hex - each story counts for one combat strength.
+A new factory will spawn with 2 stories, and factories can expand to up to 4 stories.
+Factories on hexes <a href="#combat">successfully invaded</a> by an opponent will become damaged and owned by that opponent, losing all but 1 story.</p>
+<h2 id="turns">Turns</h2>
+<p>Simultaneous declaration: each player selects a <a href="#cards">card</a> to play by placing it face down in front of themselves, and when everyone has selected a <a href="#cards">card</a>, everyone flips their <a href="#cards">card</a> up at the same time.
+Cards are mostly simultaneous action (with the exception of <a href="#combat">combat</a>) , but if someone requests, <a href="#cards">other cards can be ordered as well</a>.</p>
+<h3 id="days">Days</h3>
+<p>Days are 3 rounds - morning, evening, and night.</p>
+<p>Cards played each <a href="#turns">turn</a> are kept face-up on the table in front of the player and cannot be reused until the following day.</p>
+<h4 id="morning">Morning</h4>
+<p>Pick up all <a href="#cards">cards</a> played yesterday.</p>
+<h3 id="evening">Evening</h3>
+<p><a href="#upgrades">You have <strong>+1 upgrade</strong> for cards played in the evening.</a>
+There is no benefit to +1 upgrade on maxed out cards.</p>
+<h3 id="night">Night</h3>
+<p>???</p>
+<h2 id="cards">Cards</h2>
+<p><em>Think Rune Wars, but no supremacy bonuses, only upgrades.</em></p>
+<p>Cards can be <a href="#upgrades">upgraded</a> for better effect.
+Cards start with zero upgrades.
+On cards with multiple actions (<a href="#develop">Develop</a> and <a href="#streamline">Streamline</a>) you may take any number of the actions <strong>in order</strong>.</p>
+<p>Cards are technically resolved in numbered order, though outside of <a href="#combat">combat</a>, most cards can be resolved simultaneously.
+Ties are resolved by <a href="#objectives">completed objectives</a>, then unused alloy, then bidding alloy (say a number, next person must bid higher or lose the tie).
+Tie winner chooses who goes first.</p>
+<h3 id="develop-tbd">Develop - TBD</h3>
+<p>Priority 1.</p>
+<ul>
+<li>With mech: expand any number of <strong>existing</strong> factories once each with 3 alloy;</li>
+<li>With mech: spend 8 alloy to create one factory one expansion;</li>
+<li>With mech: terraform up to 3 controlled or adjacent territories to be one color more or less using 6 alloy (enemy territories can only be cleaned).</li>
+</ul>
+<p>Upgrades:</p>
+<ul>
+<li><strong>Constraint optimization</strong>: Factories cost 2 less. Factory expansions cost 1 less. Terraforming costs 2 less.</li>
+</ul>
+<h3 id="coordinate">Coordinate</h3>
+<p>Priority 2.</p>
+<p>Choose 2 hexes. Move mechs from those hexes to 2 <strong>adjacent</strong> <a href="#glossary">friendly</a> or empty destination hexes.
+Each mech cannot move more than 1 hex this way.</p>
+<p>Upgrades:</p>
+<ul>
+<li><strong>Multithreading</strong>: No limit on number of hexes. Each mech may move to an adjacent <a href="#glossary">friendly</a> or empty hex.</li>
+<li><strong>Overclocking</strong>: Mechs may move at speed 2 if the hex they move through is <a href="#glossary">friendly</a>.</li>
+</ul>
+<h3 id="explore">Explore</h3>
+<p>Priority 3.</p>
+<p>Move any number of mechs from any number of hexes to a destination hex.</p>
+<p>Can only move through <a href="#glossary">friendly</a> or empty territories, and still have to match colors.</p>
+<p>Upgrades:</p>
+<ul>
+<li><strong>Quantum tunneling</strong>: Treat identical colors separated by 1 hex as adjacent instead. (This can result in an effective speed of 4.)</li>
+<li><strong>Overvolting</strong>: Gain two extra <a href="#combat">combat strength</a> this turn.</li>
+<li><strong>Multiprocessing</strong>: Choose a second destination hex.</li>
+</ul>
+<h3 id="quarry">Quarry</h3>
+<p>Priority 4.</p>
+<p>Gain 2 alloy from each <a href="#glossary">friendly</a> hex.</p>
+<p>Upgrades:</p>
+<ul>
+<li><strong>Breadth-first search</strong>: <a href="#hexes">Normal hexes</a> produce 3 <a href="#alloy">alloy</a> instead of 2.</li>
+<li><strong>Depth-first search</strong>: <a href="#hexes">Special hexes</a> produce 5 <a href="#alloy">alloy</a> instead of 2.</li>
+</ul>
+<h3 id="manufacture">Manufacture</h3>
+<p>Priority 5.</p>
+<p>With any number of <a href="#factories">factories</a>: spend 5 <a href="#alloy">alloy</a> per mech to deploy <a href="#mechs">mechs</a>.
+Each <a href="#factories">factory</a> can manufacture at most a number of mechs equal to its number of stories.</p>
+<p>The <a href="#mechs">mech</a>'s <a href="#stands">stand</a> color matches the <a href="#factories">factory</a> <a href="#stands">stand</a> color.</p>
+<p><del>Mechs of your faction color are 1 cheaper.</del></p>
+<p>Upgrades: </p>
+<ul>
+<li><strong>Garbage collecting</strong>: Existing mechs (up to the number of factory stories) on a factory hex can be recycled for 3 alloy each. Reclaiming does not count against the manufacturing limit.</li>
+<li><strong>Resource Scheduling</strong>: Mechs cost 3 instead of 5.</li>
+</ul>
+<h3 id="streamline">Streamline</h3>
+<p>Priority 6.</p>
+<p>Can only be played at morning.</p>
+<ul>
+<li>Any number of times and hexes: combine mechs on the same hex to merge stand colors;</li>
+<li>
+<p>Complete one new quest (must currently meet requirements) and <a href="#upgrade">upgrade</a> a card X times based on <code># Upgrades</code>;</p>
+</li>
+<li>
+<p>0: once</p>
+</li>
+<li>1: once</li>
+<li>2: twice</li>
+</ul>
+<p>Upgrade cap: 2</p>
+<h3 id="scan">Scan</h3>
+<p>Priority 7.</p>
+<p>With mech: Create a <a href="#scanners">scanner</a> on the intersection between 3 <a href="#glossary">friendly</a> <a href="#hexes">hexes</a>.</p>
+<p>Scanners can also be placed on the edge of the planet if you really want (the missing <a href="#hexes">hex</a> counts as <a href="#glossary">friendly</a>).</p>
+<p>Scanners do not need a stand: they cannot be moved or destroyed once placed, regardless of terraform actions, hex control, or combat.
+Scanners can be co-located.</p>
+<p>Scanners cost 8 <a href="#alloy">alloy</a>.</p>
+<p>Upgrades:</p>
+<ul>
+<li><strong>Horizontal scaling</strong>: You may place two scanners at two different intersections by paying alloy for each.</li>
+<li><strong>Privilege escalation</strong>: Only 2 of the adjacent <a href="#hexes">hexes</a> must be <a href="#glossary">friendly</a>.</li>
+<li><strong>Colo</strong>: Scanners placed at an intersection where scanner(s) already exist cost 2 instead of 8.</li>
+</ul>
+<h2 id="movement">Movement</h2>
+<p>Mechs are the only <a href="#pieces">pieces</a> that can be moved.</p>
+<p>Mechs using <a href="#explore">Explore</a> have a speed of 2, meaning they can move from one hex, through another hex, to a final hex.
+By default, mechs using <a href="#coordinate">Coordinate</a> have a speed of 1, meaning they can only move to an adjacent hex, though this can be upgraded to speed 2.</p>
+<p>Mechs </p>
+<p>Upgrading the <a href="#explore">Explore</a> action allow you to move mechs at speed 2.
+Mechs can only move through friendly or empty hexes that they can stand in.</p>
+<p>Upgrading the Explore action again allows you to blink between hexes of the same color that are less than 2 hexes apart.
+Tunneling between these hexes counts allows you to to bypass enemy or inhospitable hexes.
+Tunneling between these hexes treats them as adjacent, meaning you could move up to 4 hexes away.</p>
+<h2 id="combat">Combat</h2>
+<p><em>Interstellar law prohibits sabotaging competing efforts, but short of destroying a company's scanners, no one will be able to prove anything.
+This means your mechs aren't designed for combat, but neither are anyone else's.
+Your best plan is mutually assured destruction: overload your power source and explode your units to take out theirs.
+Factories will enter lockdown during combat - you'll have to spend some explosive strength to damage them enough to get in and take control.</em></p>
+<p>Combat is just 1:1 - attacker sacrifices X units to destroy X defender units.
+Each factory expansion counts as a unit (each mech counts as one unit regardless of modifications).
+If you successfully invade a hex with a factory, destroy your opponent's factory and place an unexpanded factory (white stand) on the hex.</p>
+<p>You can choose to attack with fewer units if you want to weaken your opponent's forces, though you won't gain control of the hex.
+A tie means the territory becomes empty - any factories are completely destroyed.</p>
+<h2 id="objectives">Objectives</h2>
+<p><em>Your technology wasn't designed with this particular planet's environment in mind. Gather more training data to make actions more efficient.</em></p>
+<p>Completing objectives can only be done via the <a href="#streamline">Streamline</a> action, which will let you immediately <a href="#upgrades">upgrade</a> a <a href="#cards">card</a>.
+See the <a href="#objective-list">list</a> below.</p>
+<h3 id="upgrades">Upgrades</h3>
+<p><em>Every action is ultimately software. Deploying patches after release is standard procedure.</em>
+Upgrades are per <a href="#cards">card</a>.
+Upgrading involves <del>grabbing the higher number card of that name</del> adding a tally to your card and placing an objective token of your color on that objective to mark it off.</p>
+<p>You may upgrade any card, regardless of whether it has been played today.
+Upgrading the currently played card does not change your current action.</p>
+<p>There are a total of 27 possible upgrades, but only 17 objectives.</p>
+<p>When objective tokens run out, <a href="#game-over">game ends that <strong>night</strong></a>.</p>
+<h3 id="objective-list">Objective List</h3>
+<ul>
+<li><strong>Centrist</strong>: <a href="#glossary">Control</a> the center hex</li>
+<li><strong>Tourist</strong>: <a href="#glossary">Control</a> a hex 7 away from your starting hexes</li>
+<li><strong>Rogue</strong>: <a href="#glossary">Control</a> a hex in an enemy's <a href="#glossary">home row</a></li>
+<li><strong>Technologist</strong>: Fully expand a factory</li>
+<li><strong>Specialist</strong>: Fully upgrade a card</li>
+<li><strong>Settler</strong>: <a href="#glossary">Control</a> 15 hexes (4p, 2p: 30, 3p: 20, 5-6p: 10)</li>
+<li><strong>Linear</strong>: <a href="#glossary">Control</a> a straight line of 5 hexes (4p, 2p: 7, 3p: 5, 5-6p: 4)</li>
+<li><strong>Inhospitable</strong>: <a href="#glossary">Control</a> a black hex</li>
+<li><strong>Entrenched</strong>: <a href="#glossary">Control</a> 4 <a href="#glossary">home row</a> hexes (secondary-advantaged)</li>
+<li><strong>Innovative</strong>: <a href="#glossary">Unlock</a> a secondary that includes a color you didn't start with (primary-advantaged)</li>
+<li><strong>Flexible</strong>: <a href="#glossary">Unlock</a> all secondaries (secondary-advantaged)</li>
+<li><strong>Strategist</strong>: Terraform 3 times</li>
+<li><strong>Capitalist</strong>: Control 4 factories</li>
+<li><strong>Ruthless</strong>: Successfully invade</li>
+<li><strong>Generalist</strong>: Upgrade a card, place a scanner, and expand a factory</li>
+<li><strong>Surveyor</strong>: Place 3 corner scanners</li>
+<li><strong>Hoarder</strong>: Have 15 unspent alloy</li>
+</ul>
+<h2 id="game-over">Game Over</h2>
+<p>Game ends on the night of the day that we run out of objective markers?
+Or someone completes 10 objectives? 
+How much? No idea - 2-3: 8/p, 4: 7/p, 5-6: 6/p
+^ These are probably too long.</p>
+<h3 id="scoring">Scoring</h3>
+<p><em>Surveying is zero-sum - miners and colonizers will buy from whomever has the most complete data set. The winner is the faction with the most hex data uploaded back to the Core Worlds.</em></p>
+<p>Each unique hex covered by a scanner is worth 1 point.
+Ties are broken by number of upgrades.</p>
+<h2 id="glossary">Glossary</h2>
+<ul>
+<li><strong>Empty</strong>: A <a href="#hexes">hex</a> without <a href="#units">units</a>.</li>
+<li><strong>Enemy</strong>: A <a href="#hexes">hex</a> with a <a href="#units">unit</a> not matching your faction.</li>
+<li><strong>Friendly</strong>: A <a href="#hexes">hex</a> with a <a href="#units">unit</a> matching your faction.</li>
+<li><strong>Home row</strong>: The set of 4 outer edge hexes for each faction, including unplayed factions and your own faction.</li>
+<li><strong>Story</strong>: Each <a href="#factories">story on a factory</a> counts as one <a href="#combat">combat strength</a> and increases the maximum number of <a href="#mechs">mechs</a> that <a href="#factories">factory</a> can <a href="#manufacture">Manufacture</a>.</li>
+<li><strong>Unit</strong>: A <a href="#units">mech or factory</a>.</li>
+</ul>
+<h2 id="questions">Questions</h2>
+<ul>
+<li>Should you have a limited number of scanners and upgrading give you more scanners?</li>
+<li>Should anything to do with your color be easier? Unit discount, extra harvest, farther teleport?</li>
+<li>Is there a cooler word for "upgrades"? I want it to be most software themed, like builds / releases / patches, but those don't really start from zero like upgrades do.</li>
+<li>
+<p>What should make each faction different?</p>
+</li>
+<li>
+<p>Colors aren't white primary secondary black, it's exact and off-by-one, where you can expand into similar territories (terra mystica style)</p>
+<ul>
+<li>Boooo</li>
+</ul>
+</li>
+<li>Upkeep mechs - 1 plus one per mod<ul>
+<li>then hexes have to produce more per color, and hexes have to produce like 3 base so each hex still nets 3? but then having 2 black units on a black hex net 0, that's terrible. </li>
+<li>upkeep mechs: 0 plus 1 per mod? hexes produce 4 base</li>
+<li>Does upkeep do anything? You just have to scale production so that upkeep matches.</li>
+<li>Maybe you don't need a limit or upkeep, since people are incentivized to spread out anyway.</li>
+<li>Mechs are fundamentally workers, not fighters, so they kinda need to be the thing producing resources.</li>
+</ul>
+</li>
+<li>night mech limit by controlled hexes - 3 * #hexes?<ul>
+<li>probs not since you're not even strongly incentivized to own hexes after deploying scanners</li>
+</ul>
+</li>
+<li>can people place scanners in the same corners?<ul>
+<li>Yes</li>
+</ul>
+</li>
+</ul>
+<h2 id="good-and-bad">Good and Bad</h2>
+<p>I like the 4 turn round setup.
+I like the color requirements to expand, and the generalization penalty of more expensive units since they don't attack better.
+I like terraforming to make defending / expanding easier.
+I like teleporting / tunneling color to color to skip over terraformed defenses and reach the center.
+I like the flavor concept of mechs plus mods to enter hexes hostile in different ways.
+I like the base concept of combat and area control.
+I like deterministic combat and MAD.
+I like that permanent area control isn't the goal.</p>
+<p>I dislike 8 different actions and having to explain how to pick them up - complexity penalty.</p>
+<p>I dislike that more hostile hexes aren't more rewarding somehow.
+I dislike that your faction color doesn't matter somehow.
+I dislike that combat doesn't favor defenders.</p>
+<h2 id="alternate-ideas">Alternate ideas</h2>
+<ul>
+<li>You are organisms, and you have to adapt to terrain that's +/- one color off?</li>
+<li>You are claiming territory splatoon style?</li>
+<li>61-hex map instead of 100? (hexagon of sides of 6 hexagons)</li>
+</ul>
+<h2 id="base-principles">Base principles</h2>
+<p>I want a color-based area control game engine-building game where area control isn't the win condition.</p>
+<p>I like the trophy placement win condition.
+I like the four turn days / years with different effects.</p>
+<p>I don't know how to structure actions to be balanced.
+I don't know how to make an engine builder.</p>
+<p>I need to decide what the "engine" component is.
+What drives the game?
+I want it to be the board, not a deck to build or something.</p>
+<p>so how can you build an engine with only one material type you gather from the board and objectives you complete?</p>
+<p>I don't want to have multiple material types - that's too much like scythe or rune wars.</p>
+<h2 id="demoing">Demoing</h2>
+<p>Drop into partially completed game - each player has different upgrades, starting alloys, setup, etc.</p>
+<p>one factory on the first in</p>
+<p>forced asymmetry with groups of 6 hexes to start</p>
+<p>with 3 players take out the outer ring</p>
+<p>scan upgrade could be "scan twice"</p>
+<p>streamline should be automatic every morning</p>
+<p>not completing an objective every turn felt like losing</p>
+<p>make certain cards more incentivized by bonus points (upgrading certain cards gives bonus points)</p>
+<p>17 objectives is hard to track
+Scythe goals match an action very clearly and you need to do it all of the times, but this has a variable number for each objective</p>
+<p>top-bottom</p>
+<p>it would be nice to make the core 3 (scan streamline quarry) not played every time</p>
+  </div>
+  <hr>
+  <section class="bottom banner">
+    <p>
+    A website to showcase how little I know about web dev.
+    </p>
+    <!-- If I remove the nav, then flex-grow prevents "About" from being right-justified -->
+    <nav class="links">
+      <!-- Empty element to move "About" to the end of the box -->
+      <a></a>
+      <a href="../about">
+        About this site
+      </a>
+    </nav>
+  </section>
+
+</body>
+</html>
+<!--
+MkDocs version : 1.2.1
+Build Date UTC : 2026-01-21 01:19:15.631505+00:00
+-->
