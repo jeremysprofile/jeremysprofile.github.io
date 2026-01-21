@@ -182,10 +182,10 @@ body:
               - title: Languages
                 text: Go, Python, Bash, TypeScript, Java
               - title: Platforms
-                text: Linux, AWS, Kubernetes, Kafka, Docker
+                text: Linux, <abbr title='Amazon Web Services'>AWS</abbr>, Kubernetes, Kafka, Docker
                 hidden: Jenkins, Puppet
               - title: Networking
-                text:  <abbr title='Financial Information eXchange'>FIX</abbr>, HAproxy, nginx, Istio, VPCs, HTTP, gRPC, WebSockets, DNS, TLS
+                text:  <abbr title='Financial Information eXchange'>FIX</abbr>, HAproxy, nginx, Istio, <abbr title='Virtual Private Cloud'>VPC</abbr>, <abbr title='Hypertext Transfer Protocol'>HTTP</abbr>, <abbr title='gRPC Remote Procedure Call'>gRPC</abbr>, WebSockets, <abbr title='Domain Name System'>DNS</abbr>, <abbr title='Transport Layer Security'>TLS</abbr>
               - title: Infrastructure as Code
                 text: Helm, Terraform, Argo <abbr title="Continuous Deployment">CD</abbr>, GitLab <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>, GitHub Actions
               - title: Observability
