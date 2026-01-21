@@ -185,7 +185,7 @@ body:
                 text: Linux, AWS, Kubernetes, Kafka, Docker
                 hidden: Jenkins, Puppet
               - title: Networking
-                text:  <abbr title='Financial Information eXchange'>FIX</abbr>, HAproxy, nginx, Istio, VPCs, HTTP, FIX, gRPC, WebSockets, DNS, TLS
+                text:  <abbr title='Financial Information eXchange'>FIX</abbr>, HAproxy, nginx, Istio, VPCs, HTTP, gRPC, WebSockets, DNS, TLS
               - title: Infrastructure as Code
                 text: Helm, Terraform, Argo <abbr title="Continuous Deployment">CD</abbr>, GitLab <abbr title="Continuous Integration / Continuous Deployment">CI/CD</abbr>, GitHub Actions
               - title: Observability
